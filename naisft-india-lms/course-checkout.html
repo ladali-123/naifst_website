@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Course Checkout | NAISFT INDIA</title>
+  <meta name="description" content="Simple NAISFT INDIA course admission checkout with student details, document upload and secure payment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" href="Assets/naisft-logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/course-checkout.css">
+</head>
+<body>
+  <div class="checkout-top-strip"><div class="checkout-top-strip-inner"><div class="checkout-top-strip-left"><span>☎ <b>+91 98356 27522</b></span><span>✉ info@naisftindia.com</span></div><div class="checkout-top-strip-right"><span>Official NAISFT India Checkout</span><span>Simple Admission Payment</span></div></div></div>
+  <header class="checkout-header"><div class="checkout-header-inner"><div class="brand-wrap"><a href="index.html" class="co-brand-home" aria-label="Go to NAISFT India homepage"><img class="co-brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India"></a><div class="brand-line"></div><div class="checkout-label"><span>OFFICIAL COURSE CHECKOUT</span><strong>Submit details, reserve admission and pay securely</strong></div></div><div class="header-actions"><div class="secure-pill">🔒 Secure checkout</div><button class="cancel-link" type="button" onclick="history.back()">Cancel</button></div></div></header>
+  <section class="checkout-hero"><div class="checkout-hero-inner"><div><span class="eyebrow">NAISFT ADMISSION PAYMENT</span><h1>Simple admission checkout <em>without account creation.</em></h1><p>Students can submit basic details and documents first. Student dashboard/account can be created later after successful payment and document verification.</p></div><div class="checkout-progress" aria-label="Checkout steps"><div class="step-pill"><b>1</b>Course</div><div class="step-pill"><b>2</b>Details</div><div class="step-pill"><b>3</b>Payment</div></div></div></section>
+
+  <main class="checkout-body">
+    <div class="checkout-grid">
+      <div class="main-column">
+        <div class="checkout-alert" id="checkoutAlert"></div>
+
+<section class="co-card" id="studentDetailsCard">
+          <div class="co-card-pad">
+            <div class="card-title-row"><div><span class="section-kicker">STUDENT DETAILS</span><h2>Basic admission details</h2><p class="supporting-text">No login or signup required now. Fill the details and upload documents to proceed with payment.</p></div><span class="trust-badge">Simple form</span></div>
+            <form id="admissionForm" class="admission-form" novalidate>
+              <div class="form-section">
+                <div class="form-section-head"><span>01</span><div><h3>Personal Details</h3><p>Required for admission record, verification and certificate preparation.</p></div></div>
+                <div class="checkout-form-grid">
+                  <div class="checkout-field"><label for="studentFullName">Full Name <b>*</b></label><input id="studentFullName" name="studentFullName" autocomplete="name" placeholder="Enter student's full name" required></div>
+                  <div class="checkout-field"><label for="studentDob">Date of Birth <b>*</b></label><input id="studentDob" name="studentDob" type="date" required></div>
+                  <div class="checkout-field"><label for="studentEmail">Email ID <b>*</b></label><input id="studentEmail" name="studentEmail" type="email" autocomplete="email" placeholder="student@example.com" required></div>
+                  <div class="checkout-field"><label for="studentMobile">Mobile / WhatsApp Number <b>*</b></label><div class="checkout-phone-row"><div class="checkout-phone-picker" id="checkoutPhonePicker"><button type="button" class="checkout-phone-trigger" id="checkoutPhoneTrigger" aria-haspopup="listbox" aria-expanded="false"><span class="checkout-phone-flag" id="checkoutPhoneFlag">🇮🇳</span><span class="checkout-phone-code" id="checkoutPhoneCode">+91</span><svg class="checkout-phone-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="checkout-phone-dropdown" id="checkoutPhoneDropdown" hidden><input type="text" class="checkout-phone-search" id="checkoutPhoneSearch" placeholder="Search country or code…" autocomplete="off"><ul class="checkout-phone-list" id="checkoutPhoneList" role="listbox"></ul></div></div><input id="studentMobile" name="studentMobile" class="checkout-phone-input" autocomplete="tel-national" inputmode="numeric" placeholder="Mobile number" maxlength="15" required></div></div>
+                  <div class="checkout-field"><label for="studentCountry">Country <b>*</b></label><select id="studentCountry" name="studentCountry" required><option value="India" selected>India</option><option value="Bangladesh">Bangladesh</option><option value="Nepal">Nepal</option><option value="Bhutan">Bhutan</option><option value="Sri Lanka">Sri Lanka</option><option value="UAE">United Arab Emirates</option><option value="Saudi Arabia">Saudi Arabia</option><option value="Qatar">Qatar</option><option value="Oman">Oman</option><option value="Kuwait">Kuwait</option><option value="Other">Other Country</option></select></div>
+                  <div class="checkout-field"><label for="studentQualification">Highest Qualification</label><select id="studentQualification" name="studentQualification"><option value="">Select highest qualification</option><option value="Below 10th">Below 10th</option><option value="10th Pass">10th Pass</option><option value="12th Pass">12th Pass</option><option value="ITI">ITI</option><option value="Diploma">Diploma</option><option value="Graduate">Graduate</option><option value="Post Graduate">Post Graduate</option><option value="Other">Other</option></select></div>
+                  <div class="checkout-field full"><label for="addressLine1">Flat, House no., Building, Company, Apartment <b>*</b></label><input id="addressLine1" name="addressLine1" autocomplete="address-line1" placeholder="Flat / house no. / building name" required></div>
+                  <div class="checkout-field full"><label for="addressLine2">Area, Street, Sector, Village <b>*</b></label><input id="addressLine2" name="addressLine2" autocomplete="address-line2" placeholder="Area / street / sector / village" required></div>
+                  <div class="checkout-field full"><label for="addressLandmark">Landmark</label><input id="addressLandmark" name="addressLandmark" placeholder="Nearby landmark"></div>
+                  <div class="checkout-field"><label for="addressPincode">Pincode <b>*</b></label><input id="addressPincode" name="addressPincode" autocomplete="postal-code" inputmode="numeric" placeholder="Pincode / ZIP code" required></div>
+                  <div class="checkout-field"><label for="addressCity">Town/City <b>*</b></label><input id="addressCity" name="addressCity" autocomplete="address-level2" placeholder="Town or city" required></div>
+                  <div class="checkout-field full"><label for="addressState">State <b>*</b></label><select id="addressState" name="addressState" autocomplete="address-level1" required></select></div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <div class="form-section-head"><span>02</span><div><h3>Identity &amp; Academic Documents</h3><p>Upload clear images or PDF files. Institute team can verify these manually after payment.</p></div></div>
+                <div class="doc-guidance" id="docGuidance"><strong>India:</strong> Aadhaar Card, Passport, Voter ID, Driving Licence, PAN Card, Emirates ID, IQAMA or Any Other ID. <strong>International:</strong> Passport, National ID, Residence ID, Emirates ID, IQAMA or Any Other ID.</div>
+                <div class="checkout-form-grid compact-grid"><div class="checkout-field full"><label for="identityType">Identity Document Type <b>*</b></label><select id="identityType" name="identityType" required></select></div></div>
+                <div class="upload-grid">
+                  <label class="upload-box" for="identityDocument"><i class="fa-solid fa-id-card"></i><strong>Government Identity Card <b>*</b></strong><span id="identityDocumentName">Upload accepted government ID</span><input id="identityDocument" name="identityDocument" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp" required></label>
+                  <label class="upload-box" for="academicDocument"><i class="fa-solid fa-file-lines"></i><strong>Last Academic Certificate / Marksheet <b>*</b></strong><span id="academicDocumentName">Upload PDF or clear image</span><input id="academicDocument" name="academicDocument" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp" required></label>
+                  <label class="upload-box" for="passportPhoto"><i class="fa-solid fa-image-portrait"></i><strong>Passport Size Photo <b>*</b></strong><span id="passportPhotoName">JPG, PNG or WEBP preferred</span><input id="passportPhoto" name="passportPhoto" type="file" accept=".jpg,.jpeg,.png,.webp" required></label>
+                </div>
+                <div class="access-status" id="formStatus">Complete required fields and uploads to unlock payment.</div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+<section class="co-card" id="selectedCourseCard">
+          <div class="co-card-pad">
+            <div class="card-title-row"><div><span class="section-kicker">SELECTED COURSE</span><h2>Your course access</h2><p class="supporting-text">Confirm your selected course and choose a payment option.</p></div><span class="trust-badge">Admission-first checkout</span></div>
+            <div class="course-access"><div class="course-thumb"><img id="checkoutCourseImage" src="Assets/courses-hero.png" alt="Selected course"></div><div><h3 id="checkoutCourseName">Diploma in Oil &amp; Gas Safety Engineering</h3><p>Admission confirmation is subject to successful payment and document verification.</p></div><span class="included-chip">NAISFT INDIA</span></div>
+            <div class="plan-grid">
+              <div class="plan-card plan-active" id="planFull" role="button" tabindex="0"><div class="plan-head"><div class="plan-radio"><div class="plan-radio-dot"></div></div><div><span class="plan-label">Full Training Fee</span><span class="plan-sub">One-time secure payment</span></div></div><div class="plan-price" id="checkoutFullFee">₹26,500</div><div class="plan-note">Recommended for faster admission confirmation.</div></div>
+              <div class="plan-card" id="planInstallment" role="button" tabindex="0"><div class="plan-head"><div class="plan-radio"><div class="plan-radio-dot"></div></div><div><span class="plan-label">Pay in Installment</span><span class="plan-sub">Fixed 50% now, 50% later</span></div><span class="mini-tag">50/50</span></div><div class="plan-price"><span id="checkoutHalfFee">₹13,250</span> <span class="muted-small">now</span></div><div class="plan-note">+ <span id="checkoutHalfFee2">₹13,250</span> due in 30 days.</div></div>
+              <div class="plan-card" id="planOtherPart" role="button" tabindex="0"><div class="plan-head"><div class="plan-radio"><div class="plan-radio-dot"></div></div><div><span class="plan-label">Other Part Payment</span><span class="plan-sub">Choose first payment amount</span></div><span class="mini-tag">Min ₹5,000</span></div><div class="plan-price"><span id="checkoutPartFee">₹5,000</span> <span class="muted-small">now</span></div><div class="plan-note">Remaining balance updates automatically.</div></div>
+            </div>
+            <div class="installment-panel" id="installmentPanel" style="display:none;"><div class="installment-head"><strong id="installmentPanelTitle">Installment schedule</strong><span>Second payment reminder can be sent later.</span></div><div class="checkout-field installment-amount-field" id="installmentAmountField" style="display:none;"><label for="firstInstallmentAmount">First payment amount <b>*</b></label><input id="firstInstallmentAmount" type="number" inputmode="numeric" min="5000" step="1" placeholder="Enter amount to pay now"><small id="installmentAmountHelp">Minimum first payment: ₹5,000.</small></div><div class="installment-grid"><div class="installment-box"><small><span class="dot-num">1</span> Due today</small><b id="installmentFirst">₹13,250</b></div><div class="installment-box"><small><span class="dot-num red-dot">2</span> Due in 30 days</small><b id="installmentSecond">₹13,250</b></div></div><p class="supporting-text tiny-note">Admission process starts after the first successful payment, subject to document verification.</p></div>
+          </div>
+        </section>
+
+<input id="checkoutCountry" type="hidden" value="India"><input id="checkoutState" type="hidden" value="">
+
+        <section class="co-card" id="paymentMethodCard">
+          <div class="co-card-pad">
+            <div class="card-title-row"><div><span class="section-kicker">PAYMENT METHOD</span><h2>Choose how to pay</h2><p class="supporting-text">Online payments are secure and encrypted. Offline payments require manual verification.</p></div><span class="trust-badge">Encrypted 🔒</span></div>
+            <label class="method-card active" data-payment-method="online"><div class="method-top"><div class="method-radio"><div class="method-radio-dot"></div></div><span class="method-title">UPI, Cards, Net Banking, Wallets, EMI &amp; Pay Later</span><div class="payment-logos"><span class="pay-logo visa">VISA</span><span class="pay-logo">MC</span><span class="pay-logo rupay">RuPay</span><span class="pay-logo upi">UPI</span><span class="pay-logo amex">AMEX</span></div></div><div class="method-copy">A secure payment window will open where the student can choose the preferred online payment method.</div></label>
+            <label class="method-card" data-payment-method="offline"><div class="method-top"><div class="method-radio"><div class="method-radio-dot"></div></div><span class="method-title">Cash, Bank Transfer or UPI Transfer at Centre</span></div><div class="method-copy">Submit an offline payment request. The training centre will verify payment manually and activate the admission from the admin dashboard.</div></label>
+            <div id="offlineReferenceWrap" class="offline-reference" style="display:none;"><label>Offline payment reference / note</label><input id="offlineReference" placeholder="Cash receipt no., UPI ref no., bank transfer note"></div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="summary-column">
+        <div class="summary-card"><div class="summary-top"><span class="summary-top-label">ORDER SUMMARY</span><h2>Confirm admission payment</h2></div><div class="summary-body"><div class="summary-row"><span id="summaryCourseLabel">Course fee:</span><span id="summaryFee">₹26,500</span></div><div class="summary-row" id="summaryInstallmentNow" style="display:none;"><span>Payable now</span><span id="summaryInstallmentNowAmt" class="success-text">₹13,250</span></div><div class="summary-row" id="summaryInstallmentLater" style="display:none;"><span>Due in 30 days</span><span id="summaryInstallmentLaterAmt" class="muted-text">₹13,250</span></div><div class="total-row"><div class="total-row-left"><span>Total amount</span><strong>Official NAISFT admission</strong></div><span class="total-amount" id="summaryTotal">₹26,500</span></div><button class="coupon-btn" type="button" id="couponBtn">Apply Coupon</button><p class="summary-note"><strong>No signup before payment.</strong> Student dashboard can be created after successful payment and document verification.</p><p class="summary-note">By clicking pay now, the student agrees to start the selected NAISFT INDIA course admission process.</p><button class="pay-btn" id="checkoutPayBtn" type="button" disabled><i class="fa-solid fa-lock"></i> Complete details to pay</button><div class="security-stack"><div class="security-item">Simple admission form</div><div class="security-item">Document verification</div><div class="security-item">QR certificate updates</div><div class="security-item">Encrypted checkout</div></div></div></div>
+        <div class="help-card"><div class="help-icon">?</div><div><strong>Need help with admission?</strong><p>Contact the admission support team before completing payment.</p></div></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer (home page style) -->
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety &amp; Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Popular Courses</h4><a href="courses.html">Industrial Safety</a><a href="courses.html">Fire Technology</a><a href="courses.html">QA/QC</a><a href="courses.html">Advanced Safety Diploma</a><a href="courses.html">Technical Courses</a></div><div><h4>Student Services</h4><a href="student-login.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="contact.html">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>&copy; 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/course-images.js"></script>
+  <script src="js/course-checkout.js?v=admission-checkout-2"></script>
+</body>
+</html>

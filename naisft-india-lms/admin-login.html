@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Admin Login | NAISFT INDIA</title>
+  <meta name="description" content="NAISFT INDIA admin access portal.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-8">
+</head>
+<body class="admin-auth-body">
+  <main class="admin-auth-page">
+    <a href="index.html" class="admin-auth-top-logo">
+      <img src="Assets/naisft-logo.png" alt="NAISFT INDIA">
+    </a>
+    <section class="admin-auth-card">
+      <div class="admin-auth-left">
+        <span class="admin-pill"><i class="fa-solid fa-shield-halved"></i> Admin Control Panel</span>
+        <h1>Manage admissions, payments and student records.</h1>
+        <p>Use this panel to review applications, track enrollments, verify payments, and keep the student journey moving.</p>
+      </div>
+      <form class="admin-auth-form" id="adminLoginForm">
+        <div>
+          <h2>Admin Login</h2>
+          <p>Sign in with your admin credentials</p>
+        </div>
+        <div class="admin-alert" id="adminLoginAlert"></div>
+        <label>
+          <span>Email Address</span>
+          <input id="adminEmail" type="email" autocomplete="username" placeholder="admin@naisftindia.com" required>
+        </label>
+        <label>
+          <span>Password</span>
+          <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Enter admin password" required>
+        </label>
+        <button class="admin-primary-btn" id="adminLoginBtn" type="submit">
+          <i class="fa-solid fa-right-to-bracket"></i>
+          <span>Login to Admin</span>
+        </button>
+        <a class="admin-muted-link" href="index.html">Back to website</a>
+      </form>
+    </section>
+  </main>
+  <script src="js/admin-auth.js?v=local-api-3"></script>
+</body>
+</html>

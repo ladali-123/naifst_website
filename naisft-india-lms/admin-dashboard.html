@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | NAISFT INDIA</title>
+  <meta name="description" content="NAISFT INDIA admin dashboard for students, enrollments, payments and certificates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="Assets/naisft-logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-16">
+</head>
+<body class="admin-dashboard-body">
+  <main class="admin-shell">
+    <aside class="admin-sidebar">
+      <a href="index.html" class="admin-side-logo">
+        <img src="Assets/naisft-logo.png" alt="NAISFT INDIA">
+      </a>
+      <nav>
+        <a class="active" href="#overview" data-admin-view="overview"><i class="fa-solid fa-table-columns"></i> Overview</a>
+        <a href="#students" data-admin-view="students"><i class="fa-solid fa-users"></i> Students</a>
+        <a href="#course-builder" data-admin-view="course-builder"><i class="fa-solid fa-book-open"></i> Course Builder</a>
+        <a href="#assignments" data-admin-view="assignments"><i class="fa-solid fa-clipboard-check"></i> Assignments</a>
+        <a href="#support" data-admin-view="support"><i class="fa-solid fa-headset"></i> Support</a>
+        <a href="#credential-review" data-admin-view="credential-review"><i class="fa-solid fa-shield-halved"></i> Credential Review</a>
+      </nav>
+      <button class="admin-logout" type="button" data-admin-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+    </aside>
+
+    <section class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <p>Admin Control Panel</p>
+          <h1>Student Operations</h1>
+        </div>
+        <div class="admin-top-actions">
+          <a href="student-dashboard.html?dev=1">Student Preview</a>
+          <span id="adminEmailLabel">Admin</span>
+        </div>
+      </header>
+
+      <div class="admin-alert" id="adminAlert"></div>
+      <div class="admin-loading" id="adminLoading"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading admin dashboard...</div>
+
+      <div class="admin-content" id="adminContent" hidden>
+        <section class="admin-view active" id="adminViewOverview" data-admin-view-panel="overview">
+        <section class="admin-stats" id="overview">
+          <article><i class="fa-solid fa-users"></i><span>Total Students</span><strong id="adminTotalStudents">0</strong></article>
+          <article><i class="fa-solid fa-user-check"></i><span>Verified Students</span><strong id="adminVerifiedStudents">0</strong></article>
+          <article><i class="fa-solid fa-file-signature"></i><span>Pending Reviews</span><strong id="adminPendingApplications">0</strong></article>
+          <article><i class="fa-solid fa-graduation-cap"></i><span>Pending Enrollments</span><strong id="adminPendingEnrollments">0</strong></article>
+          <article><i class="fa-solid fa-receipt"></i><span>Pending Payments</span><strong id="adminPendingPayments">0</strong></article>
+          <article><i class="fa-solid fa-indian-rupee-sign"></i><span>Total Paid</span><strong id="adminTotalPaid">₹0</strong></article>
+        </section>
+        </section>
+
+        <section class="admin-view" id="adminViewStudents" data-admin-view-panel="students" hidden>
+        <section class="admin-pipeline" aria-label="Student pipeline">
+          <button class="active" type="button" data-admin-pipeline="all"><span>All Students</span><b>0</b></button>
+          <button type="button" data-admin-pipeline="applications"><span>Applications</span><b>0</b></button>
+          <button type="button" data-admin-pipeline="registration"><span>Registration Review</span><b>0</b></button>
+          <button type="button" data-admin-pipeline="payment"><span>Pending Payment</span><b>0</b></button>
+          <button type="button" data-admin-pipeline="verification"><span>Verification</span><b>0</b></button>
+          <button type="button" data-admin-pipeline="active"><span>Active Students</span><b>0</b></button>
+          <button type="button" data-admin-pipeline="completed"><span>Completed</span><b>0</b></button>
+        </section>
+
+        <section class="admin-grid">
+          <article class="admin-panel admin-students-panel" id="students">
+            <div class="admin-panel-head">
+              <div>
+                <p>Student Records</p>
+                <h2 id="adminPipelineTitle">Students</h2>
+              </div>
+              <label class="admin-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input id="adminStudentSearch" type="search" placeholder="Search name, email, phone, enrollment">
+              </label>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Student</th>
+                    <th>Course</th>
+                    <th>Payment</th>
+                    <th>Docs</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="adminStudentsTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="admin-panel admin-applications-panel" id="adminApplicationsPanel" hidden>
+            <div class="admin-panel-head">
+              <div>
+                <p>Application Pipeline</p>
+                <h2>Applications</h2>
+              </div>
+            </div>
+            <div class="admin-applications-list" id="adminApplicationsList"></div>
+          </article>
+
+          <aside class="admin-panel admin-detail-panel" id="adminStudentDetail">
+            <div class="admin-empty-state">
+              <i class="fa-solid fa-user-graduate"></i>
+              <h2>Select a student</h2>
+              <p>Open any student record to review enrollment, payment, document and certificate status.</p>
+            </div>
+          </aside>
+        </section>
+        </section>
+
+        <section class="admin-view admin-panel admin-lms-builder" id="adminLmsBuilder" data-admin-view-panel="course-builder" hidden>
+          <div class="admin-panel-head">
+            <div>
+              <p>LMS Foundation</p>
+              <h2>Course Builder</h2>
+            </div>
+            <label class="admin-search admin-lms-course-select">
+              <i class="fa-solid fa-book-open"></i>
+              <select id="lmsCourseSelect"></select>
+            </label>
+          </div>
+
+          <div class="admin-lms-workspace">
+            <aside class="admin-lms-step-menu" aria-label="Course builder steps">
+              <button class="active" type="button" data-lms-step="modules"><i class="fa-solid fa-layer-group"></i><span>Modules</span></button>
+              <button type="button" data-lms-step="lessons"><i class="fa-solid fa-play"></i><span>Lessons</span></button>
+              <button type="button" data-lms-step="materials"><i class="fa-solid fa-file-arrow-up"></i><span>Materials</span></button>
+              <button type="button" data-lms-step="live"><i class="fa-solid fa-video"></i><span>Live Classes</span></button>
+              <button type="button" data-lms-step="assignments"><i class="fa-solid fa-clipboard-check"></i><span>Assignments</span></button>
+              <button type="button" data-lms-step="preview"><i class="fa-solid fa-list-check"></i><span>Preview & Manage</span></button>
+            </aside>
+
+          <div class="admin-lms-grid">
+            <form class="admin-lms-form active" id="lmsModuleForm" data-lms-step-panel="modules">
+              <h3>Add Module</h3>
+              <input id="lmsModuleTitle" placeholder="Module title" required>
+              <input id="lmsModuleDescription" placeholder="Short description">
+              <button class="admin-secondary-btn" type="submit"><i class="fa-solid fa-layer-group"></i> Add Module</button>
+            </form>
+
+            <form class="admin-lms-form" id="lmsLessonForm" data-lms-step-panel="lessons" hidden>
+              <h3>Add Lesson</h3>
+              <select id="lmsLessonModule" required></select>
+              <input id="lmsLessonTitle" placeholder="Lesson title" required>
+              <select id="lmsLessonType">
+                <option>Video</option>
+                <option>Text</option>
+                <option>PDF</option>
+                <option>Link</option>
+              </select>
+              <input id="lmsLessonUrl" placeholder="Video/PDF/link URL">
+              <textarea id="lmsLessonText" placeholder="Lesson notes or text content"></textarea>
+              <button class="admin-secondary-btn" type="submit"><i class="fa-solid fa-play"></i> Add Lesson</button>
+            </form>
+
+            <form class="admin-lms-form" id="lmsMaterialForm" data-lms-step-panel="materials" hidden>
+              <h3>Add Material</h3>
+              <select id="lmsMaterialLesson" required></select>
+              <input id="lmsMaterialTitle" placeholder="Material title" required>
+              <select id="lmsMaterialType">
+                <option>PDF</option>
+                <option>Document</option>
+                <option>Image</option>
+                <option>Video</option>
+                <option>Link</option>
+              </select>
+              <input id="lmsMaterialUrl" placeholder="File or link URL" required>
+              <button class="admin-secondary-btn" type="submit"><i class="fa-solid fa-file-arrow-up"></i> Add Material</button>
+            </form>
+
+            <form class="admin-lms-form" id="lmsLiveClassForm" data-lms-step-panel="live" hidden>
+              <h3>Schedule Live Class</h3>
+              <select id="lmsLiveModule"></select>
+              <input id="lmsLiveTitle" placeholder="Class title" required>
+              <input id="lmsLiveTeacher" placeholder="Teacher name">
+              <select id="lmsLivePlatform">
+                <option>Google Meet</option>
+                <option>Zoom</option>
+                <option>Manual</option>
+                <option>Other</option>
+              </select>
+              <input id="lmsLiveUrl" placeholder="Join link" required>
+              <input id="lmsLiveStartsAt" type="datetime-local" required>
+              <input id="lmsLiveEndsAt" type="datetime-local">
+              <input id="lmsLiveRecordingUrl" placeholder="Recording link after class">
+              <textarea id="lmsLiveDescription" placeholder="Class agenda or notes"></textarea>
+              <button class="admin-secondary-btn" type="submit"><i class="fa-solid fa-video"></i> Schedule Class</button>
+            </form>
+
+            <form class="admin-lms-form" id="lmsAssignmentForm" data-lms-step-panel="assignments" hidden>
+              <h3>Create Assignment</h3>
+              <select id="lmsAssignmentModule"></select>
+              <input id="lmsAssignmentTitle" placeholder="Assignment title" required>
+              <textarea id="lmsAssignmentInstructions" placeholder="Instructions"></textarea>
+              <input id="lmsAssignmentAttachment" placeholder="Attachment or brief URL">
+              <input id="lmsAssignmentDueAt" type="datetime-local">
+              <button class="admin-secondary-btn" type="submit"><i class="fa-solid fa-clipboard-check"></i> Add Assignment</button>
+            </form>
+            <section class="admin-lms-manage" data-lms-step-panel="preview" hidden>
+              <div class="admin-lms-preview" id="lmsPreview"></div>
+              <div class="admin-lms-edit-panel" id="lmsEditPanel" hidden></div>
+            </section>
+          </div>
+          </div>
+        </section>
+
+        <section class="admin-view admin-panel admin-assignment-review" id="adminAssignmentReview" data-admin-view-panel="assignments" hidden>
+          <div class="admin-panel-head">
+            <div>
+              <p>LMS Review</p>
+              <h2>Assignment Submissions</h2>
+            </div>
+            <label class="admin-search admin-assignment-filter">
+              <i class="fa-solid fa-filter"></i>
+              <select id="assignmentStatusFilter">
+                <option value="">All submissions</option>
+                <option value="Submitted">Submitted</option>
+                <option value="Reviewed">Reviewed</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </label>
+          </div>
+          <div class="admin-assignment-shell">
+            <div class="admin-assignment-list" id="adminAssignmentList"></div>
+            <aside class="admin-assignment-detail" id="adminAssignmentDetail">
+              <div class="admin-empty-state">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <h2>Select a submission</h2>
+                <p>Open any assignment submission to review answer, marks, feedback and status.</p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="admin-view admin-panel admin-support-inbox" id="adminSupportInbox" data-admin-view-panel="support" hidden>
+          <div class="admin-panel-head">
+            <div>
+              <p>Student Helpdesk</p>
+              <h2>Support Requests</h2>
+            </div>
+            <button class="admin-secondary-btn" type="button" id="refreshSupportRequests"><i class="fa-solid fa-rotate"></i> Refresh</button>
+          </div>
+          <div class="admin-support-list" id="adminSupportList"></div>
+        </section>
+
+        <section class="admin-view admin-panel" id="adminCredentialReview" data-admin-view-panel="credential-review" hidden>
+          <div class="admin-panel-head"><div><span>MANUAL VERIFICATION</span><h2>Credential Review Inbox</h2><p>Review certificate copies submitted when QR or token verification could not be completed.</p></div></div>
+          <div id="manualVerificationList"><div class="admin-empty-inline">Loading verification requests…</div></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.NAISFT_ADMIN_DEV = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+      && new URLSearchParams(window.location.search).get('dev') === '1';
+  </script>
+  <script src="js/admin-dashboard.js?v=credentials-13"></script>
+</body>
+</html>

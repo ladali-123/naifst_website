@@ -1,0 +1,555 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Login | NAISFT INDIA</title>
+  <meta name="description" content="Login to the NAISFT INDIA student dashboard to view course status, payments, documents, certificate and support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    .student-login-qa {
+      min-height: calc(100vh - 112px);
+      background: #f9f8f5;
+      font-family: 'Poppins', sans-serif;
+      padding: 36px 0;
+    }
+
+    .student-login-qa .qa-split-card {
+      min-height: calc(100vh - 184px);
+      display: flex;
+      width: min(1272px, calc(100% - 48px));
+      margin: 0 auto;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .student-login-qa .qa-left {
+      width: 44%;
+      background: #0d1b3e;
+      padding: 56px 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .student-login-qa .qa-left::before,
+    .student-login-qa .qa-left::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .student-login-qa .qa-left::before {
+      background: url("Assets/Course Page Images/safety-training-fallback-01.png") center / cover no-repeat;
+      opacity: 0.34;
+      filter: saturate(0.85) contrast(1.08);
+    }
+
+    .student-login-qa .qa-left::after {
+      background:
+        radial-gradient(circle at 10% 12%, rgba(232,160,32,0.13), transparent 32%),
+        radial-gradient(circle at 95% 95%, rgba(232,160,32,0.08), transparent 36%),
+        linear-gradient(135deg, rgba(13,27,62,0.88), rgba(13,27,62,0.76));
+    }
+
+    .student-login-qa .qa-left-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .student-login-qa .qa-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(232,160,32,0.12);
+      border: 1px solid rgba(232,160,32,0.28);
+      border-radius: 20px;
+      padding: 4px 13px;
+      margin-bottom: 28px;
+    }
+
+    .student-login-qa .qa-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #e8a020;
+      flex-shrink: 0;
+    }
+
+    .student-login-qa .qa-badge span {
+      font-size: 10.5px;
+      color: #e8a020;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .student-login-qa .qa-left-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.28;
+      margin: 0 0 16px;
+    }
+
+    .student-login-qa .qa-left-content h2 span { color: #e8a020; }
+
+    .student-login-qa .qa-left-content p {
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      margin: 0 0 40px;
+      font-weight: 300;
+    }
+
+    .student-login-qa .qa-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .student-login-qa .qa-features li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.78);
+      font-weight: 400;
+    }
+
+    .student-login-qa .qa-features li i {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(232,160,32,0.18);
+      color: #e8a020;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      flex-shrink: 0;
+    }
+
+    .student-login-qa .qa-steps-row h3 {
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1.2px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+    }
+
+    .student-login-qa .qa-steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      counter-reset: step;
+    }
+
+    .student-login-qa .qa-steps li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      counter-increment: step;
+    }
+
+    .student-login-qa .qa-steps li::before {
+      content: counter(step);
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(232,160,32,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 10px;
+      color: #e8a020;
+      font-weight: 600;
+    }
+
+    .student-login-qa .qa-right {
+      flex: 1;
+      background: #f9f8f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 64px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .student-login-qa .qa-right-inner {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .student-login-qa .qa-right-header { margin-bottom: 36px; }
+
+    .student-login-qa .qa-right-header h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 25px;
+      font-weight: 600;
+      color: #0d1b3e;
+      margin: 0 0 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .student-login-qa .qa-right-header p {
+      font-size: 13px;
+      color: #b0b0b0;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .student-login-qa .qa-form-fields {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .student-login-qa .qa-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .student-login-qa .qa-label {
+      font-size: 12px;
+      color: #222;
+      font-weight: 500;
+    }
+
+    .student-login-qa .qa-input {
+      width: 100%;
+      height: 56px;
+      background: #fff;
+      border: 1px solid #e0dcd3;
+      border-radius: 8px;
+      padding: 0 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      color: #222;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .student-login-qa .qa-input:focus {
+      outline: none;
+      border-color: #e8a020;
+      box-shadow: 0 0 0 3px rgba(232,160,32,0.12);
+    }
+
+    .student-login-qa .qa-alert {
+      display: none;
+      align-items: flex-start;
+      gap: 8px;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .student-login-qa .qa-alert.error {
+      display: flex;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+    }
+
+    .student-login-qa .qa-alert.success {
+      display: flex;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+    }
+
+    .student-login-qa .qa-submit {
+      width: 100%;
+      height: 58px;
+      border: 0;
+      border-radius: 8px;
+      background: #b90407;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .student-login-qa .qa-submit:hover { opacity: 0.9; }
+    .student-login-qa .qa-submit:disabled { background: #94a3b8; cursor: not-allowed; opacity: 1; }
+
+    .student-login-qa .qa-secondary-btn {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid #e0dcd3;
+      border-radius: 8px;
+      background: #fff;
+      color: #0d1b3e;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .student-login-qa .qa-recovery-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .student-login-qa .qa-recovery-otp-btn {
+      background: #fff;
+      color: #0d1b3e;
+      border: 1.5px solid #e0dcd3;
+      box-shadow: none;
+    }
+
+    .student-login-qa .qa-recovery-otp-btn:hover { background: #fffaf0; opacity: 1; }
+
+    .student-login-qa .qa-recovery-panel { display: none; }
+    .student-login-qa .qa-recovery-panel.active { display: block; }
+    .student-login-qa .qa-login-panel.hidden { display: none; }
+    .student-login-qa .qa-signin-line { display: block; }
+    .student-login-qa .qa-signin-line.hidden { display: none; }
+
+    .student-login-qa .qa-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .student-login-qa .qa-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11.5px;
+      color: #999;
+      font-weight: 400;
+    }
+
+    .student-login-qa .qa-trust-item i {
+      color: #e8a020;
+      font-size: 11px;
+    }
+
+    .student-login-qa .qa-trust-sep {
+      color: #ddd;
+      font-size: 12px;
+    }
+
+    .student-login-qa .qa-signin {
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid #e8e3d8;
+    }
+
+    .student-login-qa .qa-signin span {
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    .student-login-qa .qa-signin a {
+      font-size: 13px;
+      color: #0d1b3e;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .student-login-qa .qa-signin a:hover { opacity: 0.75; }
+
+    @media (max-width: 980px) {
+      .student-login-qa .qa-split-card { flex-direction: column; }
+      .student-login-qa .qa-left { width: 100%; min-height: 0; padding: 44px 40px; border-radius: 8px 8px 0 0; }
+      .student-login-qa .qa-right { padding: 44px 40px; border-radius: 0 0 8px 8px; }
+    }
+
+    @media (max-width: 640px) {
+      .student-login-qa { padding: 0; }
+      .student-login-qa .qa-split-card { width: 100%; min-height: auto; border-radius: 0; }
+      .student-login-qa .qa-left { border-radius: 0; }
+      .student-login-qa .qa-right { border-radius: 0; }
+      .student-login-qa .qa-left { padding: 44px 28px; }
+      .student-login-qa .qa-left-content h2 { font-size: 30px; }
+      .student-login-qa .qa-right { padding: 40px 28px 48px; }
+      .student-login-qa .qa-right-inner { max-width: none; }
+      .student-login-qa .qa-trust { align-items: flex-start; flex-direction: column; }
+      .student-login-qa .qa-trust-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><i class="fa-solid fa-phone"></i><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><i class="fa-regular fa-envelope"></i><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-login.html" class="topbar-item"><i class="fa-solid fa-user"></i><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><i class="fa-solid fa-shield-halved"></i><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home"><img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="student-dashboard.html" class="active">Student Zone</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="student-login-qa">
+    <div class="qa-split-card">
+      <div class="qa-left">
+        <div class="qa-left-content">
+          <div class="qa-badge">
+            <div class="qa-badge-dot"></div>
+            <span>Student Access Portal</span>
+          </div>
+
+          <h2>Continue Your<br><span>NAISFT INDIA</span><br>Learning Journey</h2>
+          <p>Sign in to track your admission, course progress, fee records, document checklist and certificate updates from one simple dashboard.</p>
+
+          <ul class="qa-features">
+            <li><i class="fas fa-check"></i> Course &amp; admission status</li>
+            <li><i class="fas fa-check"></i> Fee payment summary</li>
+            <li><i class="fas fa-check"></i> Document checklist</li>
+            <li><i class="fas fa-check"></i> Certificate verification updates</li>
+            <li><i class="fas fa-check"></i> Direct student support</li>
+          </ul>
+
+          <div class="qa-steps-row">
+            <h3>Inside your dashboard</h3>
+            <ol class="qa-steps">
+              <li>View your student profile</li>
+              <li>Check active course details</li>
+              <li>Track payment and documents</li>
+              <li>Follow certificate status</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="qa-right">
+        <div class="qa-right-inner">
+          <form id="studentLoginForm">
+            <div class="qa-right-header">
+              <h2>Student Login</h2>
+              <p>Use your registered email and password</p>
+            </div>
+
+            <div class="qa-alert" id="studentLoginAlert" role="alert"></div>
+
+            <div class="qa-form-fields qa-login-panel" id="studentLoginPanel">
+              <div class="qa-field">
+                <label class="qa-label" for="studentEmail">Email Address</label>
+                <input type="email" class="qa-input" id="studentEmail" autocomplete="email" placeholder="Enter your email address" required>
+              </div>
+
+              <div class="qa-field">
+                <label class="qa-label" for="studentPassword">Password</label>
+                <input type="password" class="qa-input" id="studentPassword" autocomplete="current-password" placeholder="Enter your password" required>
+              </div>
+
+              <button class="qa-submit" id="studentLoginBtn" type="submit">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span>Login to Dashboard</span>
+              </button>
+              <div class="qa-trust">
+                <div class="qa-trust-item"><i class="fas fa-lock"></i> Secure login</div>
+                <span class="qa-trust-sep">&middot;</span>
+                <div class="qa-trust-item"><i class="fas fa-user-shield"></i> Student records protected</div>
+                <span class="qa-trust-sep">&middot;</span>
+                <div class="qa-trust-item"><i class="fas fa-bolt"></i> Instant access</div>
+              </div>
+            </div>
+
+            <div class="qa-form-fields qa-recovery-panel" id="studentRecoveryPanel">
+              <div class="qa-field">
+                <label class="qa-label" for="studentRecoveryIdentifier">Registered Email or Mobile</label>
+                <input type="text" class="qa-input" id="studentRecoveryIdentifier" autocomplete="username" placeholder="Enter registered email or mobile">
+              </div>
+              <button class="qa-submit qa-recovery-otp-btn" id="studentRecoveryStartBtn" type="button">
+                <i class="fa-solid fa-message"></i>
+                <span>Send OTP</span>
+              </button>
+              <div class="qa-field">
+                <label class="qa-label" for="studentRecoveryOtp">OTP</label>
+                <input type="text" class="qa-input" id="studentRecoveryOtp" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit OTP">
+              </div>
+              <div class="qa-field">
+                <label class="qa-label" for="studentRecoveryPassword">New Password</label>
+                <input type="password" class="qa-input" id="studentRecoveryPassword" autocomplete="new-password" placeholder="Minimum 8 characters">
+              </div>
+              <button class="qa-submit" id="studentRecoveryResetBtn" type="button">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Change Password</span>
+              </button>
+              <button class="qa-secondary-btn" id="studentBackToLoginBtn" type="button">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to login</span>
+              </button>
+            </div>
+
+            <div class="qa-signin" id="studentSigninHelp">
+              <span class="qa-signin-line" id="studentNewLine"><span>New student? </span><a href="quick-apply.html">Apply in less than a minute -&gt;</a></span>
+              <span class="qa-signin-line" id="studentForgotLine"><span>Forgot Password? </span><a href="#" id="studentShowForgotBtn">Recover your account -&gt;</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Popular Courses</h4><a href="courses.html">Industrial Safety</a><a href="courses.html">Fire Technology</a><a href="courses.html">QA/QC</a><a href="courses.html">Advanced Safety Diploma</a><a href="courses.html">Technical Courses</a></div><div><h4>Student Services</h4><a href="student-login.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="contact.html">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>&copy; 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg></a>
+
+  <script src="js/main.js"></script>
+  <script src="js/student-auth.js?v=local-test-login-1"></script>
+</body>
+</html>

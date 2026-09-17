@@ -1,0 +1,20 @@
+# Environment variables - IMPORTANT, isme secrets hain
+.env
+.env.local
+.env.production
+server/.env
+
+# Dependencies - bahut bada folder, push nahi karna
+node_modules/
+server/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User uploads
+server/uploads/

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Start an authorized NAISFT INDIA training center with brand support, digital franchise portal, course portfolio, certificate-request workflow and center launch support." />
+  <title>Franchise Opportunity | NAISFT INDIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/franchise.css" />
+  <style>
+  .fr-phone-row { display: flex; gap: 8px; }
+  .fr-phone-picker { position: relative; flex-shrink: 0; }
+  .fr-phone-trigger {
+    padding: 13px 10px;
+    border: 1px solid var(--fr-line,#dde5ed);
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    font-size: 13px;
+    color: var(--fr-navy,#071b32);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    min-width: 88px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .fr-phone-trigger:hover,
+  .fr-phone-trigger:focus,
+  .fr-phone-picker.open .fr-phone-trigger { border-color: #9eb0c3; box-shadow: 0 0 0 3px rgba(7,49,90,.07); }
+  .fr-phone-flag { font-size: 20px; line-height: 1; }
+  .fr-phone-code { font-size: 13px; }
+  .fr-phone-chevron { width: 10px; height: 6px; flex-shrink: 0; opacity: 0.4; transition: transform 0.18s; }
+  .fr-phone-picker.open .fr-phone-chevron { transform: rotate(180deg); }
+  .fr-phone-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    z-index: 300;
+    background: #fff;
+    border: 1px solid var(--fr-line,#dde5ed);
+    border-radius: 8px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    width: 248px;
+    overflow: hidden;
+  }
+  .fr-phone-search {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    background: #fafafa;
+    color: var(--fr-navy,#071b32);
+  }
+  .fr-phone-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    max-height: 216px;
+    overflow-y: auto;
+  }
+  .fr-phone-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--fr-navy,#071b32);
+  }
+  .fr-phone-list li:hover,
+  .fr-phone-list li.selected { background: var(--fr-soft,#f5f8fb); }
+  .fr-phone-list-flag { font-size: 20px; flex-shrink: 0; }
+  .fr-phone-list-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .fr-phone-list-dial { font-size: 12px; color: #888; flex-shrink: 0; }
+  .fr-phone-row .fr-phone-input { flex: 1; min-width: 0; width: auto !important; }
+  </style>
+</head>
+<body class="franchise-page">
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5.3-3.4 9.3-8 11-4.6-1.7-8-5.7-8-11V5l8-3Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></symbol>
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z"/><path d="m4 7 8 4 8-4M12 11v10"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h5v18H7a3 3 0 0 0-3 3V5Zm16 0a3 3 0 0 0-3-3h-5v18h5a3 3 0 0 1 3 3V5Z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6z"/><path d="M14 2v5h5M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="m3 11 14-6v14L3 13v-2Z"/><path d="M8 15v4a2 2 0 0 0 2 2h2l-2-6M19 9a4 4 0 0 1 0 6"/></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 14v-4a8 8 0 0 1 16 0v4"/><path d="M4 14h3v5H4zM17 14h3v5h-3zM17 19c0 2-2 3-5 3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-docs" viewBox="0 0 24 24"><path d="M8 3h8l4 4v14H8z"/><path d="M16 3v5h5M4 7v14h11"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-network" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="18" r="2.5"/><circle cx="19" cy="18" r="2.5"/><path d="m10.7 7.2-4.4 8.5M13.3 7.2l4.4 8.5M7.5 18h9"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 13h5"/></symbol>
+  </svg>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><svg><use href="#i-phone"/></svg><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><svg><use href="#i-mail"/></svg><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-dashboard.html" class="topbar-item"><svg><use href="#i-user"/></svg><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><svg><use href="#i-shield"/></svg><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home"><img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety &amp; Fire Technology" /></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="student-dashboard.html">Student Zone</a><a class="active" href="franchise.html">Franchise</a><a href="contact.html">Contact</a>
+        <a href="#franchise-enquiry" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="franchise-hero">
+      <div class="franchise-hero-overlay"></div>
+      <div class="container franchise-hero-grid">
+        <div class="franchise-hero-copy">
+          <span class="eyebrow light">BUILD A TRAINING BUSINESS WITH SUPPORT</span>
+          <h1><span>Start Your Own</span><em>NAISFT Training Center</em></h1>
+          <p class="hero-lead">Build an education business with authorized brand identity, a digital franchise portal, career-oriented courses, student admission support and a Head Office controlled certificate workflow.</p>
+          <div class="hero-points"><span><svg><use href="#i-check"/></svg>Brand &amp; launch support</span><span><svg><use href="#i-check"/></svg>Digital franchise portal</span><span><svg><use href="#i-check"/></svg>Certificate request system</span></div>
+          <div class="hero-actions"><a class="btn btn-primary btn-lg" href="#franchise-enquiry">Apply for Franchise <span>→</span></a><a class="btn btn-ghost btn-lg" href="#packages">View Partnership Models</a></div>
+        </div>
+        <div class="franchise-hero-visual">
+          <div class="hero-photo"><img src="Assets/group-training.jpg" alt="NAISFT training center and learner activity" /></div>
+          <div class="hero-mini-card"><span>FRANCHISE BUSINESS MODEL</span><strong>Brand + Portal + Courses + Support</strong><small>Built for training centers, district partners and regional expansion.</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner-strip" aria-label="Franchise partnership features">
+      <div class="container partner-strip-grid">
+        <article><span><svg><use href="#i-brand"/></svg></span><div><b>Authorized Brand Identity</b><small>Operate with approved NAISFT branding</small></div></article>
+        <article><span><svg><use href="#i-book"/></svg></span><div><b>Industry-Oriented Courses</b><small>Safety, fire, QA/QC and technical programs</small></div></article>
+        <article><span><svg><use href="#i-monitor"/></svg></span><div><b>Digital Franchise Portal</b><small>Student and certificate-request workflows</small></div></article>
+        <article><span><svg><use href="#i-support"/></svg></span><div><b>Continuous Support</b><small>Launch, counselling and operating guidance</small></div></article>
+      </div>
+    </section>
+
+    <section class="section business-model-section">
+      <div class="container business-model-grid">
+        <div class="business-copy reveal">
+          <span class="eyebrow">HOW THE MODEL WORKS</span>
+          <h2>A training-center model connected to NAISFT systems</h2>
+          <p class="lead">The partnership model combines brand identity, course access, digital student workflows, counselling support and a controlled certification process.</p>
+          <div class="business-feature-list">
+            <div><span>01</span><p><strong>Brand &amp; course access</strong><small>Use approved identity and offer the course portfolio attached to your partnership model.</small></p></div>
+            <div><span>02</span><p><strong>Admissions &amp; student management</strong><small>Manage enquiries, admissions and student records through the franchise workflow.</small></p></div>
+            <div><span>03</span><p><strong>Head Office controlled certification</strong><small>Submit certificate requests through the portal for approval, QR verification and official issue.</small></p></div>
+          </div>
+        </div>
+        <div class="portal-card reveal delay-1">
+          <div class="portal-top"><div><span>FRANCHISE PORTAL</span><strong>Center Operations Dashboard</strong></div><span class="portal-status">ACTIVE</span></div>
+          <div class="portal-stats"><div><span>Admissions</span><strong>Student Management</strong></div><div><span>Certificates</span><strong>Request Workflow</strong></div><div><span>Reports</span><strong>Monthly Tracking</strong></div></div>
+          <div class="portal-flow"><article><span>1</span><p><strong>Add Student</strong><small>Complete profile and course details</small></p></article><article><span>2</span><p><strong>Manage Training</strong><small>Track learner and program records</small></p></article><article><span>3</span><p><strong>Request Certificate</strong><small>Submit for Head Office review</small></p></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section packages-section" id="packages">
+      <div class="container">
+        <div class="section-heading row-heading reveal"><div><span class="eyebrow">FRANCHISE PARTNERSHIP MODELS</span><h2>Choose a model based on your center and expansion plan</h2></div><div class="heading-side"><p>Commercial proposals are shared after discussion, location review and approval.</p></div></div>
+        <div class="package-grid">
+          <article class="package-card reveal"><div class="package-head"><span>STARTER MODEL</span><h3>Basic Partner</h3><p>Small Town / Startup Center</p></div><ul><li>Brand usage permission</li><li>Basic course list</li><li>Student admission access</li><li>Certificate request access</li><li>Basic portal access</li></ul><button class="package-btn" data-package="Basic Partner">Get Proposal <span>→</span></button></article>
+          <article class="package-card reveal delay-1"><div class="package-head"><span>DISTRICT MODEL</span><h3>District Partner</h3><p>District Level Institute</p></div><ul><li>Complete course list</li><li>Franchise portal access</li><li>Student management</li><li>Monthly report system</li><li>Counselling support</li></ul><button class="package-btn" data-package="District Partner">Get Proposal <span>→</span></button></article>
+          <article class="package-card package-card-featured reveal delay-2"><div class="popular-badge">MOST POPULAR</div><div class="package-head"><span>PREMIUM MODEL</span><h3>Premium Partner</h3><p>City Level Training Center</p></div><ul><li>Priority certificate support</li><li>Staff training guidance</li><li>Center launch support</li><li>Marketing campaign support</li><li>Premium branding support</li></ul><button class="package-btn" data-package="Premium Partner">Get Proposal <span>→</span></button></article>
+          <article class="package-card reveal"><div class="package-head"><span>REGIONAL MODEL</span><h3>Master Franchise</h3><p>State / Regional Network</p></div><ul><li>Territory as per agreement</li><li>Sub-franchise option*</li><li>Dedicated account manager</li><li>Expansion support</li><li>Regional branding support</li></ul><button class="package-btn" data-package="Master Franchise">Get Proposal <span>→</span></button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section approval-section" id="approval-process">
+      <div class="container">
+        <div class="process-heading reveal">
+          <div><span class="eyebrow light">FRANCHISE APPROVAL PROCESS</span><h2>From enquiry to center launch</h2></div>
+          <p>Follow the complete partnership journey step by step. Select any stage to understand what happens before moving forward.</p>
+        </div>
+
+        <div class="approval-journey reveal">
+          <div class="approval-stepper" role="tablist" aria-label="Franchise approval steps">
+            <button class="process-step active" type="button" role="tab" aria-selected="true" data-step="0">
+              <span class="process-step-number">01</span><span class="process-step-icon"><svg><use href="#i-message"/></svg></span><strong>Enquiry</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="1">
+              <span class="process-step-number">02</span><span class="process-step-icon"><svg><use href="#i-phone"/></svg></span><strong>Discussion</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="2">
+              <span class="process-step-number">03</span><span class="process-step-icon"><svg><use href="#i-location"/></svg></span><strong>Location Review</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="3">
+              <span class="process-step-number">04</span><span class="process-step-icon"><svg><use href="#i-docs"/></svg></span><strong>Documents</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="4">
+              <span class="process-step-number">05</span><span class="process-step-icon"><svg><use href="#i-file"/></svg></span><strong>Agreement &amp; Payment</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="5">
+              <span class="process-step-number">06</span><span class="process-step-icon"><svg><use href="#i-monitor"/></svg></span><strong>Portal Activation</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="6">
+              <span class="process-step-number">07</span><span class="process-step-icon"><svg><use href="#i-brand"/></svg></span><strong>Center Launch</strong>
+            </button>
+            <button class="process-step" type="button" role="tab" aria-selected="false" data-step="7">
+              <span class="process-step-number">08</span><span class="process-step-icon"><svg><use href="#i-support"/></svg></span><strong>Ongoing Support</strong>
+            </button>
+          </div>
+
+          <div class="process-detail" aria-live="polite">
+            <div class="process-detail-copy">
+              <div class="process-detail-kicker"><span>CURRENT STEP</span><b id="processCounter">01 / 08</b></div>
+              <h3 id="processTitle">Submit your franchise enquiry</h3>
+              <p id="processDescription">Share your contact details, preferred city or district, and the type of training center you plan to build. This gives the franchise team the basic context needed for the first conversation.</p>
+              <ul id="processChecklist">
+                <li>Basic applicant and contact details</li>
+                <li>Preferred city, district or territory</li>
+                <li>Initial center and business intent</li>
+              </ul>
+            </div>
+            <aside class="process-detail-side">
+              <div class="process-progress" id="processProgress" style="--progress:12.5%"><div><strong id="processPercent">13%</strong><span>Journey progress</span></div></div>
+              <div class="process-nav-buttons">
+                <button id="processPrev" type="button" aria-label="Previous approval step">←</button>
+                <button id="processNext" type="button" aria-label="Next approval step">→</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section support-system-section">
+      <div class="container support-system-grid">
+        <div class="support-system-copy reveal">
+          <span class="eyebrow">SUPPORT AFTER APPROVAL</span>
+          <h2>Launch support, onboarding resources and operating guidance</h2>
+          <p>Approved partners receive structured materials and ongoing guidance for center operations, counselling and franchise-system use.</p>
+          <div class="support-tabs" role="tablist" aria-label="Franchise support categories">
+            <button class="support-tab active" data-tab="launch">Center Launch</button><button class="support-tab" data-tab="kit">Onboarding Kit</button><button class="support-tab" data-tab="compliance">Compliance Rules</button>
+          </div>
+          <div class="support-tab-panel active" id="tab-launch"><ul><li>Branding guidance</li><li>Opening creatives</li><li>Admission campaign support</li><li>Staff portal training</li><li>Course explanation support</li><li>Local marketing guidance</li></ul></div>
+          <div class="support-tab-panel" id="tab-kit"><ul><li>Authorization certificate</li><li>Agreement copy</li><li>Brand logo files</li><li>Course list &amp; forms</li><li>Counselling script</li><li>Portal login guide</li></ul></div>
+          <div class="support-tab-panel" id="tab-compliance"><ul><li>Brand guidelines are mandatory</li><li>ERP student data entry is required</li><li>Misleading advertisements are not allowed</li><li>Fake certificates are strictly prohibited</li><li>Monthly reporting is required</li><li>Quality standards must be maintained</li></ul></div>
+        </div>
+        <div class="support-system-media reveal delay-1"><img src="Assets/site-training.jpg" alt="Training center launch and operating support" /><div class="media-note"><span>PARTNER SUPPORT</span><strong>Built to help your center launch and operate with structure.</strong></div></div>
+      </div>
+    </section>
+
+    <section class="certificate-policy-section">
+      <div class="container certificate-policy-grid">
+        <div class="policy-icon"><svg><use href="#i-lock"/></svg></div>
+        <div><span>HEAD OFFICE CONTROLLED WORKFLOW</span><h2>Official certificate issue remains under NAISFT INDIA Head Office/Admin control</h2><p>Franchise partners can submit certificate requests through the portal. Final approval, QR verification and official certificate issue remain under Head Office/Admin control.</p></div>
+        <a href="certificate-verify.html" class="btn btn-primary">View Verification System</a>
+      </div>
+    </section>
+
+    <section class="section enquiry-section" id="franchise-enquiry">
+      <div class="container enquiry-grid">
+        <div class="enquiry-copy reveal">
+          <span class="eyebrow">FRANCHISE ENQUIRY</span>
+          <h2>Request a customized franchise proposal</h2>
+          <p class="lead">Tell us your preferred location and partnership model. The franchise team can review availability, discuss the business model and share the appropriate proposal.</p>
+          <div class="document-card"><div class="document-card-head"><span><svg><use href="#i-docs"/></svg></span><div><strong>Documents commonly required</strong><small>Prepare these before final approval</small></div></div><ul><li>Aadhaar Card / PAN Card</li><li>Photo &amp; Address Proof</li><li>Qualification proof, if any</li><li>Rent agreement / property proof</li><li>Business registration, if any</li><li>Center photos &amp; bank details</li></ul></div>
+        </div>
+        <form class="franchise-form reveal delay-1" id="franchiseForm">
+          <div class="form-head"><span>GET YOUR PROPOSAL</span><h3>Franchise enquiry form</h3><p>Submit your details and preferred model.</p></div>
+          <div class="form-grid">
+            <label><span>Full Name *</span><input type="text" name="name" required placeholder="Enter your full name" /></label>
+            <label><span>Mobile Number *</span>
+              <div class="fr-phone-row">
+                <div class="fr-phone-picker" id="frPhonePicker">
+                  <button type="button" class="fr-phone-trigger" id="frPhoneTrigger" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="fr-phone-flag" id="frPhoneFlag">🇮🇳</span>
+                    <span class="fr-phone-code" id="frPhoneCode">+91</span>
+                    <svg class="fr-phone-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="fr-phone-dropdown" id="frPhoneDropdown" hidden>
+                    <input type="text" class="fr-phone-search" id="frPhoneSearch" placeholder="Search country or code…" autocomplete="off">
+                    <ul class="fr-phone-list" id="frPhoneList" role="listbox"></ul>
+                  </div>
+                </div>
+                <input type="tel" name="phone" id="frPhone" class="fr-phone-input" required placeholder="Mobile number" maxlength="15" autocomplete="tel">
+              </div>
+            </label>
+            <label><span>Email Address</span><input type="email" name="email" placeholder="you@example.com" /></label>
+            <label><span>State *</span><select name="state" required><option value="">Select state</option><option>Bihar</option><option>Uttar Pradesh</option><option>Jharkhand</option><option>West Bengal</option><option>Delhi</option><option>Other</option></select></label>
+            <label class="full"><span>Preferred Model *</span><select name="model" id="preferredModel" required><option value="">Select partnership model</option><option>Basic Partner</option><option>District Partner</option><option>Premium Partner</option><option>Master Franchise</option></select></label>
+            <label class="full"><span>City / Preferred Location</span><input type="text" name="city" placeholder="Enter city or proposed center location" /></label>
+            <label class="full"><span>Tell us about your plan</span><textarea name="message" rows="4" placeholder="Existing institute, available premises, preferred timeline, etc."></textarea></label>
+          </div>
+          <button class="btn btn-primary btn-lg submit-btn" type="submit">Submit Enquiry <span>→</span></button>
+          <p class="form-message" id="franchiseMessage" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="container faq-grid">
+        <div class="faq-copy reveal"><span class="eyebrow">FAQ HIGHLIGHTS</span><h2>Questions before you apply</h2><p>Quick answers to the most common franchise questions.</p><a class="text-link" href="#franchise-enquiry">Start franchise enquiry <span>→</span></a></div>
+        <div class="faq-list reveal delay-1">
+          <article class="faq-item active"><button><span>Who issues certificates?</span><b>−</b></button><div class="faq-answer"><p>Official certificates are issued by Head Office/Admin after approval.</p></div></article>
+          <article class="faq-item"><button><span>Is income guaranteed?</span><b>+</b></button><div class="faq-answer"><p>No. Growth depends on center performance, local execution and market response.</p></div></article>
+          <article class="faq-item"><button><span>Can a franchise advertise locally?</span><b>+</b></button><div class="faq-answer"><p>Yes, subject to the approved brand and advertising guidelines.</p></div></article>
+          <article class="faq-item"><button><span>Is territory availability guaranteed?</span><b>+</b></button><div class="faq-answer"><p>No. Territory availability is subject to agreement, review and approval.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="franchise-cta">
+      <div class="container franchise-cta-inner"><div><span>READY TO DISCUSS YOUR CENTER?</span><h2>Start your training-center journey with NAISFT INDIA.</h2><p>Request the franchise proposal, discuss your location and choose the right partnership model.</p></div><div class="franchise-cta-actions"><a class="btn btn-primary btn-lg" href="#franchise-enquiry">Apply for Franchise</a><a class="btn btn-ghost btn-lg" href="https://wa.me/919835627522" target="_blank" rel="noopener">WhatsApp Team</a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety &amp; Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Course Categories</h4><a href="courses.html?category=diploma">Diploma Programs</a><a href="courses.html?category=advanced">Advanced Diploma Programs</a><a href="courses.html?category=corporate">Corporate Safety Skills</a></div><div><h4>Student Services</h4><a href="student-dashboard.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="contact.html">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>© 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg></a>
+
+  <script src="js/franchise.js"></script>
+  <script>
+  (function () {
+    const COUNTRIES = [
+      { flag:'🇮🇳', name:'India',           dial:'+91'  },
+      { flag:'🇦🇪', name:'UAE',             dial:'+971' },
+      { flag:'🇸🇦', name:'Saudi Arabia',    dial:'+966' },
+      { flag:'🇶🇦', name:'Qatar',           dial:'+974' },
+      { flag:'🇰🇼', name:'Kuwait',          dial:'+965' },
+      { flag:'🇧🇭', name:'Bahrain',         dial:'+973' },
+      { flag:'🇴🇲', name:'Oman',            dial:'+968' },
+      { flag:'🇺🇸', name:'United States',   dial:'+1'   },
+      { flag:'🇬🇧', name:'United Kingdom',  dial:'+44'  },
+      { flag:'🇦🇺', name:'Australia',       dial:'+61'  },
+      { flag:'🇨🇦', name:'Canada',          dial:'+1'   },
+      { flag:'🇸🇬', name:'Singapore',       dial:'+65'  },
+      { flag:'🇲🇾', name:'Malaysia',        dial:'+60'  },
+      { flag:'🇳🇵', name:'Nepal',           dial:'+977' },
+      { flag:'🇧🇩', name:'Bangladesh',      dial:'+880' },
+      { flag:'🇱🇰', name:'Sri Lanka',       dial:'+94'  },
+      { flag:'🇵🇰', name:'Pakistan',        dial:'+92'  },
+      { flag:'🇲🇻', name:'Maldives',        dial:'+960' },
+      { flag:'🇲🇲', name:'Myanmar',         dial:'+95'  },
+      { flag:'🇹🇭', name:'Thailand',        dial:'+66'  },
+      { flag:'🇮🇩', name:'Indonesia',       dial:'+62'  },
+      { flag:'🇵🇭', name:'Philippines',     dial:'+63'  },
+      { flag:'🇻🇳', name:'Vietnam',         dial:'+84'  },
+      { flag:'🇯🇵', name:'Japan',           dial:'+81'  },
+      { flag:'🇰🇷', name:'South Korea',     dial:'+82'  },
+      { flag:'🇨🇳', name:'China',           dial:'+86'  },
+      { flag:'🇩🇪', name:'Germany',         dial:'+49'  },
+      { flag:'🇫🇷', name:'France',          dial:'+33'  },
+      { flag:'🇮🇹', name:'Italy',           dial:'+39'  },
+      { flag:'🇪🇸', name:'Spain',           dial:'+34'  },
+      { flag:'🇳🇱', name:'Netherlands',     dial:'+31'  },
+      { flag:'🇧🇪', name:'Belgium',         dial:'+32'  },
+      { flag:'🇸🇪', name:'Sweden',          dial:'+46'  },
+      { flag:'🇳🇴', name:'Norway',          dial:'+47'  },
+      { flag:'🇩🇰', name:'Denmark',         dial:'+45'  },
+      { flag:'🇨🇭', name:'Switzerland',     dial:'+41'  },
+      { flag:'🇦🇹', name:'Austria',         dial:'+43'  },
+      { flag:'🇵🇱', name:'Poland',          dial:'+48'  },
+      { flag:'🇷🇺', name:'Russia',          dial:'+7'   },
+      { flag:'🇹🇷', name:'Turkey',          dial:'+90'  },
+      { flag:'🇬🇷', name:'Greece',          dial:'+30'  },
+      { flag:'🇪🇬', name:'Egypt',           dial:'+20'  },
+      { flag:'🇯🇴', name:'Jordan',          dial:'+962' },
+      { flag:'🇮🇶', name:'Iraq',            dial:'+964' },
+      { flag:'🇾🇪', name:'Yemen',           dial:'+967' },
+      { flag:'🇿🇦', name:'South Africa',    dial:'+27'  },
+      { flag:'🇳🇬', name:'Nigeria',         dial:'+234' },
+      { flag:'🇰🇪', name:'Kenya',           dial:'+254' },
+      { flag:'🇬🇭', name:'Ghana',           dial:'+233' },
+      { flag:'🇺🇬', name:'Uganda',          dial:'+256' },
+      { flag:'🇧🇷', name:'Brazil',          dial:'+55'  },
+      { flag:'🇲🇽', name:'Mexico',          dial:'+52'  },
+      { flag:'🇦🇷', name:'Argentina',       dial:'+54'  },
+      { flag:'🇳🇿', name:'New Zealand',     dial:'+64'  },
+      { flag:'🇫🇯', name:'Fiji',            dial:'+679' },
+    ];
+
+    let frSelectedDial = '+91';
+
+    const picker    = document.getElementById('frPhonePicker');
+    const trigger   = document.getElementById('frPhoneTrigger');
+    const dropdown  = document.getElementById('frPhoneDropdown');
+    const search    = document.getElementById('frPhoneSearch');
+    const list      = document.getElementById('frPhoneList');
+    const flagEl    = document.getElementById('frPhoneFlag');
+    const codeEl    = document.getElementById('frPhoneCode');
+    const phoneInput = document.getElementById('frPhone');
+
+    function renderList(filter) {
+      const q = (filter || '').toLowerCase();
+      const filtered = q
+        ? COUNTRIES.filter(c => c.name.toLowerCase().includes(q) || c.dial.includes(q))
+        : COUNTRIES;
+      list.innerHTML = filtered.map(c =>
+        `<li role="option" data-dial="${c.dial}" data-flag="${c.flag}"${c.dial === frSelectedDial ? ' class="selected"' : ''}>
+           <span class="fr-phone-list-flag">${c.flag}</span>
+           <span class="fr-phone-list-name">${c.name}</span>
+           <span class="fr-phone-list-dial">${c.dial}</span>
+         </li>`
+      ).join('');
+      list.querySelectorAll('li').forEach(li => {
+        li.addEventListener('click', () => {
+          frSelectedDial = li.dataset.dial;
+          flagEl.textContent = li.dataset.flag;
+          codeEl.textContent = li.dataset.dial;
+          closeDropdown();
+          phoneInput.focus();
+        });
+      });
+    }
+
+    function openDropdown() {
+      dropdown.hidden = false;
+      picker.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+      search.value = '';
+      renderList('');
+      search.focus();
+    }
+
+    function closeDropdown() {
+      dropdown.hidden = true;
+      picker.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', () => dropdown.hidden ? openDropdown() : closeDropdown());
+    search.addEventListener('input', () => renderList(search.value));
+    document.addEventListener('click', e => { if (!picker.contains(e.target)) closeDropdown(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDropdown(); });
+
+    renderList('');
+
+    // Prepend dial code before franchise.js reads FormData
+    document.getElementById('franchiseForm').addEventListener('submit', function () {
+      const raw = phoneInput.value.trim();
+      if (raw && !raw.startsWith('+')) {
+        phoneInput.value = frSelectedDial + raw;
+      }
+    }, true);
+  })();
+  </script>
+</body>
+</html>

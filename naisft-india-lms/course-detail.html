@@ -1,0 +1,2119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Course Detail | NAISFT INDIA</title>
+  <meta name="description" id="page-desc" content="Professional safety and technical courses by NAISFT INDIA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-8">
+  <style>
+    /* ── Course Detail Page Styles ── */
+    body { overflow-x: hidden; } /* needed for full-width hero bg via ::before -9999px */
+    :root {
+      --cd-hero-bg: #061a44;
+      --cd-gold: #f0b637;
+      --cd-red: #b60709;
+      --cd-navy: #061a44;
+      --cd-sidebar-w: 340px;
+    }
+
+    /* Outer page grid — spans hero + content, sidebar lives here from top */
+    .cd-outer-grid {
+      display: grid;
+      grid-template-columns: 1fr var(--cd-sidebar-w);
+      gap: 32px;
+      align-items: start;
+      max-width: 1272px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .cd-left-col { min-width: 0; }
+
+    /* Hero zone — inside left column, bg extends full-width via ::before */
+    .cd-hero-zone {
+      position: relative;
+      padding: 48px 0 40px;
+      color: #fff;
+    }
+    .cd-hero-zone::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: -9999px; right: -9999px;
+      background: linear-gradient(135deg, #061a44 0%, #0d2a6b 60%, #0a1f50 100%);
+      z-index: -1;
+    }
+    .cd-breadcrumb {
+      font-size: 13px;
+      color: #c0cce8;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .cd-breadcrumb a { color: #c0cce8; text-decoration: underline; }
+    .cd-breadcrumb i { font-size: 10px; }
+    .cd-badge {
+      display: inline-block;
+      background: var(--cd-gold);
+      color: #061a44;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 14px;
+    }
+    .cd-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .cd-subtitle {
+      font-size: 16px;
+      color: #ccd6f0;
+      margin-bottom: 18px;
+      max-width: 680px;
+      line-height: 1.55;
+    }
+    .cd-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    .cd-rating-stars { color: var(--cd-gold); letter-spacing: 2px; font-size: 15px; }
+    .cd-rating-num { color: var(--cd-gold); font-weight: 700; }
+    .cd-enrolled { color: #c0cce8; }
+    .cd-meta-chips {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      font-size: 13px;
+      color: #c0cce8;
+    }
+    .cd-meta-chips span { display: flex; align-items: center; gap: 6px; }
+    .cd-meta-chips i { color: var(--cd-gold); }
+
+    /* Sidebar Card */
+    .cd-sidebar {
+      position: sticky;
+      top: 108px;
+      align-self: start;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.22);
+      overflow: hidden;
+      z-index: 10;
+      margin-top: 36px; /* push down to align with hero content start */
+    }
+    .cd-sidebar-thumb {
+      position: relative;
+      background: #0a1f50;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .cd-sidebar-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cd-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(6,26,68,.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .cd-thumb-overlay:hover { background: rgba(6,26,68,.35); }
+    .cd-play-btn {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: rgba(240,182,55,.92);
+      display: flex; align-items: center; justify-content: center;
+      color: #061a44;
+      font-size: 20px;
+    }
+    .cd-sidebar-body { padding: 20px; }
+    .cd-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+    .cd-price-main {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--cd-navy);
+      font-family: "Montserrat", sans-serif;
+    }
+    .cd-price-old {
+      font-size: 16px;
+      color: #888;
+      text-decoration: line-through;
+    }
+    .cd-price-save {
+      font-size: 13px;
+      color: var(--cd-red);
+      font-weight: 600;
+    }
+    .cd-timer {
+      font-size: 12px;
+      color: var(--cd-red);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .cd-enroll-btn {
+      display: block;
+      width: 100%;
+      background: var(--cd-red);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+      transition: background .2s, transform .15s;
+      margin-bottom: 10px;
+      font-family: "Poppins", sans-serif;
+    }
+    .cd-enroll-btn:hover { background: #940608; transform: translateY(-1px); }
+    .cd-whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #25d366;
+      color: #fff;
+      border-radius: 6px;
+      padding: 11px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 14px;
+      transition: background .2s;
+    }
+    .cd-whatsapp-btn:hover { background: #1ebe59; }
+    .cd-sidebar-guarantee {
+      text-align: center;
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .cd-includes-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--cd-navy);
+      margin-bottom: 10px;
+    }
+    .cd-includes-list { list-style: none; }
+    .cd-includes-list li {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      color: #333;
+      padding: 5px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .cd-includes-list li:last-child { border-bottom: none; }
+    .cd-includes-list i { color: var(--cd-navy); width: 16px; text-align: center; }
+    .cd-share-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #eee;
+    }
+    .cd-share-btn {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      background: #fff;
+      color: #333;
+      transition: background .15s;
+    }
+    .cd-share-btn:hover { background: #f5f5f5; }
+
+    /* ── Content Area ── */
+    .cd-main { min-width: 0; padding: 36px 0 60px; }
+
+    /* Sidebar column must stretch to full grid height so sticky works */
+    .cd-sidebar-col {
+      align-self: stretch;
+    }
+
+    /* Section card style */
+    .cd-section {
+      background: #fff;
+      border: 1px solid #e4e8f0;
+      border-radius: 10px;
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+    }
+    .cd-section-title {
+      font-family: "Montserrat", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--cd-navy);
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f0b637;
+    }
+
+    /* What you'll learn */
+    .cd-learn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 20px;
+    }
+    .cd-learn-grid li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .cd-learn-grid li i { color: var(--cd-gold); margin-top: 2px; flex-shrink: 0; }
+
+    /* Requirements */
+    .cd-req-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      padding: 5px 0;
+      line-height: 1.5;
+    }
+    .cd-req-list li::before {
+      content: "▸";
+      color: var(--cd-navy);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Curriculum */
+    .cd-curriculum-summary {
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .cd-module {
+      border: 1px solid #e4e8f0;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .cd-module-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: #f8faff;
+      cursor: pointer;
+      gap: 12px;
+      user-select: none;
+    }
+    .cd-module-head:hover { background: #eef2fb; }
+    .cd-module-title {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--cd-navy);
+      flex: 1;
+    }
+    .cd-module-meta { font-size: 12px; color: #666; white-space: nowrap; }
+    .cd-module-toggle { color: var(--cd-navy); font-size: 13px; transition: transform .25s; }
+    .cd-module.open .cd-module-toggle { transform: rotate(180deg); }
+    .cd-module-body { display: none; }
+    .cd-module.open .cd-module-body { display: block; }
+    .cd-lesson {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 18px;
+      border-top: 1px solid #eef0f5;
+      font-size: 13px;
+    }
+    .cd-lesson i { color: #888; width: 16px; text-align: center; }
+    .cd-lesson-name { flex: 1; color: #333; }
+    .cd-lesson-duration { color: #888; font-size: 12px; }
+
+    /* Instructor */
+    .cd-instructor-card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .cd-instructor-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cd-navy) 0%, #1a4a9f 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .cd-instructor-name {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--cd-navy);
+      margin-bottom: 2px;
+    }
+    .cd-instructor-role { font-size: 13px; color: #555; margin-bottom: 8px; }
+    .cd-instructor-stats {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 12px;
+    }
+    .cd-instructor-stats span { display: flex; align-items: center; gap: 5px; }
+    .cd-instructor-stats i { color: var(--cd-gold); }
+    .cd-instructor-bio { font-size: 14px; color: #444; line-height: 1.6; }
+
+    /* Reviews */
+    .cd-reviews-summary {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .cd-rating-big {
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .cd-rating-big .num {
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--cd-navy);
+      line-height: 1;
+      font-family: "Montserrat", sans-serif;
+    }
+    .cd-rating-big .stars { color: var(--cd-gold); font-size: 18px; }
+    .cd-rating-big .label { font-size: 12px; color: #666; }
+    .cd-rating-bars { flex: 1; }
+    .cd-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+    .cd-bar-track {
+      flex: 1;
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .cd-bar-fill {
+      height: 100%;
+      background: var(--cd-gold);
+      border-radius: 4px;
+    }
+    .cd-bar-pct { color: #666; width: 32px; text-align: right; }
+    .cd-review-list { border-top: 1px solid #eee; padding-top: 16px; }
+    .cd-review-item { padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
+    .cd-review-item:last-child { border-bottom: none; }
+    .cd-review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+    .cd-review-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--cd-navy);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .cd-review-name { font-weight: 600; font-size: 14px; }
+    .cd-review-stars { color: var(--cd-gold); font-size: 12px; }
+    .cd-review-date { font-size: 12px; color: #888; }
+    .cd-review-text { font-size: 14px; color: #444; line-height: 1.55; }
+
+    /* Career opportunities */
+    .cd-career-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .cd-career-item {
+      background: linear-gradient(135deg, #f8faff 0%, #eef2fc 100%);
+      border: 1px solid #dde5f8;
+      border-radius: 8px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .cd-career-item i {
+      font-size: 22px;
+      color: var(--cd-navy);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .cd-career-item strong { font-size: 13px; color: var(--cd-navy); display: block; line-height: 1.3; }
+
+    /* Bottom CTA */
+    .cd-bottom-cta {
+      background: linear-gradient(135deg, #061a44 0%, #0d2a6b 100%);
+      color: #fff;
+      padding: 48px 0;
+      text-align: center;
+    }
+    .cd-bottom-cta h2 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .cd-bottom-cta p { font-size: 15px; color: #c0cce8; margin-bottom: 24px; }
+    .cd-bottom-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cd-bottom-actions a {
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform .15s, opacity .15s;
+    }
+    .cd-bottom-actions a:hover { transform: translateY(-2px); opacity: .92; }
+    .cd-btn-enroll { background: var(--cd-red); color: #fff; }
+    .cd-btn-whatsapp { background: #25d366; color: #fff; }
+    .cd-btn-call { background: transparent; color: #fff; border: 2px solid var(--cd-gold); }
+
+    /* Mobile sidebar */
+    .cd-mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fff;
+      box-shadow: 0 -4px 20px rgba(0,0,0,.15);
+      padding: 12px 16px;
+      z-index: 100;
+      gap: 10px;
+    }
+    .cd-mobile-price {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--cd-navy);
+      white-space: nowrap;
+    }
+    .cd-mobile-enroll {
+      flex: 1;
+      background: var(--cd-red);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: "Poppins", sans-serif;
+    }
+    .cd-not-found {
+      text-align: center;
+      padding: 80px 20px;
+      color: #555;
+    }
+    .cd-not-found h2 { font-size: 24px; color: var(--cd-navy); margin-bottom: 12px; }
+
+    /* Mobile course preview thumbnail (hidden on desktop) */
+    .cd-mobile-thumb {
+      display: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cd-outer-grid {
+        grid-template-columns: 1fr;
+        width: 100%;       /* override .wrap class width constraint */
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      .cd-left-col { min-width: 0; }
+      .cd-hero-zone {
+        padding: 0 0 24px;
+      }
+      /* keep ::before extending full-width on mobile too */
+      /* Show mobile thumbnail at top of hero */
+      .cd-mobile-thumb {
+        display: block;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        margin-bottom: 16px;
+      }
+      .cd-mobile-thumb img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      /* hero text gets side padding */
+      .cd-breadcrumb,
+      .cd-badge,
+      .cd-title,
+      .cd-subtitle,
+      .cd-meta-row,
+      .cd-meta-chips { padding-left: 16px; padding-right: 16px; }
+      .cd-main { padding: 16px 16px 60px; }
+      .cd-sidebar-col { display: none; }
+      .cd-mobile-cta { display: flex; align-items: center; }
+      .cd-learn-grid { grid-template-columns: 1fr; }
+      .cd-reviews-summary { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .cd-instructor-card { flex-direction: column; }
+      body { padding-bottom: 70px; }
+    }
+
+    @media (max-width: 600px) {
+      .cd-section { padding: 20px 16px; }
+      .cd-career-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><i class="fa-solid fa-phone"></i><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><i class="fa-regular fa-envelope"></i><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-login.html" class="topbar-item"><i class="fa-solid fa-user"></i><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><i class="fa-solid fa-shield-halved"></i><span>Verify Certificate</span></a>
+        <a href="course-checkout.html" class="topbar-item cart-link" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i><span>Cart</span><b>0</b></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home">
+        <img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India" />
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div>
+        <a href="courses.html" class="active">Courses</a>
+        <a href="placement.html">Career Support</a>
+        <a href="student-dashboard.html">Student Zone</a>
+        <a href="franchise.html">Franchise</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Header -->
+
+  <!-- Outer 2-column grid: left (hero + content) | right (sticky sidebar) -->
+  <div class="wrap cd-outer-grid">
+
+    <!-- Left column -->
+    <div class="cd-left-col">
+
+      <!-- Hero zone — dark navy bg extends full-width via ::before -->
+      <section class="cd-hero-zone" id="cd-hero">
+
+        <!-- Mobile-only course preview image (hidden on desktop) -->
+        <div class="cd-mobile-thumb" id="cd-mobile-thumb">
+          <img id="cd-mobile-thumb-img" src="Assets/courses-hero.png" alt="Course preview">
+          <div class="cd-thumb-overlay">
+            <div class="cd-play-btn"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+
+        <div class="cd-breadcrumb">
+          <a href="courses.html" class="active">Courses</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span id="cd-breadcrumb-cat">Category</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span id="cd-breadcrumb-name">Course Name</span>
+        </div>
+        <div class="cd-badge" id="cd-badge">Professional</div>
+        <h1 class="cd-title" id="cd-title">Course Title</h1>
+        <p class="cd-subtitle" id="cd-subtitle">Course subtitle goes here</p>
+        <div class="cd-meta-row">
+          <span class="cd-rating-stars" id="cd-stars">★★★★★</span>
+          <span class="cd-rating-num" id="cd-rating-num">4.8</span>
+          <span class="cd-enrolled" id="cd-enrolled">(1,240 students)</span>
+        </div>
+        <div class="cd-meta-chips" id="cd-meta-chips">
+          <span><i class="fa-regular fa-clock"></i> <span id="cd-duration">Duration</span></span>
+          <span><i class="fa-solid fa-graduation-cap"></i> <span id="cd-eligibility">Eligibility</span></span>
+          <span><i class="fa-solid fa-language"></i> Hindi / English</span>
+          <span><i class="fa-solid fa-certificate"></i> Govt. Recognised Certificate</span>
+        </div>
+      </section>
+
+      <!-- Main content sections -->
+      <main class="cd-main" id="cd-main">
+
+      <!-- What you'll learn -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-lightbulb" style="color:var(--cd-gold);margin-right:8px"></i>What You'll Learn</h2>
+        <ul class="cd-learn-grid" id="cd-learn-list"></ul>
+      </div>
+
+      <!-- Requirements -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-list-check" style="color:var(--cd-navy);margin-right:8px"></i>Requirements & Eligibility</h2>
+        <ul class="cd-req-list" id="cd-req-list"></ul>
+      </div>
+
+      <!-- Course Description -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-book-open" style="color:var(--cd-navy);margin-right:8px"></i>About This Course</h2>
+        <div id="cd-description" style="font-size:14px;color:#444;line-height:1.75;"></div>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-layer-group" style="color:var(--cd-navy);margin-right:8px"></i>Course Curriculum</h2>
+        <p class="cd-curriculum-summary" id="cd-curriculum-summary">Loading curriculum…</p>
+        <div id="cd-curriculum"></div>
+      </div>
+
+      <!-- Instructor -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-user-tie" style="color:var(--cd-navy);margin-right:8px"></i>Your Instructor</h2>
+        <div class="cd-instructor-card">
+          <div class="cd-instructor-avatar"><i class="fa-solid fa-user-tie"></i></div>
+          <div>
+            <div class="cd-instructor-name">NAISFT INDIA Faculty</div>
+            <div class="cd-instructor-role">Certified Industrial Safety &amp; Fire Technology Expert</div>
+            <div class="cd-instructor-stats">
+              <span><i class="fa-solid fa-star"></i> 4.8 Rating</span>
+              <span><i class="fa-solid fa-users"></i> 5,000+ Students</span>
+              <span><i class="fa-solid fa-book"></i> 34 Courses</span>
+            </div>
+            <p class="cd-instructor-bio">Our faculty team at NAISFT INDIA comprises experienced industry professionals and certified safety experts with 10+ years of hands-on experience in industrial safety, fire technology, and quality management. They bring real-world project experience from manufacturing, oil &amp; gas, construction, and process industries to ensure students receive practical, job-ready training.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-star" style="color:var(--cd-gold);margin-right:8px"></i>Student Reviews</h2>
+        <div class="cd-reviews-summary">
+          <div class="cd-rating-big">
+            <div class="num" id="cd-review-score">4.8</div>
+            <div class="stars">★★★★★</div>
+            <div class="label">Course Rating</div>
+          </div>
+          <div class="cd-rating-bars">
+            <div class="cd-bar-row"><span>5 ★</span><div class="cd-bar-track"><div class="cd-bar-fill" style="width:78%"></div></div><span class="cd-bar-pct">78%</span></div>
+            <div class="cd-bar-row"><span>4 ★</span><div class="cd-bar-track"><div class="cd-bar-fill" style="width:15%"></div></div><span class="cd-bar-pct">15%</span></div>
+            <div class="cd-bar-row"><span>3 ★</span><div class="cd-bar-track"><div class="cd-bar-fill" style="width:5%"></div></div><span class="cd-bar-pct">5%</span></div>
+            <div class="cd-bar-row"><span>2 ★</span><div class="cd-bar-track"><div class="cd-bar-fill" style="width:1%"></div></div><span class="cd-bar-pct">1%</span></div>
+            <div class="cd-bar-row"><span>1 ★</span><div class="cd-bar-track"><div class="cd-bar-fill" style="width:1%"></div></div><span class="cd-bar-pct">1%</span></div>
+          </div>
+        </div>
+        <div class="cd-review-list" id="cd-reviews"></div>
+      </div>
+
+      <!-- Career Opportunities -->
+      <div class="cd-section">
+        <h2 class="cd-section-title"><i class="fa-solid fa-briefcase" style="color:var(--cd-navy);margin-right:8px"></i>Career Opportunities</h2>
+        <div class="cd-career-grid" id="cd-careers"></div>
+      </div>
+
+    </main>
+    </div><!-- /cd-left-col -->
+
+    <!-- Right column: sticky sidebar from page top -->
+    <aside class="cd-sidebar-col">
+      <div class="cd-sidebar">
+        <div class="cd-sidebar-thumb">
+          <img id="cd-thumb" src="Assets/courses-hero.png" alt="Course thumbnail">
+          <div class="cd-thumb-overlay">
+            <div class="cd-play-btn"><i class="fa-solid fa-play"></i></div>
+          </div>
+        </div>
+        <div class="cd-sidebar-body">
+          <div class="cd-price-row">
+            <span class="cd-price-main" id="cd-price-main">₹26,500</span>
+            <span class="cd-price-old" id="cd-price-old"></span>
+          </div>
+          <div class="cd-price-save" id="cd-price-save"></div>
+          <div class="cd-timer" id="cd-timer"></div>
+          <a id="cd-enroll-btn" class="cd-enroll-btn" href="quick-apply.html">Enrol Now</a>
+          <a id="cd-wa-btn" class="cd-whatsapp-btn" href="https://wa.me/919835627522">
+            <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
+          </a>
+          <div class="cd-sidebar-guarantee"><i class="fa-solid fa-shield-halved"></i> Govt. Recognised Certificate Included</div>
+          <div class="cd-includes-title">This course includes:</div>
+          <ul class="cd-includes-list" id="cd-includes"></ul>
+          <div class="cd-share-row">
+            <button class="cd-share-btn" onclick="navigator.share ? navigator.share({title: document.title, url: location.href}) : navigator.clipboard.writeText(location.href)">
+              <i class="fa-solid fa-share-nodes"></i> Share
+            </button>
+            <button class="cd-share-btn" onclick="navigator.clipboard.writeText(location.href).then(()=>alert('Link copied!'))">
+              <i class="fa-solid fa-link"></i> Copy Link
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Bottom CTA -->
+  <section class="cd-bottom-cta">
+    <div class="wrap">
+      <h2 id="cd-cta-title">Begin Your Safety Career Today</h2>
+      <p id="cd-cta-sub">Enrol now and get a government-recognised certificate with placement support.</p>
+      <div class="cd-bottom-actions">
+        <a class="cd-btn-enroll" id="cd-cta-enroll" href="quick-apply.html"><i class="fa-solid fa-graduation-cap"></i> Enrol Now</a>
+        <a class="cd-btn-whatsapp" href="https://wa.me/919835627522"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        <a class="cd-btn-call" href="tel:+919835627522"><i class="fa-solid fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile sticky CTA -->
+  <div class="cd-mobile-cta" id="cd-mobile-cta">
+    <span class="cd-mobile-price" id="cd-mobile-price">₹26,500</span>
+    <button class="cd-mobile-enroll" id="cd-mobile-enroll">Enrol Now</button>
+  </div>
+
+  <!-- Footer -->
+
+  <script src="js/course-images.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+  // ══════════════════════════════════════════
+  //  COURSE DATA — all 34 courses
+  // ══════════════════════════════════════════
+  const COURSES = {
+    // ── DIPLOMA COURSES (ID 1–5) ──────────────────────────────────
+    1: {
+      name: "Diploma in Fire & Industrial Safety Engineering",
+      subtitle: "A 12-month professional diploma covering fire safety systems, industrial hazard control, emergency response and workplace safety management.",
+      category: "Diploma",
+      badge: "Diploma · 12 Months",
+      duration: "12 Months",
+      eligibility: "10th / 12th Pass",
+      fee: 26500,
+      oldFee: 35000,
+      rating: 4.8,
+      enrolled: "1,840",
+      thumb: "Assets/Course Page Images/safety-training-fallback-01.png",
+      heroBg: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Diploma in Fire & Industrial Safety Engineering</strong> is a professional 12-month program designed to equip students with the knowledge and practical skills required for careers in fire prevention, industrial hazard management, and workplace safety. Students gain hands-on training in fire-fighting systems, hazard identification, risk assessment, emergency response planning and safety management.</p>
+        <p style="margin-top:12px">Graduates are eligible for HSE Officer, Fire Safety Officer and Safety Inspector positions across manufacturing, construction, oil & gas, and industrial sectors in India and internationally.</p>`,
+      learnPoints: [
+        "Hazard Identification & Risk Assessment (HIRA)",
+        "Accident Investigation & Reporting",
+        "Industrial Fire Safety & Prevention",
+        "PPE Selection & Usage Standards",
+        "Permit to Work (PTW) Systems",
+        "Emergency Response Planning",
+        "Safety Auditing & Inspection",
+        "Occupational Health Management",
+        "Environmental Safety Basics",
+        "Safety Laws & Legal Compliance (India)",
+        "OHSAS 18001 / ISO 45001 Introduction",
+        "Job Safety Analysis (JSA / JHA)",
+      ],
+      requirements: [
+        "10th Standard Pass (Matriculation) or equivalent",
+        "Basic reading and writing ability in Hindi or English",
+        "Age 17 years or above",
+        "No prior safety experience required",
+      ],
+      curriculum: [
+        { title: "Module 1: Introduction to Industrial Safety", lessons: [
+          { name: "What is Industrial Safety?", duration: "45 min" },
+          { name: "History and Evolution of Safety", duration: "30 min" },
+          { name: "Importance of HSE in Industry", duration: "40 min" },
+          { name: "Safety Statistics and Case Studies", duration: "1 hr" },
+        ]},
+        { title: "Module 2: Hazard Identification & Risk Assessment", lessons: [
+          { name: "Types of Hazards in Industry", duration: "1 hr" },
+          { name: "HIRA Methodology", duration: "1.5 hr" },
+          { name: "Job Safety Analysis (JSA)", duration: "1 hr" },
+          { name: "Practical: HIRA Workshop", duration: "2 hr" },
+        ]},
+        { title: "Module 3: Fire Safety & Prevention", lessons: [
+          { name: "Fire Triangle and Chemistry of Fire", duration: "45 min" },
+          { name: "Fire Detection & Suppression Systems", duration: "1 hr" },
+          { name: "Fire Fighting Equipment & Usage", duration: "1 hr" },
+          { name: "Practical: Fire Drill", duration: "2 hr" },
+        ]},
+        { title: "Module 4: Accident Investigation & Reporting", lessons: [
+          { name: "Accident Causation Theories", duration: "1 hr" },
+          { name: "Investigation Methodology", duration: "1.5 hr" },
+          { name: "Report Writing & Documentation", duration: "1 hr" },
+        ]},
+        { title: "Module 5: PPE, Permit to Work & Legal Compliance", lessons: [
+          { name: "Types and Selection of PPE", duration: "1 hr" },
+          { name: "Permit to Work Systems", duration: "1 hr" },
+          { name: "Safety Laws & Factories Act", duration: "1.5 hr" },
+          { name: "Final Assessment & Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-hard-hat", label: "Safety Officer" },
+        { icon: "fa-solid fa-industry", label: "HSE Executive" },
+        { icon: "fa-solid fa-fire-extinguisher", label: "Fire Safety Officer" },
+        { icon: "fa-solid fa-clipboard-check", label: "Safety Inspector" },
+        { icon: "fa-solid fa-sitemap", label: "EHS Coordinator" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf / Abroad Jobs" },
+        { icon: "fa-solid fa-building", label: "Construction Safety" },
+        { icon: "fa-solid fa-oil-well", label: "Oil & Gas Sector" },
+      ],
+      reviews: [
+        { name: "Rahul Kumar", rating: 5, date: "March 2025", text: "Excellent course! The practical sessions were very helpful. I got placed as an HSE Officer within 2 months of completing the course." },
+        { name: "Priya Singh", rating: 5, date: "January 2025", text: "Very well-structured curriculum. The faculty is experienced and explains every topic with real-world examples." },
+        { name: "Mohammad Ali", rating: 4, date: "November 2024", text: "Good course content. The certificate is recognized by reputed companies. Placement support was also provided." },
+      ],
+    },
+
+    2: {
+      name: "Diploma in Oil & Gas Safety Engineering",
+      subtitle: "A 12-month professional diploma covering oil and gas industry hazards, process safety, emergency response and safety management for upstream and downstream operations.",
+      category: "Diploma",
+      badge: "Diploma · 12 Months",
+      duration: "12 Months",
+      eligibility: "10th / 12th Pass",
+      fee: 26500,
+      oldFee: 35000,
+      rating: 4.7,
+      enrolled: "1,420",
+      thumb: "Assets/Course Page Images/safety-training-fallback-02.png",
+      heroBg: "https://images.unsplash.com/photo-1545671913-b89ac1b4ac10?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Diploma in Oil & Gas Safety Engineering</strong> is a professional 12-month program designed for individuals seeking careers in the oil and gas industry. It covers the unique hazards of upstream, midstream and downstream operations, process safety management, H2S awareness, fire and gas detection, and international oil and gas safety standards.</p>
+        <p style="margin-top:12px">Graduates are eligible for HSE Officer and Safety Technician roles in oil refineries, petrochemical plants, offshore platforms, and pipeline operations in India and the Gulf region.</p>`,
+      learnPoints: [
+        "Chemistry and Physics of Fire",
+        "Fire Detection & Alarm Systems",
+        "Automatic Sprinkler Systems",
+        "Foam & Gas Suppression Systems",
+        "Industrial Fire Fighting Techniques",
+        "Fire Investigation & Cause Analysis",
+        "Building Fire Safety Codes (NBC)",
+        "Emergency Evacuation Planning",
+        "Fire Safety Auditing",
+        "Hazardous Material Fire Handling",
+        "First Aid & Rescue Operations",
+        "Fire Pump & Hydrant Systems",
+      ],
+      requirements: [
+        "10th Standard Pass or equivalent",
+        "Age 17 years or above",
+        "Physical fitness preferred for fire fighting modules",
+        "Basic understanding of Hindi or English",
+      ],
+      curriculum: [
+        { title: "Module 1: Fire Science Fundamentals", lessons: [
+          { name: "Chemistry of Fire — Triangle & Tetrahedron", duration: "1 hr" },
+          { name: "Classes of Fire & Extinguishing Agents", duration: "1 hr" },
+          { name: "Flammable & Combustible Materials", duration: "45 min" },
+        ]},
+        { title: "Module 2: Fire Detection & Suppression", lessons: [
+          { name: "Smoke & Heat Detectors", duration: "1 hr" },
+          { name: "Sprinkler System Design", duration: "1.5 hr" },
+          { name: "Foam and CO2 Systems", duration: "1 hr" },
+          { name: "Practical: System Inspection", duration: "2 hr" },
+        ]},
+        { title: "Module 3: Industrial Fire Fighting", lessons: [
+          { name: "Personal Protective Equipment for Fire", duration: "1 hr" },
+          { name: "Hose Handling & Hydrant Operations", duration: "2 hr" },
+          { name: "Practical: Live Fire Drill", duration: "3 hr" },
+        ]},
+        { title: "Module 4: Fire Investigation & Legal", lessons: [
+          { name: "Origin and Cause Investigation", duration: "1.5 hr" },
+          { name: "Indian Fire Safety Legislation", duration: "1 hr" },
+          { name: "National Building Code (Fire Chapter)", duration: "1 hr" },
+        ]},
+        { title: "Module 5: Emergency Management & Assessment", lessons: [
+          { name: "Emergency Response Plan Development", duration: "2 hr" },
+          { name: "Evacuation Drills & Mock Exercises", duration: "3 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-fire-extinguisher", label: "Fire Officer" },
+        { icon: "fa-solid fa-industry", label: "Industrial Fire Safety" },
+        { icon: "fa-solid fa-building", label: "Building Fire Safety" },
+        { icon: "fa-solid fa-truck-fire", label: "Fire Inspector" },
+        { icon: "fa-solid fa-shield-halved", label: "HSE Officer" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf Fire Jobs" },
+        { icon: "fa-solid fa-oil-well", label: "Refinery Safety" },
+        { icon: "fa-solid fa-hospital", label: "Hospital Fire Safety" },
+      ],
+      reviews: [
+        { name: "Sanjay Yadav", rating: 5, date: "April 2025", text: "The live fire drill sessions were outstanding. I feel fully confident to handle fire emergencies in any industrial setting." },
+        { name: "Anjali Verma", rating: 5, date: "February 2025", text: "Extremely practical course. The instructors have real fire department experience which makes a huge difference." },
+        { name: "Deepak Mishra", rating: 4, date: "December 2024", text: "Very good course. Certificate is widely accepted. Got a job in a petrochemical plant after completion." },
+      ],
+    },
+
+    3: {
+      name: "Diploma in Drilling & Rig Safety Management",
+      subtitle: "A 12-month professional diploma covering drilling operations safety, rig hazards, well control, and safe work practices for onshore and offshore drilling environments.",
+      category: "Diploma",
+      badge: "Diploma · 12 Months",
+      duration: "12 Months",
+      eligibility: "10th / 12th Pass",
+      fee: 26500,
+      oldFee: 35000,
+      rating: 4.7,
+      enrolled: "980",
+      thumb: "Assets/Course Page Images/safety-training-fallback-03.png",
+      heroBg: "https://images.unsplash.com/photo-1547524112-3a9706b0eeb4?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Diploma in Drilling & Rig Safety Management</strong> is a 12-month professional program covering the safety requirements of onshore and offshore drilling operations. Students learn about rig hazard identification, well control principles, H2S emergency response, and drilling-specific permit to work systems.</p>
+        <p style="margin-top:12px">This course prepares graduates for HSE roles on drilling rigs, well sites, and petroleum service companies across India and the Gulf region.</p>`,
+      learnPoints: [
+        "ISO 9001:2015 Quality Management System",
+        "Incoming, In-Process & Final Inspection",
+        "Welding Inspection Basics (WPS/PQR/WPQ)",
+        "Non-Destructive Testing (NDT) Introduction",
+        "Dimensional Inspection & Measuring Tools",
+        "Material Test Reports & Documentation",
+        "Quality Control Plans & ITPs",
+        "Deviation, NCR & Corrective Action",
+        "Root Cause Analysis Techniques",
+        "Vendor Quality Assessment",
+        "QC Documentation & Record Keeping",
+        "Pipeline & Structural Inspection Basics",
+      ],
+      requirements: [
+        "ITI / 10th Standard Pass or equivalent",
+        "Basic knowledge of engineering or technical trades preferred",
+        "Age 18 years or above",
+      ],
+      curriculum: [
+        { title: "Module 1: Quality Management Fundamentals", lessons: [
+          { name: "Introduction to Quality & QMS", duration: "1 hr" },
+          { name: "ISO 9001:2015 Overview", duration: "1.5 hr" },
+          { name: "Quality Control vs Quality Assurance", duration: "45 min" },
+        ]},
+        { title: "Module 2: Inspection Techniques", lessons: [
+          { name: "Dimensional Inspection & Tools", duration: "2 hr" },
+          { name: "Visual Inspection Methods", duration: "1 hr" },
+          { name: "Practical: Inspection Exercises", duration: "3 hr" },
+        ]},
+        { title: "Module 3: Welding Quality & NDT Basics", lessons: [
+          { name: "Welding Defects & Acceptance Criteria", duration: "1.5 hr" },
+          { name: "Introduction to NDT Methods", duration: "1.5 hr" },
+          { name: "WPS, PQR and WPQ Documents", duration: "1 hr" },
+        ]},
+        { title: "Module 4: QC Documentation & NCR", lessons: [
+          { name: "Inspection Test Plans (ITP)", duration: "1 hr" },
+          { name: "NCR & Corrective Action Reports", duration: "1 hr" },
+          { name: "Material Test Reports (MTR)", duration: "45 min" },
+        ]},
+        { title: "Module 5: Final Project & Assessment", lessons: [
+          { name: "Industry Case Study Review", duration: "2 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-clipboard-check", label: "QC Inspector" },
+        { icon: "fa-solid fa-industry", label: "QA Engineer" },
+        { icon: "fa-solid fa-wrench", label: "Welding Inspector" },
+        { icon: "fa-solid fa-oil-well", label: "Oil & Gas QC" },
+        { icon: "fa-solid fa-building", label: "Civil QC Inspector" },
+        { icon: "fa-solid fa-gears", label: "Mechanical QC" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf QC Jobs" },
+        { icon: "fa-solid fa-magnifying-glass", label: "NDT Technician" },
+      ],
+      reviews: [
+        { name: "Vikram Sharma", rating: 5, date: "May 2025", text: "The welding inspection module was very practical. I passed my CSWIP prep test after completing this course." },
+        { name: "Kavita Devi", rating: 4, date: "March 2025", text: "Good course with proper documentation training. The ITP and NCR modules are very useful for actual job work." },
+        { name: "Ravi Prakash", rating: 5, date: "January 2025", text: "Got placed as a QC Inspector in a fabrication company within 3 months. Highly recommended!" },
+      ],
+    },
+
+    4: {
+      name: "Diploma in Food Safety & Quality Management",
+      subtitle: "A 12-month professional diploma covering food safety principles, FSSAI compliance, HACCP methodology, quality management systems and hygiene controls.",
+      category: "Diploma",
+      badge: "Diploma · 12 Months",
+      duration: "12 Months",
+      eligibility: "10th / 12th Pass",
+      fee: 26500,
+      oldFee: 35000,
+      rating: 4.7,
+      enrolled: "1,120",
+      thumb: "Assets/Course Page Images/safety-training-fallback-04.png",
+      heroBg: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Diploma in Food Safety & Quality Management</strong> is a professional 12-month program designed to prepare students for careers in food safety, quality assurance, and regulatory compliance. Students learn HACCP principles, FSSAI licensing requirements, food hygiene controls, and ISO 22000 Food Safety Management Systems.</p>
+        <p style="margin-top:12px">Graduates are eligible for Food Safety Officer, Quality Control Analyst and FSSAI Compliance roles in food manufacturing, catering, hospitality, retail and food processing industries.</p>`,
+      learnPoints: [
+        "Construction Site Hazard Management",
+        "Working at Height — Fall Protection",
+        "Scaffold Erection & Inspection",
+        "Excavation & Trenching Safety",
+        "Heavy Equipment & Crane Safety",
+        "Electrical Safety on Construction Sites",
+        "Personal Protective Equipment (PPE)",
+        "Construction Site Emergency Response",
+        "Permit to Work in Construction",
+        "Safety Inspections & Toolbox Talks",
+        "Construction Safety Regulations (India)",
+        "Site Safety Plan Development",
+      ],
+      requirements: [
+        "10th Standard Pass or equivalent",
+        "Age 17 years or above",
+        "Basic physical fitness for site visits",
+      ],
+      curriculum: [
+        { title: "Module 1: Construction Industry Safety Overview", lessons: [
+          { name: "Construction Hazard Landscape", duration: "1 hr" },
+          { name: "Key Construction Accidents & Lessons", duration: "1 hr" },
+          { name: "Regulatory Framework for Construction", duration: "1 hr" },
+        ]},
+        { title: "Module 2: Work at Height & Scaffolding", lessons: [
+          { name: "Fall Protection Systems", duration: "1.5 hr" },
+          { name: "Scaffold Types & Erection Safety", duration: "2 hr" },
+          { name: "Practical: Scaffold Inspection", duration: "3 hr" },
+        ]},
+        { title: "Module 3: Excavation, Equipment & Lifting", lessons: [
+          { name: "Excavation & Shoring Safety", duration: "1.5 hr" },
+          { name: "Crane & Rigging Safety", duration: "1.5 hr" },
+          { name: "Heavy Equipment Operations Safety", duration: "1 hr" },
+        ]},
+        { title: "Module 4: Site Safety Management", lessons: [
+          { name: "Toolbox Talks & Safety Meetings", duration: "1 hr" },
+          { name: "Site Safety Inspections", duration: "2 hr" },
+          { name: "Incident Reporting & Investigation", duration: "1.5 hr" },
+        ]},
+        { title: "Module 5: Assessment & Practical", lessons: [
+          { name: "Site Visit & Practical Assessment", duration: "4 hr" },
+          { name: "Final Written Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-helmet-safety", label: "Site Safety Officer" },
+        { icon: "fa-solid fa-building-columns", label: "Construction HSE" },
+        { icon: "fa-solid fa-road", label: "Infrastructure Safety" },
+        { icon: "fa-solid fa-train", label: "Metro Rail Safety" },
+        { icon: "fa-solid fa-tower-broadcast", label: "Telecom Tower Safety" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf Construction" },
+        { icon: "fa-solid fa-hard-hat", label: "Safety Supervisor" },
+        { icon: "fa-solid fa-clipboard-list", label: "Safety Auditor" },
+      ],
+      reviews: [
+        { name: "Suresh Kumar", rating: 5, date: "April 2025", text: "The scaffold inspection practical was very eye-opening. I now understand how to spot unsafe scaffolds on real sites." },
+        { name: "Meena Rani", rating: 5, date: "February 2025", text: "Very good course. Got a placement as Site Safety Officer on a highway project in Bihar." },
+        { name: "Ajay Tiwari", rating: 4, date: "December 2024", text: "Solid content on height safety and excavation. The permit to work module was very practical." },
+      ],
+    },
+
+    5: {
+      name: "Diploma in Industrial Safety Engineering",
+      subtitle: "A 12-month diploma program covering occupational health, hazard identification, risk assessment and industrial safety management across all major industries.",
+      category: "Diploma",
+      badge: "Diploma · 12 Months",
+      duration: "12 Months",
+      eligibility: "10th / 12th Pass",
+      fee: 26500,
+      oldFee: 35000,
+      rating: 4.8,
+      enrolled: "2,200",
+      thumb: "Assets/Course Page Images/safety-training-fallback-05.png",
+      heroBg: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Diploma in Industrial Safety Engineering</strong> is a government-recognised professional program equipping students with comprehensive knowledge and practical skills for a career in industrial safety and health. This 12-month diploma covers workplace hazard management, risk assessment techniques, emergency response planning and safety management systems.</p>
+        <p style="margin-top:12px">Students gain hands-on training in PPE selection, accident investigation, permit-to-work systems, fire prevention and legal compliance under Indian and international safety standards (IS, OHSAS 18001, ISO 45001). Graduates qualify for HSE Officer positions across manufacturing, construction, oil & gas and infrastructure sectors.</p>`,
+      learnPoints: [
+        "Environmental Management System (ISO 14001)",
+        "Air, Water & Noise Pollution Control",
+        "Solid & Hazardous Waste Management",
+        "Environmental Impact Assessment (EIA)",
+        "Environmental Laws & Regulations (India)",
+        "Green Building Concepts (LEED/GRIHA basics)",
+        "Pollution Control Board Compliance",
+        "Environmental Auditing Techniques",
+        "Carbon Footprint & Sustainability",
+        "Industrial Effluent Treatment",
+        "Emergency Environmental Response",
+        "EHS Reporting & Documentation",
+      ],
+      requirements: [
+        "12th Standard Pass or Graduate preferred",
+        "Interest in environmental science or sustainability",
+        "Age 18 years or above",
+      ],
+      curriculum: [
+        { title: "Module 1: Environment & Industry", lessons: [
+          { name: "Introduction to Environmental Science", duration: "1 hr" },
+          { name: "Industry Impact on Environment", duration: "1 hr" },
+          { name: "Indian Environmental Laws Overview", duration: "1.5 hr" },
+        ]},
+        { title: "Module 2: Pollution Control", lessons: [
+          { name: "Air Pollution & Control Technologies", duration: "1.5 hr" },
+          { name: "Water Pollution & ETP Design Basics", duration: "1.5 hr" },
+          { name: "Noise & Soil Pollution Management", duration: "1 hr" },
+        ]},
+        { title: "Module 3: Waste & EIA", lessons: [
+          { name: "Solid Waste Management Rules", duration: "1 hr" },
+          { name: "Hazardous Waste Handling", duration: "1 hr" },
+          { name: "Environmental Impact Assessment Process", duration: "2 hr" },
+        ]},
+        { title: "Module 4: ISO 14001 & Auditing", lessons: [
+          { name: "ISO 14001:2015 Requirements", duration: "2 hr" },
+          { name: "Environmental Auditing Methods", duration: "1.5 hr" },
+          { name: "Practical: Audit Checklist Exercise", duration: "2 hr" },
+        ]},
+        { title: "Module 5: Final Assessment", lessons: [
+          { name: "Case Study: Industry Environmental Compliance", duration: "2 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-leaf", label: "Environment Officer" },
+        { icon: "fa-solid fa-recycle", label: "Waste Manager" },
+        { icon: "fa-solid fa-industry", label: "EHS Coordinator" },
+        { icon: "fa-solid fa-water", label: "Pollution Control" },
+        { icon: "fa-solid fa-tree", label: "Sustainability Analyst" },
+        { icon: "fa-solid fa-magnifying-glass-chart", label: "EIA Consultant" },
+        { icon: "fa-solid fa-building-columns", label: "PCB Compliance" },
+        { icon: "fa-solid fa-solar-panel", label: "Green Building Auditor" },
+      ],
+      reviews: [
+        { name: "Ritu Kumari", rating: 5, date: "March 2025", text: "The ISO 14001 module was very detailed and helped me get a role as an Environment Officer at a pharmaceutical company." },
+        { name: "Aman Singh", rating: 4, date: "January 2025", text: "Very comprehensive course on environmental laws. The CPCB and SPCB compliance chapters are particularly valuable." },
+        { name: "Neha Gupta", rating: 5, date: "November 2024", text: "Excellent programme. The EIA process module is very practical and relevant for consultancy roles." },
+      ],
+    },
+
+    // ── ADVANCED DIPLOMA COURSES (ID 6–10) ──────────────────────
+    6: {
+      name: "Advanced Diploma in Fire & Industrial Safety Engineering",
+      subtitle: "An advanced 18-month program for safety professionals seeking leadership roles in fire safety, industrial risk management and HSE management.",
+      category: "Advanced Diploma",
+      badge: "Advanced Diploma · 18 Months",
+      duration: "18 Months",
+      eligibility: "12th Pass / ITI / Diploma",
+      fee: 26500,
+      oldFee: 40000,
+      rating: 4.9,
+      enrolled: "1,480",
+      thumb: "Assets/Course Page Images/safety-training-fallback-06.png",
+      heroBg: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Advanced Diploma in Fire & Industrial Safety Engineering</strong> is a comprehensive 18-month program for aspiring HSE leaders in fire-intensive and industrial environments. It builds on foundational safety knowledge with advanced fire safety engineering, industrial risk management, behavior-based safety, process safety management and leadership skills for senior safety roles.</p>
+        <p style="margin-top:12px">The curriculum includes international standards (ISO 45001, NFPA, OHSAS 18001) and covers advanced accident investigation, fire hazard analysis and HSE management system development. Graduates qualify for Senior Safety Officer, Fire Safety Manager and Gulf HSE roles.</p>`,
+      learnPoints: [
+        "Advanced Risk Assessment — HAZOP, FMEA, LOPA",
+        "Process Safety Management (PSM)",
+        "Behavior-Based Safety (BBS)",
+        "ISO 45001:2018 Implementation & Audit",
+        "HSE Management System Development",
+        "Advanced Accident Investigation (TapRoot/5-Why)",
+        "Safety Culture & Leadership",
+        "Contractor Safety Management",
+        "Emergency Response System Design",
+        "OSHA & International Standards Overview",
+        "Safety Performance Monitoring & KPIs",
+        "Gulf / International HSE Documentation",
+      ],
+      requirements: [
+        "12th Standard Pass, ITI, or Diploma Holder",
+        "Basic knowledge of industrial safety preferred",
+        "Age 18 years or above",
+        "Working professionals from industry are welcome",
+      ],
+      curriculum: [
+        { title: "Module 1: Advanced Risk Management", lessons: [
+          { name: "HAZOP Study — Methodology & Practice", duration: "3 hr" },
+          { name: "FMEA & Fault Tree Analysis", duration: "2 hr" },
+          { name: "Layer of Protection Analysis (LOPA)", duration: "2 hr" },
+          { name: "Practical: Risk Assessment Workshop", duration: "4 hr" },
+        ]},
+        { title: "Module 2: ISO 45001 & Safety Management Systems", lessons: [
+          { name: "ISO 45001:2018 Clause-by-Clause", duration: "4 hr" },
+          { name: "HSE MS Development & Implementation", duration: "3 hr" },
+          { name: "Internal Auditing for ISO 45001", duration: "3 hr" },
+        ]},
+        { title: "Module 3: Process Safety & BBS", lessons: [
+          { name: "Process Safety Management (PSM) Elements", duration: "3 hr" },
+          { name: "Behavior-Based Safety Principles", duration: "2 hr" },
+          { name: "Safety Culture Development", duration: "2 hr" },
+        ]},
+        { title: "Module 4: Leadership & Gulf Safety", lessons: [
+          { name: "Safety Leadership & Communication", duration: "2 hr" },
+          { name: "Gulf/International HSE Documentation", duration: "2 hr" },
+          { name: "Contractor Safety Management", duration: "2 hr" },
+        ]},
+        { title: "Module 5: Project & Final Assessment", lessons: [
+          { name: "HSE Plan Development Project", duration: "8 hr" },
+          { name: "Viva & Practical Evaluation", duration: "3 hr" },
+          { name: "Final Written Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-hard-hat", label: "Senior Safety Officer" },
+        { icon: "fa-solid fa-sitemap", label: "HSE Manager" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf HSE Lead" },
+        { icon: "fa-solid fa-oil-well", label: "Oil & Gas Safety" },
+        { icon: "fa-solid fa-industry", label: "PSM Engineer" },
+        { icon: "fa-solid fa-magnifying-glass", label: "Safety Auditor" },
+        { icon: "fa-solid fa-gears", label: "EHS Head" },
+        { icon: "fa-solid fa-globe", label: "International Safety" },
+      ],
+      reviews: [
+        { name: "Pawan Kumar", rating: 5, date: "May 2025", text: "This is the best safety course I have done. The HAZOP and ISO 45001 modules alone are worth the fee. Got a job in Oman as an HSE Officer." },
+        { name: "Sunita Kumari", rating: 5, date: "March 2025", text: "The behavior-based safety and safety leadership modules completely changed how I approach safety at my workplace." },
+        { name: "Aditya Singh", rating: 5, date: "January 2025", text: "Advanced and comprehensive. The faculty explains complex concepts in a simple and practical manner." },
+      ],
+    },
+
+    7: {
+      name: "Advanced Diploma in Oil & Gas Safety Engineering",
+      subtitle: "An advanced 18-month program for safety professionals pursuing senior HSE roles in oil refineries, petrochemical plants, offshore platforms and pipeline operations.",
+      category: "Advanced Diploma",
+      badge: "Advanced Diploma · 18 Months",
+      duration: "18 Months",
+      eligibility: "12th Pass / ITI / Diploma",
+      fee: 26500,
+      oldFee: 40000,
+      rating: 4.8,
+      enrolled: "1,140",
+      thumb: "Assets/Course Page Images/safety-training-fallback-01.png",
+      heroBg: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Advanced Diploma in Oil & Gas Safety Engineering</strong> is an 18-month advanced program for professionals targeting senior HSE roles in the oil and gas sector. The course covers advanced process safety management, HAZOP, fire and explosion risk analysis, H2S emergency response, offshore safety management and HSE leadership for senior industrial roles.</p>
+        <p style="margin-top:12px">Graduates qualify for Senior HSE Officer, Process Safety Engineer and Safety Manager roles in oil refineries, petrochemical plants, drilling rigs and offshore platforms across India and the Gulf region.</p>`,
+      learnPoints: [
+        "Advanced Fire Engineering Principles",
+        "Fire Safety Management Systems",
+        "Large-Scale Emergency Response Planning",
+        "High-Rise & Complex Building Fire Safety",
+        "Petrochemical & Refinery Fire Safety",
+        "Advanced Fire Investigation Techniques",
+        "Foam Suppression System Design",
+        "Fire Safety Audit & Compliance",
+        "Crisis Communication & Command",
+        "Mass Casualty Incident Management",
+        "International Fire Codes (NFPA, FM Global)",
+        "Fire Safety Training Program Design",
+      ],
+      requirements: [
+        "12th Standard Pass, ITI, or Diploma Holder",
+        "Diploma in Fire Technology preferred but not mandatory",
+        "Age 18 years or above",
+        "Physical fitness required for fire fighting modules",
+      ],
+      curriculum: [
+        { title: "Module 1: Advanced Fire Engineering", lessons: [
+          { name: "Fire Dynamics & Behavior in Complex Spaces", duration: "3 hr" },
+          { name: "High-Rise Building Fire Safety", duration: "2 hr" },
+          { name: "Petrochemical Fire Scenarios", duration: "2 hr" },
+        ]},
+        { title: "Module 2: Suppression Systems Design", lessons: [
+          { name: "Advanced Sprinkler Design", duration: "3 hr" },
+          { name: "Foam Application Systems", duration: "2 hr" },
+          { name: "Gas Suppression — Inert & Chemical Agents", duration: "2 hr" },
+        ]},
+        { title: "Module 3: Emergency Management", lessons: [
+          { name: "Major Emergency Response Plan", duration: "3 hr" },
+          { name: "Incident Command System (ICS)", duration: "2 hr" },
+          { name: "Mass Casualty Management", duration: "2 hr" },
+          { name: "Practical: Full-Scale Emergency Drill", duration: "5 hr" },
+        ]},
+        { title: "Module 4: Fire Investigation & Codes", lessons: [
+          { name: "Advanced Fire Investigation", duration: "3 hr" },
+          { name: "NFPA Standards Overview", duration: "2 hr" },
+          { name: "Insurance & Legal Aspects of Fire", duration: "1.5 hr" },
+        ]},
+        { title: "Module 5: Final Assessment", lessons: [
+          { name: "Fire Safety Management Plan Project", duration: "6 hr" },
+          { name: "Practical Assessment", duration: "3 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-fire-extinguisher", label: "Senior Fire Officer" },
+        { icon: "fa-solid fa-building", label: "Fire Safety Manager" },
+        { icon: "fa-solid fa-oil-well", label: "Refinery Fire Safety" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf Fire Jobs" },
+        { icon: "fa-solid fa-hospital", label: "Hospital Fire Safety" },
+        { icon: "fa-solid fa-magnifying-glass", label: "Fire Investigator" },
+        { icon: "fa-solid fa-gears", label: "Fire Systems Designer" },
+        { icon: "fa-solid fa-sitemap", label: "EHS Manager" },
+      ],
+      reviews: [
+        { name: "Rajesh Kumar", rating: 5, date: "April 2025", text: "The ICS and large-scale emergency drill were absolutely the highlights. This course prepares you for the real thing." },
+        { name: "Priti Jaiswal", rating: 4, date: "February 2025", text: "The NFPA standards module was very helpful for my Gulf job application. Very practical and thorough course." },
+        { name: "Mukesh Yadav", rating: 5, date: "December 2024", text: "Completed this and got placed as a Fire Safety Officer in Kuwait. Amazing placement support from NAISFT." },
+      ],
+    },
+
+    8: {
+      name: "Advanced Diploma in Drilling & Rig Safety Management",
+      subtitle: "An advanced 18-month program for drilling safety professionals seeking senior HSE roles in onshore and offshore drilling, rig operations and well site management.",
+      category: "Advanced Diploma",
+      badge: "Advanced Diploma · 18 Months",
+      duration: "18 Months",
+      eligibility: "12th Pass / ITI / Diploma",
+      fee: 26500,
+      oldFee: 40000,
+      rating: 4.7,
+      enrolled: "720",
+      thumb: "Assets/Course Page Images/safety-training-fallback-02.png",
+      heroBg: "https://images.unsplash.com/photo-1547524112-3a9706b0eeb4?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Advanced Diploma in Drilling & Rig Safety Management</strong> is an 18-month advanced program for professionals targeting senior safety roles in the drilling sector. It covers advanced well control, rig-specific process safety management, IADC safety standards, offshore emergency response management and HSE leadership for drilling operations.</p>
+        <p style="margin-top:12px">Graduates qualify for Senior Rig Safety Officer, HSE Coordinator and Safety Manager roles with drilling contractors and well service companies in India and internationally.</p>`,
+      learnPoints: [
+        "Integrated Management System (ISO 45001 + ISO 14001 + ISO 9001)",
+        "Occupational Health & Industrial Hygiene",
+        "Advanced Environmental Management",
+        "HSE Legal Compliance (India & International)",
+        "Corporate HSE Performance Management",
+        "Contractor HSE Management",
+        "Process Safety — HAZOP, LOPA",
+        "Safety Culture Transformation",
+        "Incident Investigation — TapRoot Method",
+        "HSE Training Program Design & Delivery",
+        "ESG Reporting & Sustainability",
+        "Gulf / International HSE Standards",
+      ],
+      requirements: [
+        "12th Standard Pass or Graduate",
+        "Prior safety or technical background preferred",
+        "Age 18 years or above",
+        "Working professionals encouraged to apply",
+      ],
+      curriculum: [
+        { title: "Module 1: Integrated Management Systems", lessons: [
+          { name: "IMS — ISO 9001 + ISO 14001 + ISO 45001", duration: "4 hr" },
+          { name: "Gap Analysis & IMS Implementation", duration: "3 hr" },
+          { name: "IMS Internal Audit", duration: "3 hr" },
+        ]},
+        { title: "Module 2: Occupational Health & Industrial Hygiene", lessons: [
+          { name: "Occupational Health Programs", duration: "2 hr" },
+          { name: "Industrial Hygiene — Exposure Assessment", duration: "2 hr" },
+          { name: "Ergonomics in the Workplace", duration: "1.5 hr" },
+        ]},
+        { title: "Module 3: Advanced Environmental Management", lessons: [
+          { name: "Environmental Aspects & Impacts Register", duration: "2 hr" },
+          { name: "Compliance Obligations Management", duration: "2 hr" },
+          { name: "ESG & Sustainability Reporting Basics", duration: "2 hr" },
+        ]},
+        { title: "Module 4: HSE Leadership & Auditing", lessons: [
+          { name: "HSE Leadership & Cultural Change", duration: "2 hr" },
+          { name: "Advanced Safety Audit Methodology", duration: "3 hr" },
+          { name: "Contractor & Vendor HSE Management", duration: "2 hr" },
+        ]},
+        { title: "Module 5: Capstone Project & Assessment", lessons: [
+          { name: "HSE Management System Capstone Project", duration: "8 hr" },
+          { name: "Presentation & Viva", duration: "2 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-sitemap", label: "HSE Manager" },
+        { icon: "fa-solid fa-leaf", label: "EHS Director" },
+        { icon: "fa-solid fa-industry", label: "Corporate HSE Head" },
+        { icon: "fa-solid fa-plane-departure", label: "International HSE" },
+        { icon: "fa-solid fa-magnifying-glass", label: "HSE Auditor" },
+        { icon: "fa-solid fa-globe", label: "Sustainability Lead" },
+        { icon: "fa-solid fa-building-columns", label: "Compliance Manager" },
+        { icon: "fa-solid fa-gears", label: "IMS Consultant" },
+      ],
+      reviews: [
+        { name: "Alok Mishra", rating: 5, date: "May 2025", text: "The IMS module is outstanding. I got certified as an ISO 45001 Lead Auditor after completing this course." },
+        { name: "Shalini Rai", rating: 5, date: "March 2025", text: "Comprehensive and well structured. The faculty are top-notch safety professionals with real industry experience." },
+        { name: "Vinod Pandey", rating: 4, date: "January 2025", text: "Very good program. The ESG and sustainability reporting module is very relevant for today's corporate environment." },
+      ],
+    },
+
+    9: {
+      name: "Advanced Diploma in Food Safety & Quality Management",
+      subtitle: "An advanced 18-month program for food safety professionals pursuing senior QA/QC, HACCP auditor and food safety management roles in the food industry.",
+      category: "Advanced Diploma",
+      badge: "Advanced Diploma · 18 Months",
+      duration: "18 Months",
+      eligibility: "12th Pass / ITI / Diploma",
+      fee: 26500,
+      oldFee: 40000,
+      rating: 4.7,
+      enrolled: "860",
+      thumb: "Assets/Course Page Images/safety-training-fallback-03.png",
+      heroBg: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Advanced Diploma in Food Safety & Quality Management</strong> is an 18-month advanced program for professionals targeting senior food safety, quality assurance and regulatory compliance roles. The course covers advanced HACCP implementation, ISO 22000 auditing, FSSAI compliance management, food fraud vulnerability assessment and food quality leadership.</p>
+        <p style="margin-top:12px">Graduates qualify for Senior Food Safety Officer, QA Manager, HACCP Auditor and Food Safety Consultant roles in food manufacturing, hospitality, retail and food regulatory bodies.</p>`,
+      learnPoints: [
+        "Advanced Scaffold Engineering & Inspection",
+        "Deep Excavation & Shoring Systems",
+        "Crane Lifting Plans & Safety",
+        "Construction HSE Plan Development",
+        "Road & Highway Construction Safety",
+        "Bridge & Tunnel Safety Management",
+        "Demolition Safety Planning",
+        "Construction Site Monitoring & KPIs",
+        "OSHA 1926 Construction Standards",
+        "Risk Register for Construction Projects",
+        "Sub-Contractor Safety Management",
+        "Construction Site Emergency Response",
+      ],
+      requirements: [
+        "12th Standard Pass, Diploma, or B.Tech",
+        "Civil or construction background preferred",
+        "Age 18 years or above",
+        "Physical fitness for site work",
+      ],
+      curriculum: [
+        { title: "Module 1: Advanced Scaffold & Formwork", lessons: [
+          { name: "Scaffold Engineering Calculations Basics", duration: "3 hr" },
+          { name: "Formwork Safety", duration: "2 hr" },
+          { name: "Practical: Advanced Scaffold Inspection", duration: "4 hr" },
+        ]},
+        { title: "Module 2: Lifting & Excavation", lessons: [
+          { name: "Lifting Plan Development", duration: "3 hr" },
+          { name: "Deep Excavation Safety", duration: "2 hr" },
+          { name: "Shoring Systems Design Basics", duration: "2 hr" },
+        ]},
+        { title: "Module 3: Construction HSE Management", lessons: [
+          { name: "Construction HSE Plan & Templates", duration: "3 hr" },
+          { name: "Site Safety Inspections & KPIs", duration: "2 hr" },
+          { name: "Sub-Contractor Safety Management", duration: "2 hr" },
+        ]},
+        { title: "Module 4: International Standards & Regulations", lessons: [
+          { name: "OSHA 1926 Key Requirements", duration: "2 hr" },
+          { name: "Building Bye-Laws & NBC Safety", duration: "1.5 hr" },
+          { name: "Environmental Compliance for Construction", duration: "1.5 hr" },
+        ]},
+        { title: "Module 5: Project & Assessment", lessons: [
+          { name: "Construction HSE Plan Project", duration: "6 hr" },
+          { name: "Site Practical Assessment", duration: "3 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-helmet-safety", label: "Project HSE Manager" },
+        { icon: "fa-solid fa-building-columns", label: "Site Safety Manager" },
+        { icon: "fa-solid fa-road", label: "Highway Safety Lead" },
+        { icon: "fa-solid fa-train", label: "Metro Rail Safety" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf Construction" },
+        { icon: "fa-solid fa-tower-cell", label: "Infrastructure Safety" },
+        { icon: "fa-solid fa-gears", label: "Lifting Supervisor" },
+        { icon: "fa-solid fa-magnifying-glass", label: "Construction Auditor" },
+      ],
+      reviews: [
+        { name: "Sachin Kumar", rating: 5, date: "April 2025", text: "The lifting plan and deep excavation modules were very practical. I use these skills daily on my project site." },
+        { name: "Usha Kumari", rating: 4, date: "February 2025", text: "Well structured course. Got promoted to Safety Manager at my construction company after completing this." },
+        { name: "Nitin Singh", rating: 5, date: "November 2024", text: "The best construction safety course available in Bihar. Highly professional training and excellent certificate." },
+      ],
+    },
+
+    10: {
+      name: "Advanced Diploma in Industrial Safety Engineering",
+      subtitle: "An advanced 18-month program for safety professionals seeking senior HSE leadership, safety management and consulting roles across all major industrial sectors.",
+      category: "Advanced Diploma",
+      badge: "Advanced Diploma · 18 Months",
+      duration: "18 Months",
+      eligibility: "12th Pass / ITI / Diploma",
+      fee: 26500,
+      oldFee: 40000,
+      rating: 4.9,
+      enrolled: "2,100",
+      thumb: "Assets/Course Page Images/safety-training-fallback-04.png",
+      heroBg: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>The <strong>Advanced Diploma in Industrial Safety Engineering</strong> is a comprehensive 18-month program designed for aspiring HSE leaders. It goes beyond the basics to cover advanced risk management, behavior-based safety, safety management systems, process safety management, and leadership skills for senior safety roles.</p>
+        <p style="margin-top:12px">This course is ideal for working professionals and fresh graduates who want to qualify for Senior Safety Officer, Safety Manager, or Gulf HSE roles. The curriculum includes international standards (ISO 45001, OHSAS 18001, OSHA) and covers advanced accident investigation using TapRoot and 5-Why methodologies.</p>`,
+      learnPoints: [
+        "Advanced Welding Inspection (ASME, AWS, API)",
+        "Non-Destructive Testing (NDT) — UT, RT, MT, PT",
+        "Piping & Pressure Vessel Inspection",
+        "ASME Code Overview (Section I, VIII, IX, B31.3)",
+        "API Standards (API 570, 650, 653)",
+        "Quality Management System (ISO 9001:2015 Lead Auditor)",
+        "Positive Material Identification (PMI)",
+        "Coating & Painting Inspection",
+        "Dimensional & Fit-Up Inspection",
+        "Procurement Quality Management",
+        "Quality Audit Methodology",
+        "Gulf QC Documentation & Job Preparation",
+      ],
+      requirements: [
+        "ITI, Diploma in Mechanical/Electrical/Civil, or B.Tech",
+        "Basic welding or technical knowledge preferred",
+        "Age 18 years or above",
+      ],
+      curriculum: [
+        { title: "Module 1: Welding Inspection — Advanced", lessons: [
+          { name: "ASME Section IX — Welding Qualifications", duration: "3 hr" },
+          { name: "AWS D1.1 Structural Welding", duration: "2 hr" },
+          { name: "Welding Defect Identification Workshop", duration: "3 hr" },
+        ]},
+        { title: "Module 2: NDT Methods", lessons: [
+          { name: "Ultrasonic Testing (UT) Principles", duration: "3 hr" },
+          { name: "Radiographic Testing (RT) Basics", duration: "2 hr" },
+          { name: "Magnetic Particle & Liquid Penetrant Testing", duration: "2 hr" },
+        ]},
+        { title: "Module 3: Piping & Pressure Vessel", lessons: [
+          { name: "ASME B31.3 Process Piping QC", duration: "3 hr" },
+          { name: "Pressure Vessel Inspection (ASME Sec VIII)", duration: "2 hr" },
+          { name: "API 570 Piping In-Service Inspection", duration: "2 hr" },
+        ]},
+        { title: "Module 4: QA Systems & Auditing", lessons: [
+          { name: "ISO 9001 Lead Auditor Course", duration: "4 hr" },
+          { name: "Supplier Quality Audit", duration: "2 hr" },
+          { name: "Coating & Painting Inspection", duration: "2 hr" },
+        ]},
+        { title: "Module 5: Gulf Prep & Assessment", lessons: [
+          { name: "Gulf QC Documentation Package", duration: "3 hr" },
+          { name: "Mock Interview & CV Preparation", duration: "2 hr" },
+          { name: "Final Examination", duration: "3 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-clipboard-check", label: "Senior QC Inspector" },
+        { icon: "fa-solid fa-wrench", label: "Welding Inspector (CWI)" },
+        { icon: "fa-solid fa-magnifying-glass", label: "NDT Technician" },
+        { icon: "fa-solid fa-oil-well", label: "Oil & Gas QC Lead" },
+        { icon: "fa-solid fa-plane-departure", label: "Gulf QC Jobs" },
+        { icon: "fa-solid fa-gears", label: "QA Manager" },
+        { icon: "fa-solid fa-building-columns", label: "QMS Auditor" },
+        { icon: "fa-solid fa-industry", label: "Fabrication QC Lead" },
+      ],
+      reviews: [
+        { name: "Shyam Sunder", rating: 5, date: "May 2025", text: "The ASME and API codes modules are exceptional. I cracked my Gulf QC Inspector interview using knowledge from this course." },
+        { name: "Kavya Sharma", rating: 5, date: "March 2025", text: "The welding inspection workshop was very hands-on. I am now preparing for CWI certification." },
+        { name: "Ravi Shankar", rating: 4, date: "January 2025", text: "Outstanding course content. The NDT modules gave me a head start before my formal NDT training." },
+      ],
+    },
+
+    // ── CORPORATE SAFETY TRAINING (ID 11–34) ─────────────────────
+    11: {
+      name: "Fire Safety & Emergency Response Training",
+      subtitle: "Essential fire prevention, detection, emergency response and evacuation training for all employees and workplace teams.",
+      category: "Corporate Training",
+      badge: "Corporate Training · 1 Day",
+      duration: "1 Day",
+      eligibility: "Open to All",
+      fee: 499,
+      oldFee: 500,
+      rating: 4.8,
+      enrolled: "2,800",
+      thumb: "Assets/Course Page Images/safety-training-fallback-02.png",
+      heroBg: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=1600&q=25&auto=format&fit=crop",
+      description: `<p><strong>Fire Safety & Emergency Response Training</strong> equips all employees with the knowledge and skills to prevent, detect, and respond to fire emergencies effectively. This practical one-day program covers fire behaviour, fire prevention, alarm procedures, evacuation coordination, emergency response roles and the correct use of fire extinguishers.</p>`,
+      learnPoints: [
+        "Basic Life Support (BLS) & CPR Technique",
+        "AED (Automated External Defibrillator) Usage",
+        "Wound Care & Bandaging",
+        "Fracture & Sprain Management",
+        "Choking & Airway Obstruction Response",
+        "Burn Treatment & Classification",
+        "Electric Shock First Aid",
+        "Heat Stroke & Hypothermia Response",
+        "Eye Injury First Aid",
+        "Poisoning & Chemical Exposure Response",
+        "Recovery Position",
+        "Triage Basics for Multiple Casualties",
+      ],
+      requirements: ["Open to all — no prior medical knowledge required", "Age 16 years or above"],
+      curriculum: [
+        { title: "Session 1: Fundamentals of First Aid", lessons: [
+          { name: "What is First Aid & When to Act", duration: "30 min" },
+          { name: "Scene Safety & Calling for Help", duration: "20 min" },
+          { name: "Primary Survey — DRABC", duration: "30 min" },
+        ]},
+        { title: "Session 2: CPR & AED", lessons: [
+          { name: "CPR Technique — Adult, Child, Infant", duration: "1 hr" },
+          { name: "AED Usage Practical", duration: "30 min" },
+        ]},
+        { title: "Session 3: Injuries & Medical Emergencies", lessons: [
+          { name: "Wound Care, Bleeding Control & Bandaging", duration: "1 hr" },
+          { name: "Fractures, Burns & Chemical Exposure", duration: "1 hr" },
+          { name: "Practical: Group Scenario Exercises", duration: "1.5 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-kit-medical", label: "First Aider" },
+        { icon: "fa-solid fa-building", label: "Workplace Responder" },
+        { icon: "fa-solid fa-hard-hat", label: "Site Safety Staff" },
+        { icon: "fa-solid fa-school", label: "School / Trainer" },
+      ],
+      reviews: [
+        { name: "Nita Sharma", rating: 5, date: "May 2025", text: "Very practical training. The CPR mannequin practice was excellent. Highly recommended for everyone." },
+        { name: "Ramesh Singh", rating: 5, date: "April 2025", text: "Short, focused, and very useful. Every employee should attend this training once a year." },
+        { name: "Sunita Devi", rating: 5, date: "March 2025", text: "Life-saving skills taught in a very simple way. The AED practical was a highlight." },
+      ],
+    },
+
+    12: {
+      name: "First Aid & CPR Training",
+      subtitle: "Learn life-saving first aid and cardiopulmonary resuscitation (CPR) techniques for workplace and community emergency response.",
+      category: "Corporate Training",
+      badge: "Corporate Training · 1 Day",
+      duration: "1 Day",
+      eligibility: "Open to All",
+      fee: 499,
+      oldFee: 500,
+      rating: 4.9,
+      enrolled: "3,200",
+      thumb: "Assets/courses-hero.png",
+      heroBg: "https://images.unsplash.com/photo-1587556930799-8dca6fad6d41?w=1600&q=25&auto=format&fit=crop",
+      description: `<p>This intensive <strong>First Aid & CPR Training</strong> program teaches participants how to respond to medical emergencies in the workplace and community. Participants will learn how to perform CPR, use an AED, treat wounds, manage fractures, and respond to choking, poisoning, and heat emergencies.</p>`,
+      learnPoints: [
+        "Fire Triangle & Classes of Fire",
+        "Common Causes of Workplace Fires",
+        "Fire Detection & Alarm Systems",
+        "Fire Extinguisher Types & Selection",
+        "Correct Fire Extinguisher Operation (PASS Method)",
+        "Fire Evacuation Procedures",
+        "Emergency Assembly Points",
+        "Role of Fire Warden",
+        "Hot Work Precautions",
+        "Electrical Fire Prevention",
+        "Kitchen & Storage Fire Risks",
+        "Reporting Fire Hazards",
+      ],
+      requirements: ["Open to all employees", "No prior knowledge required"],
+      curriculum: [
+        { title: "Session 1: Understanding Fire", lessons: [
+          { name: "Fire Science Basics", duration: "30 min" },
+          { name: "Common Workplace Fire Hazards", duration: "30 min" },
+        ]},
+        { title: "Session 2: Detection & Response", lessons: [
+          { name: "Fire Alarm Systems & Response", duration: "45 min" },
+          { name: "Evacuation Procedures & Drills", duration: "1 hr" },
+        ]},
+        { title: "Session 3: Practical Fire Fighting", lessons: [
+          { name: "Extinguisher Types & Selection", duration: "30 min" },
+          { name: "Live Fire Extinguisher Practical", duration: "1.5 hr" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-fire-extinguisher", label: "Fire Warden" },
+        { icon: "fa-solid fa-building", label: "Workplace Safety" },
+        { icon: "fa-solid fa-hard-hat", label: "Site Staff" },
+        { icon: "fa-solid fa-shield-halved", label: "HSE Team" },
+      ],
+      reviews: [
+        { name: "Ajay Kumar", rating: 5, date: "April 2025", text: "The live extinguisher practical was outstanding. My whole team now knows how to respond to a fire." },
+        { name: "Priya Patel", rating: 4, date: "March 2025", text: "Short and very practical. The evacuation drill was well conducted. Excellent value at ₹499." },
+        { name: "Rohit Singh", rating: 5, date: "February 2025", text: "Every company should make this mandatory for all staff. Very engaging and informative session." },
+      ],
+    },
+  };
+
+  // For courses 13–34, generate a default template
+  const CORPORATE_COURSES_EXTRA = {
+    13: { name: "Permit to Work (PTW) Training", subtitle: "Understand permit-to-work controls, authorization responsibilities and safe work practices for hot work, confined space, electrical and height work.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-05.png", heroBg: null },
+    14: { name: "Hot Work Safety & Fire Prevention Training", subtitle: "Learn controls for hot work hazards, ignition source management, fire watch responsibilities and post-work fire risk reduction.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-06.png", heroBg: null },
+    15: { name: "Hazard Identification & Risk Assessment (HIRA) Training", subtitle: "Build practical understanding of identifying workplace hazards and evaluating risk using HIRA methodology and risk control hierarchy.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-01.png", heroBg: null },
+    16: { name: "Job Safety Analysis (JSA) Training", subtitle: "Learn to break down tasks systematically, identify step-by-step hazards and define effective safe job controls.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-02.png", heroBg: null },
+    17: { name: "MSDS / SDS Interpretation & Chemical Safety Training", subtitle: "Understand safety data sheets, GHS labelling, chemical hazard information and safe chemical handling precautions.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-03.png", heroBg: null },
+    18: { name: "Chemical Safety & Hazard Management Training", subtitle: "Develop awareness of chemical hazards, GHS classification, controls, storage requirements and safe workplace chemical management.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-04.png", heroBg: null },
+    19: { name: "Working at Height Competency Training", subtitle: "Focused learning on height-work hazards, fall protection systems, harness inspection, ladder safety and safe work controls.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-05.png", heroBg: null },
+    20: { name: "Advanced Scaffolding Inspection Training", subtitle: "Build inspection awareness around scaffold condition, erection standards, tagging systems and safety access considerations.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-06.png", heroBg: null },
+    21: { name: "Confined Space Entry & Emergency Response Training", subtitle: "Understand confined-space hazards, atmospheric testing, entry controls, rescue readiness and emergency response procedures.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-01.png", heroBg: null },
+    22: { name: "Crane Safety & Lifting Operations Training", subtitle: "Learn safety principles for crane operations, lift planning, pre-use inspection and controlled lifting work practices.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-02.png", heroBg: null },
+    23: { name: "Rigging, Slinging & Load Handling Training", subtitle: "Develop practical awareness of rigging equipment, slinging techniques and safe load-handling and storage fundamentals.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-03.png", heroBg: null },
+    24: { name: "Banksman, Signalman & Lifting Operations Training", subtitle: "Learn communication signals, hand signals and coordination responsibilities for safe lifting operations.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-04.png", heroBg: null },
+    25: { name: "Forklift Operator Safety Training", subtitle: "Focused safety learning for forklift hazards, pre-operation checks, pedestrian interaction and workplace operating controls.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-05.png", heroBg: null },
+    26: { name: "Energy Isolation & Lockout Tagout (LOTO) Training", subtitle: "Understand energy isolation principles, lockout/tagout procedures, device usage and safe maintenance controls.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-06.png", heroBg: null },
+    27: { name: "Electrical Safety & Risk Management Training", subtitle: "Develop awareness of electrical hazards, shock prevention, arc flash risk and safer electrical work practices.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-01.png", heroBg: null },
+    28: { name: "Arc Flash Protection & Safe Work Practices Training", subtitle: "Understand arc-flash risk, PPE selection for electrical work, safe approach boundaries and safer electrical work practices.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-02.png", heroBg: null },
+    29: { name: "H2S Detection & Emergency Response Training", subtitle: "Learn H2S hazard awareness, toxicity levels, detection equipment usage and emergency response actions for H2S exposure.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-03.png", heroBg: null },
+    30: { name: "Incident Investigation Training", subtitle: "Build a structured understanding of incident investigation, evidence collection, root cause analysis and corrective action development.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-04.png", heroBg: null },
+    31: { name: "Behaviour Based Safety (BBS) Training", subtitle: "Explore behavioural safety principles, safe and at-risk behaviour observation, feedback techniques and positive safety intervention.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-05.png", heroBg: null },
+    32: { name: "Emergency Response, Rescue & Crisis Management Training", subtitle: "Develop awareness of emergency coordination, rescue readiness, crisis management structure and emergency communication.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-06.png", heroBg: null },
+    33: { name: "Process Safety Management (PSM) Training", subtitle: "Understand core process-safety principles, key elements of PSM, major hazard control and structured management of operational hazards.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-01.png", heroBg: null },
+    34: { name: "Process Hazard Analysis (HAZOP) Training", subtitle: "Learn the fundamentals of structured process hazard review, HAZOP methodology, team facilitation and hazard recording.", duration: "1 Day", thumb: "Assets/Course Page Images/safety-training-fallback-02.png", heroBg: null },
+  };
+
+  // Generate full objects for courses 13–34
+  for (const [id, d] of Object.entries(CORPORATE_COURSES_EXTRA)) {
+    COURSES[id] = {
+      name: d.name,
+      subtitle: d.subtitle,
+      category: "Corporate Training",
+      badge: `Corporate Training · ${d.duration}`,
+      duration: d.duration,
+      eligibility: "Open to All / Working Professionals",
+      fee: 499,
+      oldFee: 500,
+      rating: 4.7,
+      enrolled: Math.floor(Math.random() * 800 + 400).toLocaleString('en-IN'),
+      thumb: d.thumb,
+      heroBg: d.heroBg || null,
+      description: `<p><strong>${d.name}</strong> is a focused corporate safety training program designed for working professionals and industrial teams. This practical program delivers industry-relevant content with interactive sessions, case studies, and hands-on exercises to ensure maximum learning and retention.</p><p style="margin-top:12px">Participants receive an NAISFT INDIA corporate training certificate upon successful completion. This training can be conducted at your workplace for groups of 10 or more at special rates.</p>`,
+      learnPoints: [
+        "Core concepts and industry relevance",
+        "Regulatory and legal requirements",
+        "Hazard identification techniques",
+        "Practical risk control measures",
+        "Emergency response procedures",
+        "Documentation and reporting",
+        "Correct PPE selection and use",
+        "Case studies from real incidents",
+      ],
+      requirements: [
+        "Open to all employees and working professionals",
+        "No formal educational qualification required",
+      ],
+      curriculum: [
+        { title: "Morning Session: Theory & Concepts", lessons: [
+          { name: "Introduction & Regulatory Context", duration: "45 min" },
+          { name: "Core Content & Key Concepts", duration: "1.5 hr" },
+          { name: "Case Studies & Discussions", duration: "45 min" },
+        ]},
+        { title: "Afternoon Session: Practical & Assessment", lessons: [
+          { name: "Practical Exercises & Demonstrations", duration: "2 hr" },
+          { name: "Group Activity & Q&A", duration: "1 hr" },
+          { name: "Written Assessment", duration: "30 min" },
+        ]},
+      ],
+      careers: [
+        { icon: "fa-solid fa-hard-hat", label: "Site Safety Staff" },
+        { icon: "fa-solid fa-building", label: "Workplace Teams" },
+        { icon: "fa-solid fa-shield-halved", label: "HSE Compliance" },
+        { icon: "fa-solid fa-certificate", label: "Certified Workers" },
+      ],
+      reviews: [
+        { name: "Industry Client", rating: 5, date: "2025", text: "Excellent training delivered by knowledgeable instructors. Our whole team found it very practical and engaging." },
+        { name: "HR Manager", rating: 4, date: "2025", text: "Very good value for money. The course was well organized and the certificate is widely recognized." },
+        { name: "Site Supervisor", rating: 5, date: "2025", text: "The practical demonstrations made the training very effective. Highly recommended for all site staff." },
+      ],
+    };
+  }
+
+  Object.entries(COURSES).forEach(([id, course]) => {
+    const mappedThumb = window.NAISFT_COURSE_IMAGES?.get({ id, name: course.name });
+    if (mappedThumb) course.thumb = mappedThumb;
+  });
+
+  // ══════════════════════════════════════════
+  //  PAGE POPULATION
+  // ══════════════════════════════════════════
+  function stars(rating) {
+    const full  = Math.floor(rating);
+    const half  = rating % 1 >= 0.5 ? 1 : 0;
+    const empty = 5 - full - half;
+    return '★'.repeat(full) + (half ? '½' : '') + '☆'.repeat(empty);
+  }
+
+  function populate(course) {
+    document.title = course.name + ' | NAISFT INDIA';
+    document.getElementById('page-desc').content = course.subtitle;
+
+    // Breadcrumb & hero
+    document.getElementById('cd-breadcrumb-cat').textContent = course.category;
+    document.getElementById('cd-breadcrumb-name').textContent = course.name;
+    document.getElementById('cd-badge').textContent = course.badge;
+    document.getElementById('cd-title').textContent = course.name;
+    document.getElementById('cd-subtitle').textContent = course.subtitle;
+    document.getElementById('cd-stars').textContent = stars(course.rating);
+    document.getElementById('cd-rating-num').textContent = course.rating.toFixed(1);
+    document.getElementById('cd-enrolled').textContent = '(' + course.enrolled + ' students)';
+    document.getElementById('cd-duration').textContent = course.duration;
+    document.getElementById('cd-eligibility').textContent = course.eligibility;
+
+
+    // Sidebar
+    document.getElementById('cd-thumb').src = course.thumb;
+    document.getElementById('cd-thumb').alt = course.name;
+    // Mobile hero thumbnail
+    const mobileThumbImg = document.getElementById('cd-mobile-thumb-img');
+    if (mobileThumbImg) { mobileThumbImg.src = course.thumb; mobileThumbImg.alt = course.name; }
+    const fmtFee = '₹' + course.fee.toLocaleString('en-IN');
+    document.getElementById('cd-price-main').textContent = fmtFee;
+    document.getElementById('cd-mobile-price').textContent = fmtFee;
+    const priceOld = document.getElementById('cd-price-old');
+    const priceSave = document.getElementById('cd-price-save');
+    const timer = document.getElementById('cd-timer');
+    priceOld.textContent = '';
+    priceOld.style.display = 'none';
+    priceSave.textContent = '';
+    timer.textContent = '';
+    if (course.fee === 499) {
+      priceSave.textContent = 'Focused Training Fee — Certificate Included';
+      timer.innerHTML = '<i class="fa-solid fa-clock"></i> Admissions Open — Apply Now';
+    } else if (course.oldFee) {
+      priceOld.style.display = '';
+      priceOld.textContent = '₹' + course.oldFee.toLocaleString('en-IN');
+      const save = Math.round((1 - course.fee / course.oldFee) * 100);
+      priceSave.textContent = save + '% off — Limited Time Offer';
+      timer.innerHTML = '<i class="fa-solid fa-clock"></i> Admissions Open — Apply Now';
+    }
+
+    // Enroll links
+    const courseEntry = Object.entries(COURSES).find(([, c]) => c === course);
+    const courseId = courseEntry ? courseEntry[0] : getParam('id');
+    const enrollQuery = '#courseId=' + encodeURIComponent(courseId) + '&course=' + encodeURIComponent(course.name);
+    const enrollUrl = 'course-checkout.html' + enrollQuery;
+    document.getElementById('cd-enroll-btn').href = enrollUrl;
+    document.getElementById('cd-cta-enroll').href = enrollUrl;
+    const mobileEnroll = document.getElementById('cd-mobile-enroll');
+    if (mobileEnroll) {
+      mobileEnroll.onclick = () => { location.href = enrollUrl; };
+      mobileEnroll.setAttribute('data-enroll-url', enrollUrl);
+    }
+
+    // Includes
+    const includeItems = [
+      { icon: 'fa-solid fa-video', text: course.duration + ' Training Program' },
+      { icon: 'fa-solid fa-certificate', text: 'Government Recognised Certificate' },
+      { icon: 'fa-solid fa-book', text: 'Study Material & Notes' },
+      { icon: 'fa-solid fa-flask', text: 'Practical / Lab Sessions' },
+      { icon: 'fa-solid fa-briefcase', text: 'Placement Assistance' },
+      { icon: 'fa-solid fa-headset', text: 'Student Support' },
+    ];
+    if (course.fee === 499) {
+      includeItems.splice(4, 1); // remove placement for short courses
+    }
+    document.getElementById('cd-includes').innerHTML = includeItems
+      .map(i => `<li><i class="${i.icon}"></i>${i.text}</li>`)
+      .join('');
+
+    // Learn points
+    document.getElementById('cd-learn-list').innerHTML = (course.learnPoints || [])
+      .map(p => `<li><i class="fa-solid fa-check"></i>${p}</li>`)
+      .join('');
+
+    // Requirements
+    document.getElementById('cd-req-list').innerHTML = (course.requirements || [])
+      .map(r => `<li>${r}</li>`)
+      .join('');
+
+    // Description
+    document.getElementById('cd-description').innerHTML = course.description || '';
+
+    // Curriculum
+    const mods = course.curriculum || [];
+    const totalLessons = mods.reduce((s, m) => s + m.lessons.length, 0);
+    document.getElementById('cd-curriculum-summary').textContent =
+      mods.length + ' modules • ' + totalLessons + ' lessons • ' + course.duration + ' total';
+    document.getElementById('cd-curriculum').innerHTML = mods.map((mod, mi) =>
+      `<div class="cd-module${mi === 0 ? ' open' : ''}" onclick="this.classList.toggle('open')">
+        <div class="cd-module-head">
+          <span class="cd-module-title">${mod.title}</span>
+          <span class="cd-module-meta">${mod.lessons.length} lessons</span>
+          <i class="fa-solid fa-chevron-down cd-module-toggle"></i>
+        </div>
+        <div class="cd-module-body">
+          ${mod.lessons.map(l =>
+            `<div class="cd-lesson">
+              <i class="fa-regular fa-circle-play"></i>
+              <span class="cd-lesson-name">${l.name}</span>
+              <span class="cd-lesson-duration">${l.duration}</span>
+            </div>`
+          ).join('')}
+        </div>
+      </div>`
+    ).join('');
+
+    // Reviews
+    document.getElementById('cd-review-score').textContent = course.rating.toFixed(1);
+    document.getElementById('cd-reviews').innerHTML = (course.reviews || []).map(r =>
+      `<div class="cd-review-item">
+        <div class="cd-review-header">
+          <div class="cd-review-avatar">${r.name.charAt(0)}</div>
+          <div>
+            <div class="cd-review-name">${r.name}</div>
+            <div class="cd-review-stars">${'★'.repeat(r.rating)}</div>
+            <div class="cd-review-date">${r.date}</div>
+          </div>
+        </div>
+        <p class="cd-review-text">${r.text}</p>
+      </div>`
+    ).join('');
+
+    // Careers
+    document.getElementById('cd-careers').innerHTML = (course.careers || []).map(c =>
+      `<div class="cd-career-item">
+        <i class="${c.icon}"></i>
+        <strong>${c.label}</strong>
+      </div>`
+    ).join('');
+
+    // Bottom CTA
+    document.getElementById('cd-cta-title').textContent = 'Start Your Training in ' + course.name;
+    document.getElementById('cd-cta-sub').textContent =
+      'Enrol now and get a government-recognised certificate. ' +
+      (course.fee === 499 ? 'Corporate batch bookings available.' : 'Placement support included for eligible students.');
+  }
+
+  // ── Init ──────────────────────────────────
+  // Supports both query-string (?id=1 / ?name=...) for live servers
+  // AND hash params (#id=1 / #name=...) which work with Live Server locally.
+  function getParam(key) {
+    // Try hash first (#id=1), then query string (?id=1)
+    const hash   = new URLSearchParams(location.hash.replace(/^#/, ''));
+    const search = new URLSearchParams(location.search);
+    return hash.get(key) || search.get(key) || '';
+  }
+
+  // Slug to course ID map; must stay in sync with the links built in courses.js
+  const SLUG_MAP = {
+    'diploma-fire-industrial-safety':     1,
+    'diploma-oil-gas-safety':             2,
+    'diploma-drilling-rig-safety':        3,
+    'diploma-food-safety-quality':        4,
+    'diploma-industrial-safety':          5,
+    'adv-diploma-fire-industrial-safety': 6,
+    'adv-diploma-oil-gas-safety':         7,
+    'adv-diploma-drilling-rig-safety':    8,
+    'adv-diploma-food-safety-quality':    9,
+    'adv-diploma-industrial-safety':      10,
+    'corp-fire-safety-emergency-response':11,
+    'corp-first-aid-cpr':                 12,
+    'corp-permit-to-work':                13,
+    'corp-hot-work-safety':               14,
+    'corp-hira-training':                 15,
+    'corp-job-safety-analysis':           16,
+    'corp-msds-sds-chemical-safety':      17,
+    'corp-chemical-safety-hazard-mgmt':   18,
+    'corp-working-at-height':             19,
+    'corp-scaffolding-inspection':        20,
+    'corp-confined-space-entry':          21,
+    'corp-crane-safety-lifting':          22,
+    'corp-rigging-slinging-load':         23,
+    'corp-banksman-signalman-lifting':    24,
+    'corp-forklift-operator-safety':      25,
+    'corp-loto-energy-isolation':         26,
+    'corp-electrical-safety-risk':        27,
+    'corp-arc-flash-protection':          28,
+    'corp-h2s-detection-emergency':       29,
+    'corp-incident-investigation':        30,
+    'corp-behaviour-based-safety':        31,
+    'corp-emergency-response-rescue':     32,
+    'corp-process-safety-mgmt':           33,
+    'corp-hazop-process-hazard':          34,
+  };
+
+  function resolveCourse() {
+    const id = parseInt(getParam('id'), 10);
+    if (id && COURSES[id]) return COURSES[id];
+
+    // Handle ?course=<slug> links from courses.html
+    const slugParam = getParam('course');
+    if (slugParam) {
+      const mappedId = SLUG_MAP[slugParam];
+      if (mappedId && COURSES[mappedId]) return COURSES[mappedId];
+      // Word-overlap fallback for unmapped corporate slugs
+      const words = slugParam.replace(/-/g, ' ').split(' ').filter(w => w.length > 3);
+      let best = null, bestScore = 0;
+      for (const c of Object.values(COURSES)) {
+        const cname = c.name.toLowerCase();
+        const score = words.filter(w => cname.includes(w)).length;
+        if (score > bestScore) { bestScore = score; best = c; }
+      }
+      if (bestScore >= 2) return best;
+    }
+
+    const nameParam = getParam('name').toLowerCase().trim();
+    if (!nameParam) return null;
+
+    // Exact match
+    for (const c of Object.values(COURSES)) {
+      if (c.name.toLowerCase() === nameParam) return c;
+    }
+    // Partial match fallback
+    for (const c of Object.values(COURSES)) {
+      if (c.name.toLowerCase().includes(nameParam) || nameParam.includes(c.name.toLowerCase().slice(0, 12))) return c;
+    }
+    return null;
+  }
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const course = resolveCourse();
+
+    if (!course) {
+      document.getElementById('cd-hero').style.display = 'none';
+      const main = document.getElementById('cd-main');
+      main.innerHTML = `<div class="cd-not-found">
+        <h2>Course Not Found</h2>
+        <p>The course you're looking for doesn't exist or the link may be incorrect.</p>
+        <a class="btn red" href="courses.html" style="display:inline-block;margin-top:20px;padding:12px 28px">Browse All Courses</a>
+      </div>`;
+      return;
+    }
+
+    populate(course);
+  });
+  </script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home">
+            <img src="Assets/naisft-logo.png" alt="NAISFT India" />
+          </a>
+          <p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p>
+          <small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="about-naisft-india.html">About NAISFT INDIA</a>
+          <a href="courses.html" class="active">Courses</a>
+          <a href="placement.html">Career Support</a>
+          <a href="franchise.html">Franchise</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div>
+          <h4>Popular Courses</h4>
+          <a href="courses.html" class="active">Industrial Safety</a>
+          <a href="courses.html" class="active">Fire Technology</a>
+          <a href="courses.html" class="active">QA/QC</a>
+          <a href="courses.html" class="active">Advanced Safety Diploma</a>
+          <a href="courses.html" class="active">Technical Courses</a>
+        </div>
+        <div>
+          <h4>Student Services</h4>
+          <a href="student-login.html">Student Login</a>
+          <a href="certificate-verify.html">Verify Certificate</a>
+          <a href="student-dashboard.html">View Results</a>
+          <a href="student-dashboard.html">Download Certificate</a>
+          <a href="contact.html">Admission Enquiry</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 NAISFT INDIA. All Rights Reserved.</span>
+        <span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a class="floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg>
+  </a>
+</body>
+</html>

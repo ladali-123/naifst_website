@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Player | NAISFT INDIA</title>
+  <meta name="description" content="NAISFT INDIA student course player for lessons, materials, live classes and assignments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="Assets/naisft-logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-16">
+</head>
+<body class="student-account-body">
+  <main class="course-player-page">
+    <header class="course-player-top">
+      <a href="student-dashboard.html" class="course-player-logo"><img src="Assets/naisft-logo.png" alt="NAISFT INDIA"></a>
+      <a href="student-dashboard.html" class="course-player-back"><i class="fa-solid fa-arrow-left"></i> Dashboard</a>
+    </header>
+
+    <section class="course-player-shell">
+      <aside class="course-player-sidebar">
+        <p>Course Modules</p>
+        <h1 id="playerCourseName">Loading course...</h1>
+        <div class="course-player-progress">
+          <span><b id="playerProgressPercent">0%</b> complete</span>
+          <div><i id="playerProgressBar"></i></div>
+        </div>
+        <div id="playerModuleList" class="course-player-modules"></div>
+      </aside>
+
+      <section class="course-player-main">
+        <div class="dash-alert" id="playerAlert"></div>
+        <div class="dash-loading" id="playerLoading"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading course content...</div>
+        <div id="playerContent" hidden>
+          <article class="course-player-lesson" id="playerLesson"></article>
+          <section class="course-player-panel">
+            <div class="sd-panel-head"><h2>Live Classes</h2><span id="liveClassCount">0 scheduled</span></div>
+            <div id="playerLiveClasses" class="course-player-list"></div>
+          </section>
+          <section class="course-player-panel">
+            <div class="sd-panel-head"><h2>Assignments</h2><span id="assignmentCount">0 active</span></div>
+            <div id="playerAssignments" class="course-player-list"></div>
+          </section>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    window.NAISFT_STUDENT_PLAYER_DEV = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+      && new URLSearchParams(window.location.search).get('dev') === '1';
+  </script>
+  <script src="js/student-course-player.js?v=7"></script>
+</body>
+</html>

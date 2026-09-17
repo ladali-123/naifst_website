@@ -1,0 +1,13 @@
+Options -Indexes
+RewriteEngine On
+
+# Clean URLs
+RewriteRule ^quick-apply/?$ /quick-apply.html [L]
+RewriteRule ^apply-online/?$ /apply-online.html [L]
+RewriteRule ^student-login/?$ /student-login.html [L]
+RewriteRule ^student-dashboard/?$ /student-dashboard.html [L]
+RewriteRule ^course-checkout/?$ /course-checkout.html [L]
+
+# Block direct access to apply-online.html (must come via token link)
+RewriteCond %{QUERY_STRING} !token=
+RewriteRule ^apply-online\.html$ /index.html [R=302,L]

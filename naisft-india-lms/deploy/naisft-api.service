@@ -1,0 +1,17 @@
+[Unit]
+Description=NAISFT INDIA Node API
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/naisft/NAISFT-INDIA/server
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=10
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
+

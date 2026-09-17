@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Apply Online | NAISFT INDIA - Admission Application</title>
+  <meta name="description" content="Apply online for NAISFT INDIA courses - Industrial Safety, Fire Technology, QA/QC, Technical and Computer Courses. Start your admission process today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-10">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><i class="fa-solid fa-phone"></i><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><i class="fa-regular fa-envelope"></i><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-login.html" class="topbar-item"><i class="fa-solid fa-user"></i><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><i class="fa-solid fa-shield-halved"></i><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home"><img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="student-dashboard.html">Student Zone</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+<!-- STUDENT REGISTRATION FORM -->
+<style>
+/* ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â Registration Page - Modern Minimal ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â */
+:root {
+  --rp-bg: #f4f6fb;
+  --rp-surface: #ffffff;
+  --rp-navy: #0a1628;
+  --rp-gold: #e2a800;
+  --rp-border: #e2e8f0;
+  --rp-text: #1e293b;
+  --rp-label: #64748b;
+  --rp-muted: #94a3b8;
+  --rp-success: #16a34a;
+  --rp-error: #ef4444;
+  --rp-shadow: 0 1px 4px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --rp-r-card: 20px;
+  --rp-r-input: 10px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+
+
+.reg-wrap { padding: 2rem 0 5rem; background: var(--rp-bg); max-width: 100%; }
+body { overflow-x: hidden; }
+.reg-wrap .container, .reg-wrap .wrap { max-width: 100%; width: 100%; padding-inline: 1.25rem; }
+
+/* Three-column grid */
+.reg-3col {
+  display: grid;
+  grid-template-columns: 265px 1fr 275px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ LEFT SIDEBAR ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.reg-left-bar {
+  background: linear-gradient(160deg, #0f2040 0%, #0a1628 100%);
+  border-radius: var(--rp-r-card);
+  padding: 1.75rem 1.5rem;
+  position: sticky;
+  top: 98px;
+  align-self: start;
+  border: 1px solid rgba(255,255,255,.05);
+}
+.lsb-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #fff;
+  line-height: 1.45;
+  margin-bottom: 1.5rem;
+}
+.lsb-heading .gold { color: #e2a800; }
+
+.lsb-badges { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1.5rem; }
+.lsb-badge {
+  display: flex; align-items: center; gap: .65rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px; padding: .65rem .9rem;
+  transition: background .2s;
+}
+.lsb-badge:hover { background: rgba(255,255,255,.11); }
+.lsb-badge-icon {
+  width: 32px; height: 32px;
+  background: rgba(226,168,0,.15);
+  border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: .88rem; color: #e2a800;
+}
+.lsb-badge-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: .74rem; font-weight: 600; color: #fff; line-height: 1.3;
+}
+
+.lsb-why-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .68rem;
+  color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .08em;
+  margin-bottom: .65rem;
+}
+.lsb-why-list {
+  list-style: none; padding: 0; margin: 0 0 1.5rem;
+  display: flex; flex-direction: column; gap: .42rem;
+}
+.lsb-why-list li {
+  display: flex; align-items: center; gap: .5rem;
+  font-family: 'Poppins', sans-serif; font-size: .76rem; color: rgba(255,255,255,.8);
+}
+.lsb-why-list li i { color: #e2a800; font-size: .7rem; flex-shrink: 0; }
+
+/* Left sidebar: step-6 verification status list */
+.lsb-verify-status-list { list-style: none; padding: 0; margin: 0 0 .5rem; display: flex; flex-direction: column; gap: .38rem; }
+.lsb-verify-status-list li { display: flex; align-items: center; gap: .42rem; font-size: .71rem; font-family: 'Poppins', sans-serif; color: rgba(255,255,255,.8); }
+.lsb-verify-status-list li i { color: #4ade80; font-size: .66rem; flex-shrink: 0; }
+.lsb-verify-status-list li span:nth-child(2) { flex: 1; }
+.lsb-vbadge { font-size: .57rem; font-weight: 700; padding: .1rem .42rem; border-radius: 20px; background: rgba(74,222,128,.15); color: #4ade80; border: 1px solid rgba(74,222,128,.3); white-space: nowrap; flex-shrink: 0; }
+.lsb-vbadge.confirmed { background: rgba(226,168,0,.15); color: #e2a800; border-color: rgba(226,168,0,.3); }
+
+.btn-brochure {
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  width: 100%; padding: .72rem; background: #e2a800; color: #fff;
+  border: none; border-radius: 8px; font-family: 'Montserrat', sans-serif;
+  font-weight: 700; font-size: .78rem; cursor: pointer;
+  text-decoration: none; letter-spacing: .02em; transition: background .2s;
+}
+.btn-brochure:hover { background: #c99500; }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CENTER AREA ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.reg-center { min-width: 0; }
+
+.reg-page-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 900;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  color: var(--rp-navy); letter-spacing: .02em; margin-bottom: .35rem; text-align: center;
+}
+.reg-page-sub {
+  font-family: 'Poppins', sans-serif; font-size: .87rem;
+  color: var(--rp-label); margin-bottom: 1.4rem; text-align: center;
+}
+
+/* Progress stepper */
+.reg-stepper {
+  display: flex; align-items: center;
+  background: var(--rp-surface); border-radius: 16px; padding: 1rem 1.25rem;
+  box-shadow: var(--rp-shadow); margin-bottom: 1.25rem;
+}
+.rs-item { display: flex; flex-direction: column; align-items: center; gap: .3rem; flex: 1; }
+.rs-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .78rem;
+  border: 2px solid var(--rp-border); color: var(--rp-muted);
+  background: #f8fafc; transition: all .25s;
+}
+.rs-label { font-size: .6rem; font-weight: 600; color: var(--rp-muted); text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.3; }
+.rs-line { flex: 1; height: 2px; background: var(--rp-border); margin: 0 4px 18px; border-radius: 2px; transition: background .3s; }
+.rs-item.done .rs-num  { background: #dcfce7; border-color: #86efac; color: var(--rp-success); }
+.rs-item.done .rs-label { color: var(--rp-success); }
+.rs-item.active .rs-num {
+  background: var(--rp-gold); border-color: var(--rp-gold); color: #fff;
+  box-shadow: 0 0 0 5px rgba(226,168,0,.18);
+}
+.rs-item.active .rs-label { color: var(--rp-navy); font-weight: 700; }
+.rs-line.done { background: #86efac; }
+
+/* Panels */
+.reg-step-panel { display: none; }
+.reg-step-panel.active { display: block; }
+
+/* Main form card - one unified card */
+.reg-card {
+  background: var(--rp-surface); border-radius: var(--rp-r-card);
+  padding: 1.85rem 2rem;
+  box-shadow: var(--rp-shadow); margin-bottom: 1rem;
+  border: 1px solid rgba(0,0,0,.03);
+}
+
+/* Section header inside the card */
+.reg-sec { margin-bottom: 1.6rem; }
+.reg-sec:last-child { margin-bottom: 0; }
+.reg-sec-hd {
+  display: flex; align-items: center; gap: .6rem;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .8rem;
+  color: var(--rp-navy);
+  padding-bottom: .8rem; border-bottom: 1.5px solid var(--rp-border); margin-bottom: 1.1rem;
+}
+.reg-sec-hd::before {
+  content: ''; display: inline-block;
+  width: 3px; height: 15px;
+  background: var(--rp-gold); border-radius: 2px; flex-shrink: 0;
+}
+
+/* Input grid */
+.rf-grid { display: grid; gap: 1rem; }
+.rf-grid-2 { grid-template-columns: 1fr 1fr; }
+.rf-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.rf-group { display: flex; flex-direction: column; gap: .32rem; }
+.rf-label { font-size: .76rem; font-weight: 600; color: var(--rp-label); font-family: 'Poppins', sans-serif; }
+.rf-label .req { color: var(--rp-error); margin-left: 2px; }
+.rf-label .opt { color: var(--rp-muted); font-weight: 400; font-size: .7rem; }
+.rf-input {
+  height: 48px; border: 1.5px solid var(--rp-border); border-radius: var(--rp-r-input);
+  padding: 0 1rem; font-size: .875rem; font-family: 'Poppins', sans-serif;
+  color: var(--rp-text); background: #fff; transition: border-color .2s, box-shadow .2s;
+  width: 100%; box-sizing: border-box;
+}
+.rf-input:focus { outline: none; border-color: var(--rp-gold); box-shadow: 0 0 0 4px rgba(226,168,0,.1); }
+.rf-input.error { border-color: var(--rp-error); }
+.rf-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center;
+  padding-right: 2.4rem; cursor: pointer;
+}
+.rf-error-msg { font-size: .71rem; color: var(--rp-error); font-family: 'Poppins', sans-serif; display: none; }
+.rf-group.has-error .rf-error-msg { display: block; }
+.rf-group.has-error .rf-input { border-color: var(--rp-error); }
+.rf-group.has-error .rf-phone-wrap { border-color: var(--rp-error); }
+
+/* Phone input */
+.rf-phone-wrap {
+  display: flex; height: 48px;
+  border: 1.5px solid var(--rp-border); border-radius: var(--rp-r-input);
+  overflow: hidden; transition: border-color .2s, box-shadow .2s; background: #fff;
+}
+.rf-phone-wrap:focus-within { border-color: var(--rp-gold); box-shadow: 0 0 0 4px rgba(226,168,0,.1); }
+.rf-phone-prefix {
+  display: flex; align-items: center; gap: .35rem;
+  padding: 0 .75rem; background: #f8fafc; border-right: 1.5px solid var(--rp-border);
+  font-size: .78rem; font-weight: 600; color: var(--rp-label); white-space: nowrap; flex-shrink: 0;
+}
+.rf-phone-prefix .flag { font-size: .95rem; }
+.rf-phone-input {
+  border: none; outline: none; flex: 1; padding: 0 .75rem;
+  font-size: .875rem; font-family: 'Poppins', sans-serif; color: var(--rp-text);
+  background: transparent; min-width: 0;
+}
+
+/* Checkbox */
+.rf-check-row { display: flex; align-items: center; gap: .48rem; margin-top: .3rem; }
+.rf-check-row input[type="checkbox"] { width: 15px; height: 15px; accent-color: var(--rp-gold); cursor: pointer; flex-shrink: 0; }
+.rf-check-row label { font-size: .74rem; color: var(--rp-label); font-family: 'Poppins', sans-serif; cursor: pointer; }
+
+/* Info note */
+.rf-info-note {
+  background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px;
+  padding: .65rem .9rem; display: flex; align-items: flex-start; gap: .5rem; margin-top: .75rem;
+}
+.rf-info-note i { color: #3b82f6; font-size: .8rem; margin-top: 2px; flex-shrink: 0; }
+.rf-info-note span { font-size: .74rem; color: #1e40af; font-family: 'Poppins', sans-serif; line-height: 1.6; }
+
+/* Password */
+.rf-pass-wrap { position: relative; }
+.rf-pass-wrap .rf-input { padding-right: 2.4rem; }
+.rf-eye {
+  position: absolute; right: .72rem; top: 50%; transform: translateY(-50%);
+  background: none; border: none; cursor: pointer; color: #8a9ab5; padding: 0; font-size: .85rem;
+}
+
+/* Password rules */
+.pw-rules { display: grid; grid-template-columns: 1fr 1fr; gap: .3rem .8rem; margin-top: .6rem; background: #f8fafc; border-radius: 10px; padding: .7rem .85rem; }
+.pw-rule { display: flex; align-items: center; gap: .35rem; font-size: .71rem; color: var(--rp-muted); font-family: 'Poppins', sans-serif; }
+.pw-rule i { font-size: .48rem; }
+.pw-rule.ok { color: var(--rp-success); }
+.pw-rule.ok i { font-size: .62rem; }
+.pw-rule.ok i::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; }
+
+/* Course selection card */
+.course-sel-card {
+  border: 1.5px solid var(--rp-border); border-radius: 14px;
+  overflow: hidden; margin-top: 1rem; display: none; box-shadow: var(--rp-shadow);
+}
+.course-sel-card.show { display: block; }
+.csc-top { display: flex; }
+.csc-img {
+  width: 100px; flex-shrink: 0;
+  background: linear-gradient(135deg, #0f2040 0%, #1a3a6e 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.2rem; padding: 1rem;
+}
+.csc-info { padding: .9rem 1rem; flex: 1; min-width: 0; }
+.csc-name { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .88rem; color: var(--rp-navy); margin-bottom: .35rem; }
+.csc-badges { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .45rem; }
+.csc-badge { font-size: .63rem; font-weight: 600; padding: .14rem .45rem; border-radius: 5px; font-family: 'Poppins', sans-serif; }
+.csc-badge.dur { background: #e0f2fe; color: #0369a1; }
+.csc-badge.eli { background: #f0fdf4; color: #166534; }
+.csc-badge.qr  { background: #fef9c3; color: #854d0e; }
+.csc-about { font-size: .73rem; color: var(--rp-label); font-family: 'Poppins', sans-serif; line-height: 1.6; margin-bottom: .45rem; }
+.csc-trust { display: flex; gap: .5rem; flex-wrap: wrap; }
+.csc-trust-item { display: flex; align-items: center; gap: .22rem; font-size: .63rem; color: var(--rp-text); font-family: 'Poppins', sans-serif; }
+.csc-trust-item i { color: var(--rp-gold); font-size: .6rem; }
+.csc-bottom {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .7rem 1rem; border-top: 1px solid var(--rp-border); background: #f8fafc;
+}
+.csc-fee { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.05rem; color: var(--rp-navy); }
+.csc-fee small { font-size: .63rem; color: var(--rp-muted); font-weight: 400; margin-left: 2px; }
+.btn-view-details {
+  padding: .44rem .9rem; background: var(--rp-navy); color: #fff;
+  border: none; border-radius: 8px; font-family: 'Poppins', sans-serif;
+  font-weight: 600; font-size: .72rem; cursor: pointer; transition: background .2s;
+  display: inline-flex; align-items: center; gap: .32rem; text-decoration: none;
+}
+.btn-view-details:hover { background: #1a3a6e; }
+.csc-intl-note {
+  display: flex; align-items: center; gap: .38rem; margin-top: .55rem;
+  font-size: .71rem; color: var(--rp-success); font-family: 'Poppins', sans-serif; font-weight: 600;
+}
+.csc-intl-note i { font-size: .68rem; }
+
+/* Action buttons */
+.btn-google {
+  width: 100%; height: 48px; background: #fff;
+  border: 1.5px solid var(--rp-border); border-radius: 12px;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .875rem; color: var(--rp-text);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  gap: .6rem; margin-bottom: .82rem; transition: border-color .2s, box-shadow .2s;
+}
+.btn-google:hover { border-color: #4285F4; box-shadow: 0 2px 12px rgba(66,133,244,.14); }
+.reg-divider {
+  display: flex; align-items: center; gap: .72rem; margin-bottom: .82rem;
+}
+.reg-divider span { font-size: .74rem; color: var(--rp-muted); font-family: 'Poppins', sans-serif; white-space: nowrap; }
+.reg-divider::before, .reg-divider::after { content: ''; flex: 1; height: 1px; background: var(--rp-border); }
+.btn-reg-primary {
+  width: 100%; height: 54px; background: var(--rp-gold); color: #fff;
+  border: none; border-radius: 12px; font-family: 'Montserrat', sans-serif;
+  font-weight: 800; font-size: .95rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  gap: .5rem; letter-spacing: .03em; transition: background .2s, box-shadow .2s, transform .1s;
+}
+.btn-reg-primary:hover { background: #c99500; box-shadow: 0 6px 20px rgba(226,168,0,.35); }
+.btn-reg-primary:active { transform: scale(.98); }
+.btn-reg-primary:disabled { background: var(--rp-border); cursor: not-allowed; box-shadow: none; }
+.reg-secure {
+  display: flex; align-items: center; justify-content: center; gap: .4rem;
+  margin-top: .82rem; font-size: .74rem; color: var(--rp-muted); font-family: 'Poppins', sans-serif;
+}
+.reg-secure i { color: var(--rp-success); }
+
+/* Alert */
+.reg-alert {
+  border-radius: 12px; padding: .7rem 1rem; font-size: .79rem;
+  font-family: 'Poppins', sans-serif; margin-bottom: .88rem;
+  display: none; align-items: center; gap: .52rem;
+}
+.reg-alert.show { display: flex; }
+.reg-alert.error   { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+.reg-alert.success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; }
+.reg-alert i { flex-shrink: 0; }
+
+/* OTP Panel */
+.otp-boxes { display: flex; gap: .52rem; justify-content: flex-start; margin-bottom: .8rem; }
+.otp-box {
+  width: 50px; height: 56px; border: 2px solid var(--rp-border); border-radius: 12px;
+  text-align: center; font-size: 1.3rem; font-weight: 700;
+  font-family: 'Montserrat', sans-serif; color: var(--rp-navy); transition: border-color .2s, background .2s, box-shadow .2s;
+}
+.otp-box:focus { outline: none; border-color: var(--rp-gold); box-shadow: 0 0 0 4px rgba(226,168,0,.13); }
+.otp-box.verified { border-color: var(--rp-success); background: #f0fdf4; }
+.otp-box.dashed { border-style: dashed; border-color: var(--rp-border); background: #f8fafc; }
+
+.otp-field-hdr {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  margin-bottom: .42rem;
+}
+.otp-field-label {
+  font-family: 'Poppins', sans-serif; font-size: .74rem; font-weight: 600; color: #374151;
+  display: flex; align-items: center; gap: .4rem;
+}
+.otp-field-label i { color: #e2a800; font-size: .78rem; }
+.otp-badge-sent {
+  display: inline-flex; align-items: center; gap: .28rem;
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 20px;
+  padding: .18rem .55rem; font-size: .65rem; font-weight: 700;
+  color: #15803d; font-family: 'Poppins', sans-serif; white-space: nowrap;
+}
+.otp-badge-sent i { font-size: .62rem; }
+.otp-badge-optional {
+  display: inline-flex; align-items: center; gap: .22rem;
+  background: #fffbeb; border: 1px solid #fde68a; border-radius: 20px;
+  padding: .18rem .55rem; font-size: .65rem; font-weight: 700;
+  color: #92400e; font-family: 'Poppins', sans-serif;
+}
+
+.otp-phone-val {
+  font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .95rem;
+  color: #0a1628; margin-bottom: .65rem; letter-spacing: .02em;
+  display: flex; align-items: center; gap: .5rem;
+}
+.otp-phone-val i { color: #e2a800; }
+
+.otp-boxes-label {
+  font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 600;
+  color: #374151; margin-bottom: .42rem;
+}
+
+.otp-verified-msg {
+  display: flex; align-items: center; gap: .38rem;
+  font-family: 'Poppins', sans-serif; font-size: .78rem; font-weight: 600;
+  color: #15803d; margin-bottom: .5rem;
+}
+.otp-verified-msg i { font-size: .8rem; }
+
+.otp-links {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+}
+.otp-link-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Poppins', sans-serif; font-size: .73rem; color: #4b5563;
+  text-decoration: none; display: flex; align-items: center; gap: .28rem;
+  padding: 0; transition: color .2s;
+}
+.otp-link-btn:hover { color: #0a1628; }
+.otp-link-btn i { font-size: .7rem; }
+.otp-link-btn:disabled { color: #9ca3af; cursor: not-allowed; }
+
+.otp-optional-note {
+  font-family: 'Poppins', sans-serif; font-size: .72rem; color: #6b7280;
+  margin-bottom: .75rem; font-style: italic;
+}
+
+.otp-or {
+  display: flex; align-items: center; gap: .75rem;
+  margin: 1rem 0; color: #9ca3af; font-family: 'Poppins', sans-serif; font-size: .75rem;
+}
+.otp-or::before, .otp-or::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+
+.otp-sec { margin-bottom: 1.2rem; }
+.otp-sec:last-child { margin-bottom: 0; }
+
+/* OTP action buttons row */
+.otp-action-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .75rem;
+}
+.btn-skip {
+  height: 50px; background: #fff; color: #374151;
+  border: 1.5px solid #d1d9e6; border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .82rem;
+  cursor: pointer; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: .1rem; transition: border-color .2s;
+}
+.btn-skip small { font-size: .62rem; color: #9ca3af; font-weight: 400; }
+.btn-skip:hover { border-color: #0a1628; color: #0a1628; }
+.btn-verify-email-now {
+  height: 50px; background: #0a1628; color: #fff;
+  border: none; border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-weight: 700; font-size: .82rem;
+  cursor: pointer; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: .1rem; transition: background .2s;
+}
+.btn-verify-email-now small { font-size: .62rem; color: rgba(255,255,255,.6); font-weight: 400; }
+.btn-verify-email-now:hover { background: #1a3a6e; }
+.btn-verify-email-now:disabled { background: #d1d9e6; cursor: not-allowed; }
+
+.otp-main-cta-or {
+  display: flex; align-items: center; gap: .75rem; margin: .6rem 0;
+}
+.otp-main-cta-or::before, .otp-main-cta-or::after { content: ''; flex: 1; height: 1px; background: #e5e7eb; }
+.otp-main-cta-or span { font-size: .72rem; color: #9ca3af; font-family: 'Poppins', sans-serif; }
+
+/* OTP trust bar */
+.otp-trust-bar {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.2rem; flex-wrap: wrap; padding: .9rem;
+  background: #fff; border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(10,22,56,.06); margin-top: .75rem;
+}
+.otp-trust-item {
+  display: flex; align-items: center; gap: .35rem;
+  font-family: 'Poppins', sans-serif; font-size: .65rem; font-weight: 600; color: #374151;
+}
+.otp-trust-item i { color: #e2a800; font-size: .75rem; }
+
+/* Verification status (right sidebar) */
+.rsb-verify-row {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: .62rem;
+}
+.rsb-verify-row:last-of-type { margin-bottom: 0; }
+.rsb-verify-label {
+  font-size: .7rem; color: rgba(255,255,255,.6); font-family: 'Poppins', sans-serif;
+  display: flex; align-items: center; gap: .35rem;
+}
+.rsb-verify-label i { font-size: .72rem; }
+.rsb-verify-badge {
+  display: inline-flex; align-items: center; gap: .25rem;
+  font-size: .65rem; font-weight: 700; padding: .18rem .5rem;
+  border-radius: 20px; font-family: 'Poppins', sans-serif;
+}
+.rsb-verify-badge.green { background: rgba(21,128,61,.25); color: #4ade80; }
+.rsb-verify-badge.amber { background: rgba(245,158,11,.2); color: #fbbf24; }
+.rsb-verify-status-note {
+  font-family: 'Poppins', sans-serif; font-size: .68rem; color: rgba(255,255,255,.55);
+  margin-top: .65rem; padding-top: .65rem; border-top: 1px solid rgba(255,255,255,.1);
+  line-height: 1.5;
+}
+.rsb-help-email {
+  display: flex; align-items: center; gap: .38rem; margin-top: .55rem;
+  font-family: 'Poppins', sans-serif; font-size: .72rem; color: rgba(255,255,255,.7); text-decoration: none;
+}
+.rsb-help-email i { color: #e2a800; font-size: .7rem; }
+.rsb-help-avail { font-size: .65rem; color: rgba(255,255,255,.4); font-family: 'Poppins', sans-serif; margin-top: .45rem; }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ RIGHT SIDEBAR ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.reg-right-bar { position: sticky; top: 98px; align-self: start; }
+.rsb-box {
+  background: var(--rp-navy); border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.06);
+  padding: 1.35rem 1.2rem; margin-bottom: .85rem; color: #fff;
+}
+.rsb-box.light { background: var(--rp-surface); border: 1px solid var(--rp-border); box-shadow: var(--rp-shadow); color: var(--rp-text); }
+.rsb-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .72rem;
+  color: #e2a800; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .9rem;
+}
+.rsb-box.light .rsb-title { color: #0a1628; }
+.rsb-row { display: flex; gap: .62rem; align-items: flex-start; margin-bottom: .75rem; }
+.rsb-row:last-child { margin-bottom: 0; }
+.rsb-row > i { color: rgba(255,255,255,.38); font-size: .78rem; width: 14px; flex-shrink: 0; margin-top: 2px; }
+.rsb-key { font-size: .61rem; color: rgba(255,255,255,.42); font-family: 'Poppins', sans-serif; margin-bottom: .08rem; text-transform: uppercase; letter-spacing: .04em; }
+.rsb-val { font-size: .76rem; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 600; }
+.rsb-val.gold { color: #e2a800; font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .88rem; }
+.rsb-val.muted { color: rgba(255,255,255,.38); font-weight: 400; font-size: .7rem; }
+.rsb-status {
+  background: rgba(226,168,0,.12); border: 1px solid rgba(226,168,0,.28);
+  border-radius: 5px; padding: .27rem .6rem; display: inline-flex; align-items: center; gap: .28rem; margin-top: .12rem;
+}
+.rsb-status span { font-size: .68rem; color: #e2a800; font-family: 'Poppins', sans-serif; font-weight: 600; }
+
+.rsb-why-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .42rem; }
+.rsb-why-list li { display: flex; align-items: center; gap: .42rem; font-size: .76rem; color: rgba(255,255,255,.8); font-family: 'Poppins', sans-serif; }
+.rsb-why-list li i { color: #e2a800; font-size: .68rem; flex-shrink: 0; }
+
+.rsb-help-sub { font-size: .71rem; color: rgba(255,255,255,.52); font-family: 'Poppins', sans-serif; margin-bottom: .7rem; }
+.rsb-phone {
+  display: flex; align-items: center; gap: .48rem;
+  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: .92rem;
+  color: #fff; text-decoration: none; margin-bottom: .72rem;
+}
+.rsb-phone i { color: #e2a800; }
+.btn-whatsapp {
+  display: flex; align-items: center; justify-content: center; gap: .48rem;
+  width: 100%; padding: .58rem; background: #25d366; color: #fff;
+  border: none; border-radius: 8px; font-family: 'Poppins', sans-serif;
+  font-weight: 600; font-size: .78rem; cursor: pointer; text-decoration: none; transition: background .2s;
+}
+.btn-whatsapp:hover { background: #1ebe5a; }
+.btn-whatsapp i { font-size: .85rem; }
+
+/* Left sidebar progress list (step 3) */
+.lsb-progress-list { display: flex; flex-direction: column; margin-bottom: .5rem; }
+.lsb-prog-item {
+  display: flex; align-items: flex-start; gap: .65rem;
+}
+.lsb-prog-dot {
+  width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .62rem; font-weight: 700;
+  background: rgba(255,255,255,.1); border: 2px solid rgba(255,255,255,.2);
+  color: rgba(255,255,255,.4); font-family: 'Montserrat', sans-serif;
+  transition: all .3s;
+}
+.lsb-prog-item.done .lsb-prog-dot { background: #16a34a; border-color: #16a34a; color: #fff; font-size: .7rem; }
+.lsb-prog-item.active .lsb-prog-dot { background: #e2a800; border-color: #e2a800; color: #fff; font-size: .7rem; box-shadow: 0 0 0 3px rgba(226,168,0,.25); }
+.lsb-prog-text { padding-top: 3px; }
+.lsb-prog-label {
+  font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 600;
+  color: rgba(255,255,255,.8); line-height: 1.3;
+}
+.lsb-prog-item.done .lsb-prog-label { color: #4ade80; }
+.lsb-prog-item.active .lsb-prog-label { color: #fbbf24; }
+.lsb-prog-sub { font-size: .64rem; color: rgba(255,255,255,.45); font-family: 'Poppins', sans-serif; margin-top: 1px; }
+.lsb-prog-line { width: 2px; height: 16px; background: rgba(255,255,255,.12); margin: 3px 0 3px 12px; }
+.lsb-prog-item.done ~ .lsb-prog-line { background: rgba(74,222,128,.3); }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ STEP 4: Profile photo upload ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.photo-upload-wrap {
+  display: flex; align-items: flex-start; gap: 1.2rem; margin-bottom: 1rem;
+}
+.photo-circle {
+  width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+  border: 2.5px dashed var(--rp-border); background: var(--rp-bg);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  cursor: pointer; overflow: hidden; position: relative; transition: border-color .2s;
+}
+.photo-circle:hover { border-color: var(--rp-gold); }
+.photo-circle img { width: 100%; height: 100%; object-fit: cover; display: none; }
+.photo-circle .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: .28rem; }
+.photo-circle .photo-placeholder i { font-size: 1.4rem; color: var(--rp-muted); }
+.photo-circle .photo-placeholder span { font-size: .58rem; color: var(--rp-muted); font-family: 'Poppins', sans-serif; text-align: center; line-height: 1.3; }
+.photo-upload-info { flex: 1; }
+.photo-upload-info .rf-label { margin-bottom: .4rem; }
+.photo-upload-info p { font-size: .69rem; color: var(--rp-label); font-family: 'Poppins', sans-serif; line-height: 1.6; margin: 0; }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ STEP 4: Document upload boxes ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.doc-upload-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; margin-top: .5rem; }
+.doc-upload-box {
+  border: 1.5px dashed var(--rp-border); border-radius: 12px;
+  padding: 1rem .9rem; display: flex; flex-direction: column; align-items: center;
+  gap: .45rem; cursor: pointer; transition: border-color .2s, background .2s;
+  background: #f8fafc; position: relative; min-height: 110px; justify-content: center;
+}
+.doc-upload-box:hover { border-color: var(--rp-gold); background: #fffdf0; }
+.doc-upload-box.uploaded { border-color: var(--rp-success); background: #f0fdf4; border-style: solid; }
+.doc-upload-box.optional { border-color: #e5e7eb; background: #f9fafb; }
+.doc-upload-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(10,22,56,.06); display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--rp-muted); flex-shrink: 0;
+}
+.doc-upload-box.uploaded .doc-upload-icon { background: rgba(22,163,74,.12); color: var(--rp-success); }
+.doc-upload-label { font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 700; color: var(--rp-navy); text-align: center; line-height: 1.35; }
+.doc-upload-sub { font-family: 'Poppins', sans-serif; font-size: .63rem; color: var(--rp-muted); text-align: center; }
+.doc-upload-btn {
+  background: var(--rp-navy); color: #fff; border: none; border-radius: 7px;
+  padding: .32rem .8rem; font-family: 'Poppins', sans-serif; font-size: .68rem; font-weight: 600;
+  cursor: pointer; transition: background .2s; display: flex; align-items: center; gap: .3rem;
+}
+.doc-upload-btn:hover { background: #1a3a6e; }
+.doc-upload-box.uploaded .doc-upload-btn { background: var(--rp-success); }
+.doc-file-name { font-size: .63rem; color: var(--rp-text); font-family: 'Poppins', sans-serif; text-align: center; max-width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.doc-remove-btn {
+  position: absolute; top: 6px; right: 6px;
+  background: #fef2f2; border: none; border-radius: 5px; cursor: pointer;
+  color: var(--rp-error); font-size: .6rem; padding: .18rem .3rem; display: none;
+}
+.doc-upload-box.uploaded .doc-remove-btn { display: block; }
+.doc-optional-badge {
+  position: absolute; top: 6px; left: 6px;
+  background: #fef3c7; color: #92400e; border-radius: 5px;
+  font-size: .58rem; font-weight: 700; padding: .12rem .38rem; font-family: 'Poppins', sans-serif;
+}
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ STEP 4: Learning mode radio ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.learn-mode-group { display: flex; gap: .55rem; flex-wrap: wrap; margin-top: .35rem; }
+.learn-mode-opt {
+  display: flex; align-items: center; gap: .38rem;
+  border: 1.5px solid var(--rp-border); border-radius: 10px;
+  padding: .5rem .95rem; cursor: pointer; transition: border-color .2s, background .2s;
+  font-family: 'Poppins', sans-serif; font-size: .78rem; font-weight: 600; color: var(--rp-label);
+}
+.learn-mode-opt input[type="radio"] { accent-color: var(--rp-gold); width: 15px; height: 15px; }
+.learn-mode-opt:has(input:checked) { border-color: var(--rp-gold); background: #fffbeb; color: var(--rp-navy); }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ STEP 4: Action buttons row ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.step4-action-row { display: grid; grid-template-columns: auto auto 1fr; gap: .75rem; align-items: center; margin-top: .75rem; }
+.btn-back-step {
+  height: 48px; padding: 0 1.15rem; background: var(--rp-surface); color: var(--rp-label);
+  border: 1.5px solid var(--rp-border); border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .8rem;
+  cursor: pointer; display: flex; align-items: center; gap: .4rem; white-space: nowrap;
+  transition: border-color .2s, color .2s;
+}
+.btn-back-step:hover { border-color: var(--rp-navy); color: var(--rp-navy); }
+.btn-draft {
+  height: 48px; padding: 0 1.15rem; background: var(--rp-bg); color: var(--rp-label);
+  border: 1.5px solid var(--rp-border); border-radius: 10px;
+  font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .8rem;
+  cursor: pointer; display: flex; align-items: center; gap: .4rem; white-space: nowrap;
+  transition: background .2s, border-color .2s;
+}
+.btn-draft:hover { background: #e9edf5; border-color: #cbd5e1; }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ STEP 4 Right sidebar additions ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.rsb-progress-wrap { margin-top: .5rem; }
+.rsb-progress-label { display: flex; justify-content: space-between; margin-bottom: .35rem; }
+.rsb-progress-label span { font-size: .68rem; font-family: 'Poppins', sans-serif; }
+.rsb-progress-label .rsb-pct { color: #e2a800; font-weight: 700; }
+.rsb-progress-bar { height: 7px; background: rgba(255,255,255,.12); border-radius: 99px; overflow: hidden; }
+.rsb-progress-fill { height: 100%; background: linear-gradient(90deg, #e2a800, #fbbf24); border-radius: 99px; transition: width .5s ease; }
+
+.rsb-doc-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: .55rem; }
+.rsb-doc-row:last-child { margin-bottom: 0; }
+.rsb-doc-name { font-size: .7rem; color: rgba(255,255,255,.7); font-family: 'Poppins', sans-serif; display: flex; align-items: center; gap: .35rem; }
+.rsb-doc-name i { font-size: .65rem; color: rgba(255,255,255,.35); }
+.rsb-doc-badge { font-size: .62rem; font-weight: 700; padding: .14rem .45rem; border-radius: 20px; font-family: 'Poppins', sans-serif; display: inline-flex; align-items: center; gap: .22rem; }
+.rsb-doc-badge.pending { background: rgba(245,158,11,.18); color: #fbbf24; }
+.rsb-doc-badge.uploaded { background: rgba(22,163,74,.2); color: #4ade80; }
+.rsb-doc-badge.optional { background: rgba(255,255,255,.08); color: rgba(255,255,255,.4); }
+
+.rsb-secure-item { display: flex; align-items: center; gap: .45rem; margin-bottom: .45rem; font-size: .76rem; color: rgba(255,255,255,.8); font-family: 'Poppins', sans-serif; }
+.rsb-secure-item:last-child { margin-bottom: 0; }
+.rsb-secure-item i { color: #e2a800; font-size: .75rem; flex-shrink: 0; }
+
+.lsb-security-list { display: flex; flex-direction: column; gap: .65rem; margin: 1.2rem 0; }
+.lsb-security-item { display: flex; gap: .65rem; align-items: flex-start; }
+.lsb-security-icon { width: 28px; height: 28px; background: rgba(226,168,0,.15); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #e2a800; font-size: .8rem; }
+.lsb-security-text strong { display: block; font-family: 'Poppins', sans-serif; font-size: .72rem; font-weight: 700; color: #fff; line-height: 1.3; }
+.lsb-security-text span { font-size: .63rem; color: rgba(255,255,255,.45); font-family: 'Poppins', sans-serif; line-height: 1.4; }
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Step 6: Admission Confirmed ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+.adm-confirmed-banner {
+  background: linear-gradient(135deg, #0a1628 0%, #0f2040 60%, #1a3060 100%);
+  border-radius: 14px; padding: 1.5rem 1.4rem; margin-bottom: 1.1rem;
+  display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+  border: 1px solid rgba(226,168,0,.25);
+}
+.adm-conf-left .adm-conf-title {
+  font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700;
+  color: #e2a800; margin-bottom: .25rem; letter-spacing: .03em;
+}
+.adm-conf-greeting { font-family: 'Poppins', sans-serif; font-size: .82rem; color: #fff; font-weight: 600; margin-bottom: .25rem; }
+.adm-conf-sub { font-family: 'Poppins', sans-serif; font-size: .72rem; color: rgba(255,255,255,.6); line-height: 1.55; }
+.adm-conf-badges { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .85rem; }
+.adm-conf-badge {
+  display: flex; align-items: center; gap: .3rem; padding: .25rem .6rem;
+  background: rgba(22,163,74,.15); border: 1px solid rgba(22,163,74,.3);
+  border-radius: 20px; font-family: 'Poppins', sans-serif; font-size: .62rem;
+  color: #4ade80; font-weight: 600;
+}
+.adm-conf-badge i { font-size: .6rem; }
+.adm-conf-right { display: flex; flex-direction: column; align-items: flex-end; gap: .5rem; }
+.adm-id-box {
+  background: rgba(255,255,255,.05); border: 1px solid rgba(226,168,0,.2);
+  border-radius: 10px; padding: .6rem .9rem; text-align: right; min-width: 200px;
+}
+.adm-id-label { font-family: 'Poppins', sans-serif; font-size: .6rem; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .06em; }
+.adm-id-val { font-family: 'Cinzel', serif; font-size: .85rem; color: #e2a800; font-weight: 700; margin: .1rem 0; letter-spacing: .04em; }
+.adm-id-sub { font-size: .62rem; color: rgba(255,255,255,.5); font-family: 'Poppins', sans-serif; }
+.adm-conf-badge-gold {
+  display: inline-flex; align-items: center; justify-content: center; flex-direction: column;
+  width: 80px; height: 80px; border-radius: 50%;
+  background: linear-gradient(135deg, #e2a800, #f5c842);
+  box-shadow: 0 0 0 4px rgba(226,168,0,.2), 0 4px 16px rgba(226,168,0,.3);
+  font-family: 'Cinzel', serif; font-size: .52rem; font-weight: 700; color: #0a1628;
+  text-align: center; line-height: 1.25; letter-spacing: .03em;
+}
+
+.adm-info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: .7rem; margin-bottom: 1rem; }
+.adm-info-card {
+  background: #0a1628; border-radius: 11px; padding: .9rem 1rem;
+  border: 1px solid rgba(255,255,255,.07);
+}
+.adm-info-card-title {
+  font-family: 'Cinzel', serif; font-size: .65rem; font-weight: 700; color: #e2a800;
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: .65rem;
+  padding-bottom: .45rem; border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.adm-info-row { display: flex; justify-content: space-between; gap: .4rem; margin-bottom: .4rem; }
+.adm-info-row:last-child { margin-bottom: 0; }
+.adm-info-key { font-family: 'Poppins', sans-serif; font-size: .62rem; color: rgba(255,255,255,.45); flex-shrink: 0; }
+.adm-info-val { font-family: 'Poppins', sans-serif; font-size: .63rem; color: #fff; font-weight: 600; text-align: right; word-break: break-word; }
+.adm-info-val.green { color: #4ade80; }
+.adm-info-val.amber { color: #e2a800; }
+.adm-info-val.na { color: rgba(255,255,255,.35); font-weight: 400; }
+.adm-info-note {
+  margin-top: .6rem; padding-top: .5rem; border-top: 1px solid rgba(255,255,255,.07);
+  font-family: 'Poppins', sans-serif; font-size: .6rem; color: rgba(255,255,255,.35); line-height: 1.5; font-style: italic;
+}
+.adm-verified-row { display: flex; align-items: center; gap: .35rem; margin-bottom: .35rem; font-family: 'Poppins', sans-serif; font-size: .62rem; }
+.adm-verified-row i { font-size: .6rem; }
+.adm-verified-row.ok { color: #4ade80; }
+.adm-verified-row.na { color: rgba(255,255,255,.35); }
+.adm-verified-row.warn { color: #fbbf24; }
+
+.adm-download-section { margin-bottom: 1rem; }
+.adm-download-title {
+  font-family: 'Cinzel', serif; font-size: .72rem; font-weight: 700; color: #374151;
+  letter-spacing: .05em; text-transform: uppercase; margin-bottom: .65rem;
+  display: flex; align-items: center; gap: .4rem;
+}
+.adm-download-grid { display: flex; gap: .6rem; flex-wrap: wrap; }
+.adm-doc-btn {
+  display: flex; flex-direction: column; align-items: center; gap: .3rem;
+  padding: .65rem .85rem; background: var(--rp-bg); border: 1px solid var(--rp-border);
+  border-radius: 11px; cursor: pointer; transition: all .2s; text-decoration: none;
+  min-width: 90px;
+}
+.adm-doc-btn:hover { background: #eef3ff; border-color: #c7d2fe; }
+.adm-doc-btn .adm-doc-icon { font-size: 1.4rem; }
+.adm-doc-btn .adm-doc-label { font-family: 'Poppins', sans-serif; font-size: .6rem; color: var(--rp-label); font-weight: 600; text-align: center; line-height: 1.3; }
+.adm-doc-btn .adm-doc-status { font-size: .55rem; color: var(--rp-muted); font-family: 'Poppins', sans-serif; }
+.adm-doc-btn.ready .adm-doc-label { color: var(--rp-navy); }
+.adm-doc-btn.ready .adm-doc-status { color: var(--rp-success); }
+
+.adm-dashboard-box {
+  background: linear-gradient(135deg, #0f2040 0%, #0a1628 100%);
+  border-radius: 16px; padding: 1.2rem 1.3rem; margin-bottom: 1rem;
+  border: 1px solid rgba(226,168,0,.2);
+  display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center;
+}
+.adm-dash-title { font-family: 'Cinzel', serif; font-size: .8rem; color: var(--rp-gold); font-weight: 700; margin-bottom: .2rem; }
+.adm-dash-sub { font-family: 'Poppins', sans-serif; font-size: .68rem; color: rgba(255,255,255,.55); line-height: 1.5; margin-bottom: .7rem; }
+.adm-dash-icons { display: flex; gap: .5rem; flex-wrap: wrap; }
+.adm-dash-icon { display: flex; flex-direction: column; align-items: center; gap: .2rem; }
+.adm-dash-icon span { font-size: 1.2rem; }
+.adm-dash-icon small { font-size: .55rem; color: rgba(255,255,255,.4); font-family: 'Poppins', sans-serif; text-align: center; }
+.btn-goto-dashboard {
+  background: linear-gradient(135deg, var(--rp-gold), #f5c842); color: var(--rp-navy);
+  font-family: 'Cinzel', serif; font-size: .7rem; font-weight: 700;
+  padding: .7rem 1.2rem; border-radius: 10px; border: none; cursor: pointer;
+  letter-spacing: .04em; white-space: nowrap; text-decoration: none; display: inline-block;
+  transition: opacity .2s;
+}
+.btn-goto-dashboard:hover { opacity: .9; color: var(--rp-navy); }
+
+.adm-next-steps { margin-bottom: 1rem; }
+.adm-next-title { font-family: 'Cinzel', serif; font-size: .72rem; font-weight: 700; color: var(--rp-label); letter-spacing: .05em; text-transform: uppercase; margin-bottom: .7rem; display: flex; align-items: center; gap: .4rem; }
+.adm-steps-row { display: flex; gap: .5rem; align-items: flex-start; }
+.adm-next-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: .3rem; padding: .75rem .5rem; background: var(--rp-bg); border-radius: 12px;
+  border: 1px solid var(--rp-border);
+}
+.adm-next-num {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--rp-navy); color: var(--rp-gold);
+  font-family: 'Cinzel', serif; font-size: .7rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.adm-next-label { font-family: 'Poppins', sans-serif; font-size: .62rem; color: var(--rp-text); font-weight: 600; line-height: 1.35; }
+
+.step6-action-row { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+
+/* Right sidebar: Full Verification Status (Step 6) */
+.rsb-verify-full-row { display: flex; justify-content: space-between; align-items: center; padding: .3rem 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.rsb-verify-full-row:last-child { border-bottom: none; }
+.rsb-verify-full-key { font-family: 'Poppins', sans-serif; font-size: .67rem; color: rgba(255,255,255,.55); }
+.rsb-badge { display: inline-flex; align-items: center; gap: .25rem; padding: .18rem .5rem; border-radius: 20px; font-size: .6rem; font-family: 'Poppins', sans-serif; font-weight: 700; }
+.rsb-badge.green { background: rgba(22,163,74,.15); color: #4ade80; border: 1px solid rgba(22,163,74,.3); }
+.rsb-badge.amber { background: rgba(226,168,0,.15); color: #e2a800; border: 1px solid rgba(226,168,0,.3); }
+
+/* ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â
+   RESPONSIVE - Registration Form
+   ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â */
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ 1100px: tablet landscape - hide left bar, 2-col layout ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+@media (max-width: 1100px) {
+  .reg-3col { grid-template-columns: 1fr 260px; }
+  .reg-left-bar { display: none; }
+  /* Step 6 info grid: 4 ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ 2 cols */
+  .adm-info-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ 900px: tablet portrait - collapse right bar ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+@media (max-width: 900px) {
+  .reg-3col { grid-template-columns: 1fr; }
+  .reg-right-bar { position: static; width: 100%; }
+  /* Step 5 */
+  .adm-dashboard-box { grid-template-columns: 1fr; }
+  .adm-dashboard-box > div:last-child { text-align: left; margin-top: .75rem; }
+  /* Step 6 */
+  .adm-info-grid { grid-template-columns: 1fr 1fr; }
+  .adm-conf-banner { grid-template-columns: 1fr; }
+  .adm-conf-right { flex-direction: row; flex-wrap: wrap; align-items: center; gap: .75rem; }
+  .adm-id-box { min-width: unset; }
+}
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ 768px: mobile landscape / large phone ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+@media (max-width: 768px) {
+  /* Layout */
+  .reg-3col { grid-template-columns: 1fr; }
+  .reg-right-bar { position: static; width: 100%; }
+  .reg-wrap { padding: 1.2rem 0 2rem; }
+  .reg-card { padding: 1.2rem; }
+
+  /* Stepper: make horizontally scrollable, hide long labels */
+  .reg-stepper { overflow-x: auto; padding-bottom: .5rem; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .rs-item { min-width: 44px; }
+  .rs-label { display: none; }
+  .rs-line { min-width: 20px; margin-bottom: 10px; }
+
+  /* Step 2 - form grids */
+  .rf-grid-2, .rf-grid-3 { grid-template-columns: 1fr; }
+  .pw-rules { grid-template-columns: 1fr; }
+  .otp-action-row { grid-template-columns: 1fr; }
+
+  /* Step 3 - OTP */
+  .otp-cols { flex-direction: column; gap: 1rem; }
+  .otp-divider { display: none; }
+
+  /* Step 4 - Docs */
+  .doc-upload-grid { grid-template-columns: 1fr; }
+  .step4-action-row { grid-template-columns: 1fr 1fr; }
+  .step4-action-row .btn-reg-primary { grid-column: 1 / -1; }
+
+  /* Step 5 - Fee */
+  .tax-coupon-row { grid-template-columns: 1fr; }
+  .step5-action-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'back draft' 'proceed proceed';
+  }
+  .step5-action-row .btn-back-step { grid-area: back; }
+  .step5-action-row .btn-draft { grid-area: draft; }
+  .step5-action-row .btn-reg-primary { grid-area: proceed; }
+  .adm-dashboard-box { grid-template-columns: 1fr; }
+  .adm-dashboard-box > div:last-child { text-align: left; margin-top: .75rem; }
+
+  /* Step 6 - Confirmed */
+  .adm-info-grid { grid-template-columns: 1fr 1fr; }
+  .adm-conf-banner { grid-template-columns: 1fr; }
+  .adm-conf-right { flex-direction: row; flex-wrap: wrap; gap: .75rem; }
+  .adm-id-box { min-width: unset; }
+  .adm-steps-row { overflow-x: auto; flex-wrap: nowrap; padding-bottom: .4rem; -webkit-overflow-scrolling: touch; }
+  .adm-next-item { min-width: 110px; flex: 0 0 auto; }
+  .step6-action-row { flex-direction: column; align-items: stretch; }
+  .step6-action-row .btn-goto-dashboard { text-align: center; }
+  .adm-download-grid { flex-wrap: wrap; }
+}
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ 480px: small phone ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+@media (max-width: 480px) {
+  .reg-card { padding: 1rem; }
+
+  /* Stepper */
+  .rs-num { width: 28px; height: 28px; font-size: .65rem; }
+  .rs-item { min-width: 36px; }
+
+  /* Step 2 */
+  .otp-box { width: 42px; height: 50px; font-size: 1.2rem; }
+
+  /* Step 4 */
+  .step4-action-row { grid-template-columns: 1fr; }
+  .step4-action-row .btn-reg-primary,
+  .step4-action-row .btn-back-step,
+  .step4-action-row .btn-draft { width: 100%; }
+
+  /* Step 5 */
+  .step5-action-row {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'proceed' 'draft' 'back';
+  }
+
+  /* Step 6 */
+  .adm-info-grid { grid-template-columns: 1fr; }
+  .adm-conf-banner { padding: 1rem; }
+  .adm-conf-right { flex-direction: column; align-items: flex-start; }
+  .adm-conf-badge-gold { width: 68px; height: 68px; font-size: .48rem; }
+  .adm-id-box { width: 100%; min-width: 0; text-align: left; }
+  .adm-doc-btn { min-width: 72px; padding: .5rem .55rem; }
+  .adm-doc-btn .adm-doc-icon { font-size: 1.2rem; }
+  .adm-conf-title { font-size: 1rem; }
+  .adm-steps-row { flex-wrap: wrap; }
+  .adm-next-item { min-width: calc(50% - .25rem); flex: 0 0 auto; }
+}
+
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ 360px: very small / compact phones ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+@media (max-width: 360px) {
+  .otp-box { width: 36px; height: 44px; font-size: 1.05rem; }
+  .otp-boxes { gap: .3rem; }
+  .adm-doc-btn { min-width: 64px; padding: .45rem .4rem; }
+  .adm-next-item { min-width: calc(50% - .2rem); }
+  .reg-page-title { font-size: clamp(.85rem, 3.5vw, 1.1rem); }
+  .reg-card { padding: .85rem; }
+  .adm-conf-badge-gold { width: 58px; height: 58px; }
+  .csc-bottom { flex-direction: column; align-items: flex-start; gap: .6rem; }
+}
+</style>
+
+<section class="reg-wrap">
+  <div class="container">
+    <div class="reg-3col">
+
+      <!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â LEFT SIDEBAR ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
+      <aside class="reg-left-bar">
+
+        <!-- STEP 2: Registration content -->
+        <div id="lsb-content-step2">
+          <h2 class="lsb-heading">Your Journey to a <span class="gold">Global Safety Career</span></h2>
+          <div class="lsb-badges">
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-industry"></i></div>
+              <span class="lsb-badge-text">Industry Focused Training</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-qrcode"></i></div>
+              <span class="lsb-badge-text">QR Verified Certificates</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+              <span class="lsb-badge-text">Experienced Trainers</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-briefcase"></i></div>
+              <span class="lsb-badge-text">Placement Guidance</span>
+            </div>
+          </div>
+          <div class="lsb-why-title">Why Choose NAISFT India?</div>
+          <ul class="lsb-why-list">
+            <li><i class="fas fa-check-circle"></i> ISO 9001:2015 Certified</li>
+            <li><i class="fas fa-check-circle"></i> MSME Registered</li>
+            <li><i class="fas fa-check-circle"></i> Govt. Recognized Courses</li>
+            <li><i class="fas fa-check-circle"></i> 100% Placement Assistance</li>
+            <li><i class="fas fa-check-circle"></i> International Eligibility</li>
+            <li><i class="fas fa-check-circle"></i> Career Growth Roadmap</li>
+          </ul>
+          <a href="courses.html" class="btn-brochure">
+            <i class="fas fa-book-open"></i> View Courses
+          </a>
+        </div>
+
+        <!-- STEP 2: OTP Verification content -->
+        <div id="lsb-content-step3" style="display:none;">
+          <h2 class="lsb-heading">One Step Away From <span class="gold">Your Enrollment</span></h2>
+
+          <div class="lsb-progress-list">
+            <div class="lsb-prog-item done">
+              <div class="lsb-prog-dot"><i class="fas fa-check"></i></div>
+              <div class="lsb-prog-text"><div class="lsb-prog-label">Step 1 - Registration Done</div></div>
+            </div>
+            <div class="lsb-prog-line"></div>
+            <div class="lsb-prog-item active">
+              <div class="lsb-prog-dot"><i class="fas fa-shield-alt"></i></div>
+              <div class="lsb-prog-text">
+                <div class="lsb-prog-label">Step 2 - OTP Verification</div>
+                <div class="lsb-prog-sub">Verify your mobile number</div>
+              </div>
+            </div>
+            <div class="lsb-prog-line"></div>
+            <div class="lsb-prog-item">
+              <div class="lsb-prog-dot">3</div>
+              <div class="lsb-prog-text"><div class="lsb-prog-label">Step 3 - Profile &amp; Docs</div></div>
+            </div>
+            <div class="lsb-prog-line"></div>
+            <div class="lsb-prog-item">
+              <div class="lsb-prog-dot">4</div>
+              <div class="lsb-prog-text"><div class="lsb-prog-label">Step 4 - Registration Confirmed</div></div>
+            </div>
+          </div>
+
+          <div class="lsb-badges" style="margin-top:1.5rem;">
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-lock"></i></div>
+              <span class="lsb-badge-text">256-Bit Encrypted OTP</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-user-shield"></i></div>
+              <span class="lsb-badge-text">Fraud Prevention System</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-eye-slash"></i></div>
+              <span class="lsb-badge-text">Privacy Protected Data</span>
+            </div>
+          </div>
+
+          <a href="courses.html" class="btn-brochure" style="margin-top:1.2rem;">
+            <i class="fas fa-book-open"></i> View Courses
+          </a>
+        </div>
+
+        <!-- STEP 3: Profile & Documents content -->
+        <div id="lsb-content-step4" style="display:none;">
+          <h2 class="lsb-heading">Completing Your <span class="gold">Registration Profile</span></h2>
+
+          <div class="lsb-progress-list">
+            <div class="lsb-prog-item done">
+              <div class="lsb-prog-dot"><i class="fas fa-check"></i></div>
+              <div class="lsb-prog-text"><div class="lsb-prog-label">Step 1 - Registration Done</div></div>
+            </div>
+            <div class="lsb-prog-line"></div>
+            <div class="lsb-prog-item done">
+              <div class="lsb-prog-dot"><i class="fas fa-check"></i></div>
+              <div class="lsb-prog-text"><div class="lsb-prog-label">Step 2 - OTP Verified</div></div>
+            </div>
+            <div class="lsb-prog-line"></div>
+            <div class="lsb-prog-item active">
+              <div class="lsb-prog-dot"><i class="fas fa-id-card"></i></div>
+              <div class="lsb-prog-text">
+                <div class="lsb-prog-label">Step 3 - Profile &amp; Docs</div>
+                <div class="lsb-prog-sub">Upload your documents</div>
+              </div>
+            </div>
+            <div class="lsb-prog-line"></div>
+            <div class="lsb-prog-item">
+              <div class="lsb-prog-dot">4</div>
+              <div class="lsb-prog-text"><div class="lsb-prog-label">Step 4 - Registration Confirmed</div></div>
+            </div>
+          </div>
+
+          <div class="lsb-badges" style="margin-top:1.5rem;">
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-file-shield"></i></div>
+              <span class="lsb-badge-text">Documents Stored Securely</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-qrcode"></i></div>
+              <span class="lsb-badge-text">Profile Verification Ready</span>
+            </div>
+            <div class="lsb-badge">
+              <div class="lsb-badge-icon"><i class="fas fa-briefcase"></i></div>
+              <span class="lsb-badge-text">Student Support Available</span>
+            </div>
+          </div>
+
+          <a href="courses.html" class="btn-brochure" style="margin-top:1.2rem;">
+            <i class="fas fa-book-open"></i> View Courses
+          </a>
+        </div>
+        <!-- STEP 4: Registration Confirmed content -->
+        <div id="lsb-content-step6" style="display:none;">
+          <h2 class="lsb-heading"><span class="gold">Registration</span> Submitted!</h2>
+          <div class="lsb-progress-list">
+            <div class="lsb-prog-item done"><div class="lsb-prog-dot"><i class="fas fa-check"></i></div><div class="lsb-prog-text"><div class="lsb-prog-label">Step 1 - Registration Done</div></div></div>
+            <div class="lsb-prog-line done"></div>
+            <div class="lsb-prog-item done"><div class="lsb-prog-dot"><i class="fas fa-check"></i></div><div class="lsb-prog-text"><div class="lsb-prog-label">Step 2 - OTP Verified</div></div></div>
+            <div class="lsb-prog-line done"></div>
+            <div class="lsb-prog-item done"><div class="lsb-prog-dot"><i class="fas fa-check"></i></div><div class="lsb-prog-text"><div class="lsb-prog-label">Step 3 - Profile &amp; Docs Submitted</div></div></div>
+            <div class="lsb-prog-line done"></div>
+            <div class="lsb-prog-item done"><div class="lsb-prog-dot"><i class="fas fa-check"></i></div><div class="lsb-prog-text"><div class="lsb-prog-label">Dashboard Access Active</div></div></div>
+          </div>
+          <div class="lsb-divider"></div>
+          <div class="lsb-trust-badges">
+            <div class="trust-badge"><i class="fas fa-shield-alt"></i> Secure Profile</div>
+            <div class="trust-badge"><i class="fas fa-certificate"></i> QR Certificate Ready</div>
+            <div class="trust-badge"><i class="fas fa-headset"></i> 24/7 Support</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â CENTER FORM ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
+      <div class="reg-center">
+        <div class="reg-page-title">STEP 1  STUDENT REGISTRATION</div>
+        <p class="reg-page-sub">Create Your Account in Just a Few Simple Steps</p>
+
+        <!-- 4-step progress bar -->
+        <div class="reg-stepper">
+          <div class="rs-item active" id="si-1" onclick="devStepJump(1)" style="cursor:pointer" title="[DEV] Jump to step 1">
+            <div class="rs-num">1</div>
+            <div class="rs-label">Registration</div>
+          </div>
+          <div class="rs-line" id="sl-1"></div>
+          <div class="rs-item" id="si-2" onclick="devStepJump(2)" style="cursor:pointer" title="[DEV] Jump to step 2">
+            <div class="rs-num">2</div>
+            <div class="rs-label">OTP<br>Verify</div>
+          </div>
+          <div class="rs-line" id="sl-2"></div>
+          <div class="rs-item" id="si-3" onclick="devStepJump(3)" style="cursor:pointer" title="[DEV] Jump to step 3">
+            <div class="rs-num">3</div>
+            <div class="rs-label">Profile &amp;<br>Documents</div>
+          </div>
+          <div class="rs-line" id="sl-3"></div>
+          <div class="rs-item" id="si-4" onclick="devStepJump(4)" style="cursor:pointer" title="[DEV] Jump to step 4">
+            <div class="rs-num">4</div>
+            <div class="rs-label">Registration<br>Confirmed</div>
+          </div>
+        </div>
+
+        <!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ REGISTRATION PANEL ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
+        <div class="reg-step-panel active" id="panel-register">
+
+          <div class="reg-alert error" id="regAlert">
+            <i class="fas fa-exclamation-circle"></i><span id="regAlertMsg"></span>
+          </div>
+
+          <!-- ONE unified card with all 5 sections -->
+          <div class="reg-card">
+
+            <!-- 1. BASIC INFORMATION -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">1. Basic Information</div>
+
+              <!-- Row 1: Full Name | Mobile | WhatsApp -->
+              <div class="rf-grid rf-grid-3">
+                <div class="rf-group" id="g-fullName">
+                  <label class="rf-label">Full Name <span class="req">*</span></label>
+                  <div style="position:relative;">
+                    <span style="position:absolute;left:.78rem;top:50%;transform:translateY(-50%);color:#9ca3af;font-size:.8rem;pointer-events:none;"><i class="fas fa-user"></i></span>
+                    <input type="text" id="fullName" class="rf-input" style="padding-left:2rem;" placeholder="Enter your full name">
+                  </div>
+                  <span class="rf-error-msg">Full name is required.</span>
+                </div>
+                <div class="rf-group" id="g-phone">
+                  <label class="rf-label">Mobile Number <span class="req">*</span></label>
+                  <div class="rf-phone-wrap">
+                    <div class="rf-phone-prefix">IN +91 <i class="fas fa-chevron-down" style="font-size:.48rem;color:#8a9ab5;margin-left:.15rem;"></i></div>
+                    <input type="tel" id="phone" class="rf-phone-input" placeholder="10-digit number" maxlength="10">
+                  </div>
+                  <span class="rf-error-msg">Valid 10-digit number required.</span>
+                </div>
+                <div class="rf-group" id="g-whatsapp">
+                  <label class="rf-label">WhatsApp Number</label>
+                  <div class="rf-check-row" style="margin-bottom:.45rem;">
+                    <input type="checkbox" id="wasSame" checked onchange="toggleWaField(this)">
+                    <label for="wasSame">Same as mobile number</label>
+                  </div>
+                  <div class="rf-phone-wrap" id="waPhoneWrap" style="display:none;">
+                    <div class="rf-phone-prefix">IN +91 <i class="fas fa-chevron-down" style="font-size:.48rem;color:#8a9ab5;margin-left:.15rem;"></i></div>
+                    <input type="tel" id="whatsapp" class="rf-phone-input" placeholder="WhatsApp number" maxlength="10">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Email | Alternate Mobile -->
+              <div class="rf-grid rf-grid-2" style="margin-top:.8rem;">
+                <div class="rf-group" id="g-email">
+                  <label class="rf-label">Email Address <span class="req">*</span></label>
+                  <input type="email" id="email" class="rf-input" placeholder="Enter email address">
+                  <span class="rf-error-msg">Valid email is required.</span>
+                </div>
+                <div class="rf-group" id="g-altPhone">
+                  <label class="rf-label">Alternate Mobile <span class="opt">(Optional)</span></label>
+                  <div class="rf-phone-wrap">
+                    <div class="rf-phone-prefix">IN +91</div>
+                    <input type="tel" id="altPhone" class="rf-phone-input" placeholder="Alternate number" maxlength="10">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. LOCATION INFORMATION -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">2. Location Information</div>
+              <div class="rf-grid rf-grid-3">
+                <div class="rf-group" id="g-country">
+                  <label class="rf-label">Country <span class="req">*</span></label>
+                  <select id="country" class="rf-input rf-select" onchange="onCountryChange()">
+                    <option value="">Select Country</option>
+                    <option value="India" selected>India</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="UAE">UAE</option>
+                    <option value="Saudi Arabia">Saudi Arabia</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  <span class="rf-error-msg">Country is required.</span>
+                </div>
+                <div class="rf-group" id="g-state">
+                  <label class="rf-label">State <span class="req">*</span></label>
+                  <select id="state" class="rf-input rf-select" onchange="onStateChange()">
+                    <option value="">Select State</option>
+                    <option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option>
+                    <option>Bihar</option><option>Chhattisgarh</option><option>Goa</option>
+                    <option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option>
+                    <option>Jharkhand</option><option>Karnataka</option><option>Kerala</option>
+                    <option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option>
+                    <option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option>
+                    <option>Odisha</option><option>Punjab</option><option>Rajasthan</option>
+                    <option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option>
+                    <option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option>
+                    <option>West Bengal</option><option>Delhi</option><option>Other</option>
+                  </select>
+                  <span class="rf-error-msg">State is required.</span>
+                </div>
+                <div class="rf-group" id="g-city">
+                  <label class="rf-label">City <span class="req">*</span></label>
+                  <select id="city" class="rf-input rf-select">
+                    <option value="">Select City</option>
+                  </select>
+                  <span class="rf-error-msg">City is required.</span>
+                </div>
+              </div>
+              <div class="rf-info-note">
+                <i class="fas fa-info-circle"></i>
+                <span>Please select your country, state and city. Complete address will be collected in Step 3 after OTP verification.</span>
+              </div>
+            </div>
+
+            <!-- 3. EDUCATIONAL INFORMATION -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">3. Educational Information</div>
+              <div class="rf-grid rf-grid-2">
+                <div class="rf-group" id="g-qualification">
+                  <label class="rf-label">Highest Qualification <span class="req">*</span></label>
+                  <select id="qualification" class="rf-input rf-select">
+                    <option value="">Select Qualification</option>
+                    <option>8th Pass</option>
+                    <option>10th Pass</option>
+                    <option>12th Pass</option>
+                    <option>ITI</option>
+                    <option>Diploma</option>
+                    <option>Graduate (B.Tech / B.Sc / BA / B.Com)</option>
+                    <option>Post Graduate</option>
+                    <option>PhD</option>
+                  </select>
+                  <span class="rf-error-msg">Qualification is required.</span>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Work Experience</label>
+                  <select id="workExperience" class="rf-input rf-select">
+                    <option value="">Select Experience</option>
+                    <option>Fresher (No Experience)</option>
+                    <option>Less than 1 Year</option>
+                    <option>1-2 Years</option>
+                    <option>2-5 Years</option>
+                    <option>5-10 Years</option>
+                    <option>10+ Years</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- 4. ACCOUNT SECURITY -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">4. Account Security</div>
+              <div class="rf-info-note" style="margin-bottom:.9rem;">
+                <i class="fas fa-info-circle"></i>
+                <span>Documents are not required at this stage. You will upload your photo, identity proof and certificates in Step 3 after OTP verification.</span>
+              </div>
+              <div class="rf-grid rf-grid-2">
+                <div class="rf-group" id="g-password">
+                  <label class="rf-label">Create Password <span class="req">*</span></label>
+                  <div class="rf-pass-wrap">
+                    <input type="password" id="password" class="rf-input" placeholder="Enter password" oninput="checkPassword()">
+                    <button type="button" class="rf-eye" onclick="togglePass('password',this)"><i class="fas fa-eye-slash"></i></button>
+                  </div>
+                  <span class="rf-error-msg" id="passErrMsg">Password does not meet requirements.</span>
+                </div>
+                <div class="rf-group" id="g-confirmPassword">
+                  <label class="rf-label">Confirm Password <span class="req">*</span></label>
+                  <div class="rf-pass-wrap">
+                    <input type="password" id="confirmPassword" class="rf-input" placeholder="Confirm password" oninput="checkConfirmPass()">
+                    <button type="button" class="rf-eye" onclick="togglePass('confirmPassword',this)"><i class="fas fa-eye-slash"></i></button>
+                  </div>
+                  <span class="rf-error-msg">Passwords do not match.</span>
+                </div>
+              </div>
+              <div class="pw-rules" style="margin-top:.62rem;">
+                <div class="pw-rule" id="pr-len"><i class="fas fa-circle"></i> Minimum 8 Characters</div>
+                <div class="pw-rule" id="pr-cap"><i class="fas fa-circle"></i> One Capital Letter (A-Z)</div>
+                <div class="pw-rule" id="pr-num"><i class="fas fa-circle"></i> One Number (0-9)</div>
+                <div class="pw-rule" id="pr-spc"><i class="fas fa-circle"></i> One Special Character (@#$%^&amp;*!)</div>
+              </div>
+            </div>
+
+          </div><!-- /.reg-card -->
+
+          <!-- Action Buttons -->
+          <button class="btn-reg-primary" id="sendOtpBtn" onclick="handleSendOtp()">
+            <i class="fas fa-paper-plane"></i> Continue Next
+          </button>
+          <div class="reg-secure"><i class="fas fa-lock"></i> Your information is 100% secure with us.</div>
+
+        </div><!-- /#panel-register -->
+
+        <!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ OTP VERIFICATION PANEL ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
+        <div class="reg-step-panel" id="panel-otp">
+
+          <!-- Info note -->
+          <div class="rf-info-note" style="margin-bottom:1.1rem;background:#fffbeb;border-color:#fde68a;">
+            <i class="fas fa-shield-alt" style="color:#d97706;"></i>
+            <span style="color:#92400e;">Your security is our priority. Please verify your contact details to continue.</span>
+          </div>
+
+          <!-- Main card -->
+          <div class="reg-card">
+
+            <!-- Section 1: Mobile Number Verification -->
+            <div class="otp-sec">
+              <div class="reg-sec-hd">1. Mobile Number Verification</div>
+
+              <div class="otp-field-hdr">
+                <div class="otp-field-label"><i class="fas fa-mobile-alt"></i> Mobile Number</div>
+                <span class="otp-badge-sent" id="mobileSentBadge" style="display:none;">
+                  <i class="fas fa-check-circle"></i> OTP Sent Successfully
+                </span>
+              </div>
+              <div class="otp-phone-val" id="mobileDisplay">
+                <i class="fas fa-mobile-alt"></i> +91 XXXXXXXXXX
+              </div>
+
+              <div class="otp-boxes-label">Enter 6 Digit OTP</div>
+              <div class="otp-boxes">
+                <input class="otp-box" type="tel" maxlength="1" id="otp1" oninput="otpInput(this,null,'otp2')" onkeydown="otpKeydown(event,this,null,'otp2')">
+                <input class="otp-box" type="tel" maxlength="1" id="otp2" oninput="otpInput(this,'otp1','otp3')" onkeydown="otpKeydown(event,this,'otp1','otp3')">
+                <input class="otp-box" type="tel" maxlength="1" id="otp3" oninput="otpInput(this,'otp2','otp4')" onkeydown="otpKeydown(event,this,'otp2','otp4')">
+                <input class="otp-box" type="tel" maxlength="1" id="otp4" oninput="otpInput(this,'otp3','otp5')" onkeydown="otpKeydown(event,this,'otp3','otp5')">
+                <input class="otp-box" type="tel" maxlength="1" id="otp5" oninput="otpInput(this,'otp4','otp6')" onkeydown="otpKeydown(event,this,'otp4','otp6')">
+                <input class="otp-box" type="tel" maxlength="1" id="otp6" oninput="otpInput(this,'otp5',null)" onkeydown="otpKeydown(event,this,'otp5',null)">
+              </div>
+
+              <div class="otp-verified-msg" id="mobileVerifiedMsg" style="display:none;">
+                <i class="fas fa-check-circle"></i> Mobile Verified Successfully!
+              </div>
+              <div class="reg-alert error" id="otpAlert" style="margin-bottom:.6rem;">
+                <i class="fas fa-exclamation-circle"></i><span id="otpAlertMsg"></span>
+              </div>
+
+              <div class="otp-links">
+                <button class="otp-link-btn" id="resendBtn" onclick="handleResendOtp()" disabled>
+                  <i class="fas fa-redo-alt"></i> Resend OTP <span id="otpTimer">(60s)</span>
+                </button>
+                <button class="otp-link-btn" onclick="showPanel('panel-register')">
+                  <i class="fas fa-edit"></i> Edit Mobile Number
+                </button>
+              </div>
+            </div>
+
+            <!-- Section 2: Email Verification -->
+            <div class="otp-sec">
+              <div class="otp-field-hdr" style="margin-bottom:.35rem;">
+                <div class="reg-sec-hd" style="margin-bottom:0;border:none;padding:0;">2. Email Verification</div>
+                <span class="otp-badge-sent" style="display:inline-flex;">
+                  <i class="fas fa-check-circle"></i> Verified
+                </span>
+              </div>
+
+              <div class="otp-field-hdr">
+                <div class="otp-field-label"><i class="fas fa-envelope"></i> Email Address</div>
+              </div>
+              <div class="otp-phone-val" id="emailDisplay" style="font-size:.88rem;font-family:'Poppins',sans-serif;font-weight:600;">
+                <i class="fas fa-envelope" style="color:#e2a800;font-size:.85rem;"></i> <span id="emailDisplayText">-</span>
+              </div>
+            </div>
+
+          </div><!-- /.reg-card -->
+
+          <!-- Action buttons -->
+          <div class="otp-action-row" id="otpActionRow">
+            <button class="btn-skip" onclick="handleBackToRegistration()">
+              Back
+              <small>Edit registration details</small>
+            </button>
+            <button class="btn-verify-email-now" id="verifyEmailNowBtn" onclick="showPanel('panel-docs')" disabled>
+              Continue Next
+              <small>Available after mobile OTP</small>
+            </button>
+          </div>
+
+          <!-- Main CTA: shown after mobile verified -->
+          <button class="btn-reg-primary" id="continueToDocsBtn" onclick="showPanel('panel-docs')" style="display:none;">
+            <i class="fas fa-check-circle"></i> Continue Next
+          </button>
+          <div class="reg-secure" id="otpContinueNote" style="display:none;">
+            <i class="fas fa-file-upload"></i> You can upload your documents in the next step
+          </div>
+
+          <!-- Trust bar -->
+          <div class="otp-trust-bar">
+            <div class="otp-trust-item"><i class="fas fa-lock"></i><span>OTP Encrypted Verification</span></div>
+            <div class="otp-trust-item"><i class="fas fa-user-shield"></i><span>Secure Student Registration</span></div>
+            <div class="otp-trust-item"><i class="fas fa-shield-alt"></i><span>Fraud Prevention System</span></div>
+            <div class="otp-trust-item"><i class="fas fa-eye-slash"></i><span>Privacy Protected</span></div>
+          </div>
+
+        </div><!-- /#panel-otp -->
+
+        <!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ SUCCESS PANEL (OTP done - bridge to Step 4) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
+        <div class="reg-step-panel" id="panel-success">
+          <div class="reg-card" style="text-align:center;padding:3rem 2rem;">
+            <div style="font-size:3rem;margin-bottom:1rem;color:#22c55e;"><i class="fas fa-check-circle"></i></div>
+            <h2 style="font-family:'Montserrat',sans-serif;font-weight:800;color:#0a1628;margin-bottom:.75rem;">Mobile Verified Successfully!</h2>
+            <p style="color:#4b5563;font-family:'Poppins',sans-serif;margin-bottom:.5rem;">Enrollment No: <strong id="enrollNoDisplay" style="color:#0a1628;"></strong></p>
+            <p style="color:#6b7280;font-family:'Poppins',sans-serif;font-size:.875rem;margin-bottom:2rem;">Your account is ready. Now complete your profile and upload required documents to proceed.</p>
+            <button onclick="showPanel('panel-docs')" class="btn-reg-primary" style="max-width:300px;margin:0 auto;">
+              <i class="fas fa-id-card"></i> Continue to Profile &amp; Documents &rarr;
+            </button>
+          </div>
+        </div><!-- /#panel-success -->
+
+        <!-- ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ STEP 4: PROFILE & DOCUMENT VERIFICATION ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ -->
+        <div class="reg-step-panel" id="panel-docs">
+
+          <div class="reg-card">
+
+            <!-- 1. PERSONAL DETAILS -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">1. Personal Details</div>
+
+              <!-- Profile photo + name row -->
+              <div class="photo-upload-wrap">
+                <div class="photo-circle" id="photoCircle" onclick="document.getElementById('photoFileInput').click()" title="Click to upload photo">
+                  <img id="photoPreview" src="" alt="Profile Photo">
+                  <div class="photo-placeholder" id="photoPlaceholder">
+                    <i class="fas fa-camera"></i>
+                    <span>Upload Photo</span>
+                  </div>
+                </div>
+                <div class="photo-upload-info">
+                  <label class="rf-label">Student Photo <span class="req">*</span></label>
+                  <p>Clear passport-size photo<br>JPG/PNG - Max 2 MB - White background preferred</p>
+                  <input type="file" id="photoFileInput" accept="image/*" style="display:none;" onchange="previewPhoto(this)">
+                </div>
+              </div>
+
+              <!-- Name row -->
+              <div class="rf-grid rf-grid-3" style="margin-bottom:.8rem;">
+                <div class="rf-group" id="g-s4-fullName">
+                  <label class="rf-label">Full Name <span class="req">*</span></label>
+                  <input type="text" id="s4-fullName" class="rf-input" placeholder="Full name" readonly style="background:#f4f6fb;">
+                </div>
+                <div class="rf-group" id="g-s4-fatherName">
+                  <label class="rf-label">Father's Name <span class="req">*</span></label>
+                  <input type="text" id="s4-fatherName" class="rf-input" placeholder="Father's full name">
+                  <span class="rf-error-msg">Father's name is required.</span>
+                </div>
+                <div class="rf-group" id="g-s4-motherName">
+                  <label class="rf-label">Mother's Name <span class="req">*</span></label>
+                  <input type="text" id="s4-motherName" class="rf-input" placeholder="Mother's full name">
+                  <span class="rf-error-msg">Mother's name is required.</span>
+                </div>
+              </div>
+
+              <!-- DOB / Gender / Blood / Marital -->
+              <div class="rf-grid rf-grid-3" style="margin-bottom:.8rem;">
+                <div class="rf-group" id="g-s4-dob">
+                  <label class="rf-label">Date of Birth <span class="req">*</span></label>
+                  <input type="date" id="s4-dob" class="rf-input">
+                  <span class="rf-error-msg">Date of birth is required.</span>
+                </div>
+                <div class="rf-group" id="g-s4-gender">
+                  <label class="rf-label">Gender <span class="req">*</span></label>
+                  <select id="s4-gender" class="rf-input rf-select">
+                    <option value="">Select Gender</option>
+                    <option>Male</option><option>Female</option><option>Other</option>
+                  </select>
+                  <span class="rf-error-msg">Gender is required.</span>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Blood Group</label>
+                  <select id="s4-bloodGroup" class="rf-input rf-select">
+                    <option value="">Select Blood Group</option>
+                    <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+                    <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="rf-grid rf-grid-2">
+                <div class="rf-group">
+                  <label class="rf-label">Marital Status</label>
+                  <select id="s4-marital" class="rf-input rf-select">
+                    <option value="">Select Status</option>
+                    <option>Single</option><option>Married</option><option>Other</option>
+                  </select>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Nationality <span class="req">*</span></label>
+                  <select id="s4-nationality" class="rf-input rf-select" onchange="onNationalityChange()">
+                    <option value="">Select Nationality</option>
+                    <option value="indian">Indian</option>
+                    <option value="international">International</option>
+                  </select>
+                  <span class="rf-error-msg">Please select your nationality.</span>
+                </div>
+              </div>
+
+              <div class="rf-grid rf-grid-2" id="g-s4-idproof-row" style="display:none;">
+                <div class="rf-group">
+                  <label class="rf-label" id="s4-idtype-label">Identity Proof Type <span class="req">*</span></label>
+                  <select id="s4-idtype" class="rf-input rf-select" onchange="onIdTypeChange()">
+                    <option value="">Select Type</option>
+                  </select>
+                  <span class="rf-error-msg">Please select an identity proof type.</span>
+                </div>
+                <div class="rf-group" id="g-s4-idnum">
+                  <label class="rf-label" id="s4-idnum-label">Identity Number <span class="req">*</span></label>
+                  <input type="text" id="s4-idnum" class="rf-input" placeholder="Enter identity number">
+                  <span class="rf-error-msg" id="s4-idnum-err">Please enter a valid identity number.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. CONTACT & EMERGENCY DETAILS -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">2. Contact &amp; Emergency Details</div>
+
+              <!-- Pre-filled from registration (read-only) -->
+              <div class="rf-grid rf-grid-3" style="margin-bottom:.8rem;">
+                <div class="rf-group">
+                  <label class="rf-label">Mobile Number</label>
+                  <input type="text" id="s4-mobile" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Email Address</label>
+                  <input type="text" id="s4-email" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">WhatsApp Number</label>
+                  <input type="text" id="s4-whatsapp" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+              </div>
+
+              <!-- Emergency contact -->
+              <div class="rf-grid rf-grid-3">
+                <div class="rf-group" id="g-s4-emergName">
+                  <label class="rf-label">Emergency Contact Name <span class="req">*</span></label>
+                  <input type="text" id="s4-emergName" class="rf-input" placeholder="Contact person's name">
+                  <span class="rf-error-msg">Emergency contact name required.</span>
+                </div>
+                <div class="rf-group" id="g-s4-emergPhone">
+                  <label class="rf-label">Emergency Contact Number <span class="req">*</span></label>
+                  <div class="rf-phone-wrap">
+                    <div class="rf-phone-prefix">IN +91</div>
+                    <input type="tel" id="s4-emergPhone" class="rf-phone-input" placeholder="10-digit number" maxlength="10">
+                  </div>
+                  <span class="rf-error-msg">Valid emergency number required.</span>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Relation</label>
+                  <select id="s4-relation" class="rf-input rf-select">
+                    <option value="">Select Relation</option>
+                    <option>Father</option><option>Mother</option><option>Spouse</option>
+                    <option>Sibling</option><option>Guardian</option><option>Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. ADDRESS DETAILS -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">3. Address Details</div>
+
+              <div class="rf-grid rf-grid-3" style="margin-bottom:.8rem;">
+                <div class="rf-group">
+                  <label class="rf-label">Country</label>
+                  <input type="text" id="s4-country" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">State</label>
+                  <input type="text" id="s4-state" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">City / District</label>
+                  <input type="text" id="s4-city" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+              </div>
+
+              <div class="rf-grid rf-grid-2" style="margin-bottom:.8rem;">
+                <div class="rf-group" id="g-s4-pincode">
+                  <label class="rf-label">Pin Code <span class="req">*</span></label>
+                  <input type="text" id="s4-pincode" class="rf-input" placeholder="6-digit pin code" maxlength="6">
+                  <span class="rf-error-msg">Valid 6-digit pin code required.</span>
+                </div>
+                <div class="rf-group" id="g-s4-street">
+                  <label class="rf-label">Street Address / Locality <span class="req">*</span></label>
+                  <input type="text" id="s4-street" class="rf-input" placeholder="House no., street, locality">
+                  <span class="rf-error-msg">Street address is required.</span>
+                </div>
+              </div>
+
+              <div class="rf-check-row">
+                <input type="checkbox" id="s4-sameAddr" checked>
+                <label for="s4-sameAddr">Same address for certificate delivery</label>
+              </div>
+            </div>
+
+            <!-- 4. EDUCATION & EXPERIENCE DETAILS -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">4. Education &amp; Experience Details</div>
+
+              <div class="rf-grid rf-grid-3" style="margin-bottom:.8rem;">
+                <div class="rf-group">
+                  <label class="rf-label">Highest Qualification</label>
+                  <input type="text" id="s4-qualification" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+                <div class="rf-group" id="g-s4-passYear">
+                  <label class="rf-label">Passing Year <span class="req">*</span></label>
+                  <select id="s4-passYear" class="rf-input rf-select">
+                    <option value="">Select Year</option>
+                  </select>
+                  <span class="rf-error-msg">Passing year is required.</span>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Work Experience</label>
+                  <input type="text" id="s4-experience" class="rf-input" readonly style="background:#f4f6fb;">
+                </div>
+              </div>
+
+              <div class="rf-info-note" style="margin-bottom:.8rem;">
+                <i class="fas fa-info-circle"></i>
+                <span>Freshers are eligible for all courses. Experience holders receive a Bonus Experience Certificate.</span>
+              </div>
+
+              <div class="rf-grid rf-grid-2" style="margin-bottom:.8rem;">
+                <div class="rf-group" id="g-s4-institute">
+                  <label class="rf-label">Institute / College Name <span class="req">*</span></label>
+                  <input type="text" id="s4-institute" class="rf-input" placeholder="Name of your school/college">
+                  <span class="rf-error-msg">Institute name is required.</span>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Board / University</label>
+                  <input type="text" id="s4-board" class="rf-input" placeholder="e.g. CBSE, BSEB, Patna University">
+                </div>
+              </div>
+
+              <div class="rf-grid rf-grid-2">
+                <div class="rf-group">
+                  <label class="rf-label">Primary Language</label>
+                  <select id="s4-primaryLang" class="rf-input rf-select">
+                    <option value="">Select Language</option>
+                    <option>Hindi</option><option>English</option><option>Bengali</option>
+                    <option>Bhojpuri</option><option>Urdu</option><option>Maithili</option><option>Other</option>
+                  </select>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Additional Language <span class="opt">(Optional)</span></label>
+                  <select id="s4-addLang" class="rf-input rf-select">
+                    <option value="">Select Language</option>
+                    <option>Hindi</option><option>English</option><option>Bengali</option>
+                    <option>Bhojpuri</option><option>Urdu</option><option>Maithili</option><option>Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. BATCH & LEARNING MODE -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">5. Batch &amp; Learning Mode</div>
+
+              <div class="rf-grid rf-grid-2">
+                <div class="rf-group" id="g-s4-batch">
+                  <label class="rf-label">Preferred Batch <span class="req">*</span></label>
+                  <select id="s4-batch" class="rf-input rf-select">
+                    <option value="">Select Preferred Batch</option>
+                    <option>Morning Batch (7 AM - 10 AM)</option>
+                    <option>Day Batch (10 AM - 1 PM)</option>
+                    <option>Evening Batch (4 PM - 7 PM)</option>
+                    <option>Weekend Batch (Sat - Sun)</option>
+                    <option>Online Flexible</option>
+                  </select>
+                  <span class="rf-error-msg">Please select a batch.</span>
+                </div>
+                <div class="rf-group">
+                  <label class="rf-label">Learning Mode <span class="req">*</span></label>
+                  <div class="learn-mode-group">
+                    <label class="learn-mode-opt">
+                      <input type="radio" name="learningMode" value="Offline" checked> Offline
+                    </label>
+                    <label class="learn-mode-opt">
+                      <input type="radio" name="learningMode" value="Online"> Online
+                    </label>
+                    <label class="learn-mode-opt">
+                      <input type="radio" name="learningMode" value="Hybrid"> Hybrid
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rf-info-note" style="margin-top:.7rem;">
+                <i class="fas fa-info-circle"></i>
+                <span>Batch can be changed before admission starts, subject to seat availability.</span>
+              </div>
+            </div>
+
+            <!-- 6. DOCUMENT UPLOAD -->
+            <div class="reg-sec">
+              <div class="reg-sec-hd">6. Document Upload</div>
+
+              <div class="doc-upload-grid">
+
+                <!-- Student Photo -->
+                <div class="doc-upload-box" id="docBox-photo" onclick="triggerDocUpload('docInput-photo','docBox-photo','docBadge-photo')">
+                  <button class="doc-remove-btn" onclick="removeDoc(event,'docBox-photo','docBadge-photo','docInput-photo')"><i class="fas fa-times"></i></button>
+                  <div class="doc-upload-icon"><i class="fas fa-camera"></i></div>
+                  <div class="doc-upload-label">Student Photo</div>
+                  <div class="doc-upload-sub">JPG/PNG - Max 2 MB</div>
+                  <div class="doc-file-name" id="docName-photo" style="display:none;"></div>
+                  <button class="doc-upload-btn"><i class="fas fa-upload"></i> Upload</button>
+                  <input type="file" id="docInput-photo" accept="image/*" style="display:none;" onchange="onDocUploaded(this,'docBox-photo','docName-photo','docBadge-photo')">
+                </div>
+
+                <!-- Identity Proof -->
+                <div class="doc-upload-box" id="docBox-aadhaar" onclick="triggerDocUpload('docInput-aadhaar','docBox-aadhaar','docBadge-aadhaar')">
+                  <button class="doc-remove-btn" onclick="removeDoc(event,'docBox-aadhaar','docBadge-aadhaar','docInput-aadhaar')"><i class="fas fa-times"></i></button>
+                  <div class="doc-upload-icon"><i class="fas fa-id-card"></i></div>
+                  <div class="doc-upload-label">Govt. Identity Proof</div>
+                  <div class="doc-upload-sub">PDF/JPG/PNG - Max 5 MB</div>
+                  <div class="doc-file-name" id="docName-aadhaar" style="display:none;"></div>
+                  <button class="doc-upload-btn"><i class="fas fa-upload"></i> Upload</button>
+                  <input type="file" id="docInput-aadhaar" accept="image/*,.pdf" style="display:none;" onchange="onDocUploaded(this,'docBox-aadhaar','docName-aadhaar','docBadge-aadhaar')">
+                </div>
+
+                <!-- Education Certificate -->
+                <div class="doc-upload-box" id="docBox-cert" onclick="triggerDocUpload('docInput-cert','docBox-cert','docBadge-cert')">
+                  <button class="doc-remove-btn" onclick="removeDoc(event,'docBox-cert','docBadge-cert','docInput-cert')"><i class="fas fa-times"></i></button>
+                  <div class="doc-upload-icon"><i class="fas fa-graduation-cap"></i></div>
+                  <div class="doc-upload-label">Education Certificate</div>
+                  <div class="doc-upload-sub">10th/12th Marksheet - PDF/JPG/PNG - Max 5 MB</div>
+                  <div class="doc-file-name" id="docName-cert" style="display:none;"></div>
+                  <button class="doc-upload-btn"><i class="fas fa-upload"></i> Upload</button>
+                  <input type="file" id="docInput-cert" accept="image/*,.pdf" style="display:none;" onchange="onDocUploaded(this,'docBox-cert','docName-cert','docBadge-cert')">
+                </div>
+
+                <!-- Additional (Optional) -->
+                <div class="doc-upload-box optional" id="docBox-extra" onclick="triggerDocUpload('docInput-extra','docBox-extra','docBadge-extra')">
+                  <div class="doc-optional-badge">Optional</div>
+                  <button class="doc-remove-btn" onclick="removeDoc(event,'docBox-extra','docBadge-extra','docInput-extra')"><i class="fas fa-times"></i></button>
+                  <div class="doc-upload-icon"><i class="fas fa-plus"></i></div>
+                  <div class="doc-upload-label">Additional Document</div>
+                  <div class="doc-upload-sub">Experience Letter / Other - Max 5 MB</div>
+                  <div class="doc-file-name" id="docName-extra" style="display:none;"></div>
+                  <button class="doc-upload-btn"><i class="fas fa-upload"></i> Upload</button>
+                  <input type="file" id="docInput-extra" accept="image/*,.pdf" style="display:none;" onchange="onDocUploaded(this,'docBox-extra','docName-extra','docBadge-extra')">
+                </div>
+
+              </div><!-- /.doc-upload-grid -->
+            </div>
+
+          </div><!-- /.reg-card -->
+
+          <!-- Step 4 action row -->
+          <div class="step4-action-row">
+            <button class="btn-back-step" onclick="showPanel('panel-otp')">
+              <i class="fas fa-arrow-left"></i> Back to OTP
+            </button>
+            <button class="btn-draft" id="saveDraftBtn" onclick="handleSaveDraft()">
+              <i class="fas fa-save"></i> Save as Draft
+            </button>
+            <button class="btn-reg-primary" id="continueToFeeBtn" onclick="handleContinueToFee()">
+              <i class="fas fa-arrow-right"></i> Submit &amp; Continue
+            </button>
+          </div>
+
+          <div class="reg-secure" style="margin-top:.6rem;">
+            <i class="fas fa-lock"></i> Your documents are encrypted and stored securely.
+          </div>
+
+        </div><!-- /#panel-docs -->
+
+        <!-- STEP 4: REGISTRATION CONFIRMED -->
+        <div class="reg-step-panel" id="panel-confirmed">
+          <div class="adm-confirmed-banner">
+            <div class="adm-conf-left">
+              <div class="adm-conf-title"><i class="fas fa-check-circle"></i> Registration Completed Successfully!</div>
+              <div class="adm-conf-greeting">Congratulations, <span id="c6-name">Student</span>!</div>
+              <div class="adm-conf-sub">Your NAISFT registration profile has been submitted. The center team will review your profile and documents, while your student dashboard remains active.</div>
+              <div class="adm-conf-badges">
+                <span class="adm-conf-badge"><i class="fas fa-check"></i> Profile Submitted</span>
+                <span class="adm-conf-badge"><i class="fas fa-check"></i> Documents Received</span>
+                <span class="adm-conf-badge"><i class="fas fa-check"></i> Dashboard Active</span>
+              </div>
+            </div>
+            <div class="adm-conf-right">
+              <div class="adm-id-box">
+                <div class="adm-id-label">Registration Status</div>
+                <div class="adm-id-val" id="c6-admNo">Under Review</div>
+                <div class="adm-id-sub">Final admission details will appear in your dashboard</div>
+              </div>
+              <div class="adm-conf-badge-gold">PROFILE<br>SUBMITTED</div>
+            </div>
+          </div>
+
+          <div class="adm-info-grid">
+            <div class="adm-info-card">
+              <div class="adm-info-card-title"><i class="fas fa-user-graduate" style="margin-right:.3rem;"></i> Registration Details</div>
+              <div class="adm-info-row"><span class="adm-info-key">Student Name</span><span class="adm-info-val" id="c6-sname">-</span></div>
+              <div class="adm-info-row"><span class="adm-info-key">Profile</span><span class="adm-info-val" id="c6-course">Submitted</span></div>
+              <div class="adm-info-row"><span class="adm-info-key">Documents</span><span class="adm-info-val" id="c6-duration">Under Review</span></div>
+              <div class="adm-info-row"><span class="adm-info-key">Dashboard</span><span class="adm-info-val green"><i class="fas fa-check-circle"></i> Active</span></div>
+            </div>
+            <div class="adm-info-card">
+              <div class="adm-info-card-title"><i class="fas fa-folder-open" style="margin-right:.3rem;"></i> Document Status</div>
+              <div class="adm-verified-row ok"><i class="fas fa-check-circle"></i> Student Photo - Submitted</div>
+              <div class="adm-verified-row ok"><i class="fas fa-check-circle"></i> Identity Proof - Submitted</div>
+              <div class="adm-verified-row ok"><i class="fas fa-check-circle"></i> Academic Certificate - Submitted</div>
+              <div class="adm-info-note" style="color:#4ade80;">Your documents are ready for center verification.</div>
+            </div>
+            <div class="adm-info-card">
+              <div class="adm-info-card-title"><i class="fas fa-users" style="margin-right:.3rem;"></i> Next Updates</div>
+              <div class="adm-info-row"><span class="adm-info-key">Batch</span><span class="adm-info-val" id="c6-batch">After review</span></div>
+              <div class="adm-info-row"><span class="adm-info-key">Orientation</span><span class="adm-info-val amber">To be announced</span></div>
+              <div class="adm-info-row"><span class="adm-info-key">Support</span><span class="adm-info-val green">Available</span></div>
+              <div class="adm-info-note">Batch and class schedule details will be updated in your student dashboard.</div>
+            </div>
+          </div>
+
+          <div class="reg-card" style="padding:1.1rem 1.2rem;margin-bottom:1rem;">
+            <div class="adm-download-title"><i class="fas fa-download" style="color:#e2a800;"></i> Download Your Registration Documents</div>
+            <div class="adm-download-grid">
+              <a href="#" class="adm-doc-btn ready" onclick="handleDownloadDoc(event,'admission-letter')"><span class="adm-doc-icon"><i class="fas fa-file-alt"></i></span><span class="adm-doc-label">Registration Copy</span><span class="adm-doc-status">Ready Soon</span></a>
+              <a href="#" class="adm-doc-btn" onclick="handleDownloadDoc(event,'student-id')"><span class="adm-doc-icon"><i class="fas fa-id-card"></i></span><span class="adm-doc-label">Student ID Card</span><span class="adm-doc-status">After approval</span></a>
+              <a href="#" class="adm-doc-btn" onclick="handleDownloadDoc(event,'schedule')"><span class="adm-doc-icon"><i class="fas fa-calendar-alt"></i></span><span class="adm-doc-label">Class Schedule</span><span class="adm-doc-status">After batch allocation</span></a>
+            </div>
+          </div>
+
+          <div class="adm-dashboard-box">
+            <div>
+              <div class="adm-dash-title"><i class="fas fa-rocket"></i> Your Student Dashboard is Ready!</div>
+              <div class="adm-dash-sub">Access your dashboard to view your profile status, enrolled courses, class schedule, assignments, certificates, and support.</div>
+              <div class="adm-dash-icons">
+                <div class="adm-dash-icon"><i class="fas fa-user-check"></i><small>Profile Status</small></div>
+                <div class="adm-dash-icon"><i class="fas fa-book-open"></i><small>Courses</small></div>
+                <div class="adm-dash-icon"><i class="fas fa-certificate"></i><small>Certificate</small></div>
+                <div class="adm-dash-icon"><i class="fas fa-headset"></i><small>Support</small></div>
+              </div>
+            </div>
+            <div><a href="student-dashboard.html" class="btn-goto-dashboard">Go to Student Dashboard -></a></div>
+          </div>
+
+          <div class="reg-card" style="padding:1.1rem 1.2rem;margin-bottom:1rem;">
+            <div class="adm-next-title"><i class="fas fa-route" style="color:#e2a800;"></i> Your Next Steps</div>
+            <div class="adm-steps-row">
+              <div class="adm-next-item"><div class="adm-next-num">1</div><div class="adm-next-label">Open Student Dashboard</div></div>
+              <div class="adm-next-item"><div class="adm-next-num">2</div><div class="adm-next-label">Track Profile Verification</div></div>
+              <div class="adm-next-item"><div class="adm-next-num">3</div><div class="adm-next-label">Check Batch Updates</div></div>
+              <div class="adm-next-item"><div class="adm-next-num">4</div><div class="adm-next-label">Start Learning Journey</div></div>
+            </div>
+          </div>
+
+          <div class="step6-action-row">
+            <button class="btn-reg-primary" onclick="handleDownloadDoc(null,'admission-letter')"><i class="fas fa-download"></i> Download Registration Copy</button>
+            <a href="student-dashboard.html" class="btn-goto-dashboard" style="padding:.6rem 1.1rem;"><i class="fas fa-tachometer-alt"></i> Go to Student Dashboard -></a>
+          </div>
+          <div class="reg-secure" style="margin-top:.6rem;"><i class="fas fa-shield-alt"></i> Secure registration data | QR Verified Certificates | 24/7 Support</div>
+        </div><!-- /#panel-confirmed -->
+
+      </div><!-- /.reg-center -->
+
+      <!-- ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â RIGHT SIDEBAR ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â -->
+      <aside class="reg-right-bar">
+
+        <!-- Registration Summary -->
+        <div class="rsb-box">
+          <div class="rsb-title">Registration Summary</div>
+          <div class="rsb-row" id="sb-row-name" style="display:none;">
+            <i class="fas fa-user"></i>
+            <div>
+              <div class="rsb-key">Student Name</div>
+              <div class="rsb-val" id="sb-name">-</div>
+            </div>
+          </div>
+          <div class="rsb-row" id="sb-row-mobile" style="display:none;">
+            <i class="fas fa-mobile-alt"></i>
+            <div>
+              <div class="rsb-key">Mobile Number</div>
+              <div class="rsb-val" id="sb-mobile">-</div>
+            </div>
+          </div>
+          <div class="rsb-row" id="sb-row-email" style="display:none;">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <div class="rsb-key">Email</div>
+              <div class="rsb-val" id="sb-email">-</div>
+            </div>
+          </div>
+          <div class="rsb-row" id="sb-row-qual" style="display:none;">
+            <i class="fas fa-graduation-cap"></i>
+            <div>
+              <div class="rsb-key">Qualification</div>
+              <div class="rsb-val" id="sb-qualification">-</div>
+            </div>
+          </div>
+          <div class="rsb-row" id="sb-row-loc" style="display:none;">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <div class="rsb-key">Location</div>
+              <div class="rsb-val" id="sb-location">-</div>
+            </div>
+          </div>
+          <div class="rsb-row">
+            <i class="fas fa-dot-circle"></i>
+            <div>
+              <div class="rsb-key">Registration Status</div>
+              <div class="rsb-status"><span id="sb-status-text">Registration in Progress</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verification Status (shown on OTP panel) -->
+        <div class="rsb-box" id="rsb-verify-box" style="display:none;">
+          <div class="rsb-title">Verification Status</div>
+          <div class="rsb-verify-row">
+            <div class="rsb-verify-label"><i class="fas fa-mobile-alt"></i> Mobile</div>
+            <span class="rsb-verify-badge amber" id="vb-mobile"><i class="fas fa-clock"></i> Pending</span>
+          </div>
+          <div class="rsb-verify-row">
+            <div class="rsb-verify-label"><i class="fas fa-envelope"></i> Email</div>
+            <span class="rsb-verify-badge amber" id="vb-email"><i class="fas fa-clock"></i> Pending</span>
+          </div>
+          <div class="rsb-verify-status-note" id="vb-status-note">
+            Email verified. Complete mobile verification to continue.
+          </div>
+        </div>
+
+        <!-- Why Choose (hidden on OTP panel) -->
+        <div class="rsb-box" id="rsb-why-box">
+          <div class="rsb-title">Why Choose NAISFT India?</div>
+          <ul class="rsb-why-list">
+            <li><i class="fas fa-check-circle"></i> ISO Certified Institute</li>
+            <li><i class="fas fa-check-circle"></i> Industry Focused Training</li>
+            <li><i class="fas fa-check-circle"></i> QR Verified Certificates</li>
+            <li><i class="fas fa-check-circle"></i> Experienced Trainers</li>
+            <li><i class="fas fa-check-circle"></i> Placement Guidance</li>
+            <li><i class="fas fa-check-circle"></i> Career Growth Opportunities</li>
+          </ul>
+        </div>
+
+        <!-- Document Status (shown on Step 4) -->
+        <div class="rsb-box" id="rsb-doc-status-box" style="display:none;">
+          <div class="rsb-title">Document Status</div>
+          <div class="rsb-doc-row">
+            <div class="rsb-doc-name"><i class="fas fa-camera"></i> Student Photo</div>
+            <span class="rsb-doc-badge pending" id="docBadge-photo"><i class="fas fa-clock"></i> Pending</span>
+          </div>
+          <div class="rsb-doc-row">
+            <div class="rsb-doc-name"><i class="fas fa-id-card"></i> Identity Proof</div>
+            <span class="rsb-doc-badge pending" id="docBadge-aadhaar"><i class="fas fa-clock"></i> Pending</span>
+          </div>
+          <div class="rsb-doc-row">
+            <div class="rsb-doc-name"><i class="fas fa-graduation-cap"></i> Education Cert.</div>
+            <span class="rsb-doc-badge pending" id="docBadge-cert"><i class="fas fa-clock"></i> Pending</span>
+          </div>
+          <div class="rsb-doc-row">
+            <div class="rsb-doc-name"><i class="fas fa-file-alt"></i> Additional Doc</div>
+            <span class="rsb-doc-badge optional" id="docBadge-extra"><i class="fas fa-minus"></i> Optional</span>
+          </div>
+        </div>
+
+        <!-- Profile Completion (shown on Step 4) -->
+        <div class="rsb-box" id="rsb-profile-box" style="display:none;">
+          <div class="rsb-title">Profile Completion</div>
+          <div class="rsb-progress-wrap">
+            <div class="rsb-progress-label">
+              <span style="color:rgba(255,255,255,.6);">Progress</span>
+              <span class="rsb-pct" id="rsb-profile-pct">0%</span>
+            </div>
+            <div class="rsb-progress-bar">
+              <div class="rsb-progress-fill" id="rsb-profile-fill" style="width:0%"></div>
+            </div>
+          </div>
+          <div style="font-size:.65rem;color:rgba(255,255,255,.38);font-family:'Poppins',sans-serif;margin-top:.6rem;">Complete all sections to submit your registration</div>
+        </div>
+
+        <!-- Documents Security (shown on Step 4) -->
+        <div class="rsb-box" id="rsb-secure-box" style="display:none;">
+          <div class="rsb-title">Your Documents Are Secure</div>
+          <div class="rsb-secure-item"><i class="fas fa-lock"></i> 256-Bit SSL Encrypted</div>
+          <div class="rsb-secure-item"><i class="fas fa-eye-slash"></i> Privacy Protected</div>
+          <div class="rsb-secure-item"><i class="fas fa-landmark"></i> Government Compliant</div>
+          <div class="rsb-secure-item"><i class="fas fa-shield-alt"></i> Fraud Prevention Active</div>
+        </div>
+
+
+        <!-- Important Notes (shown on Step 6) -->
+        <div class="rsb-box" id="rsb-conf-notes-box" style="display:none;">
+          <div class="rsb-title"><i class="fas fa-info-circle" style="color:#e2a800;margin-right:.35rem;"></i> Important Notes</div>
+          <div class="rsb-note-item"><i class="fas fa-circle"></i> Registration review is subject to successful document verification.</div>
+          <div class="rsb-note-item"><i class="fas fa-circle"></i> Certificate is issued after course completion and assessment.</div>
+          <div class="rsb-note-item"><i class="fas fa-circle"></i> Keep your registered email and mobile number active for all future updates.</div>
+          <div class="rsb-note-item"><i class="fas fa-circle"></i> For corrections in name or details, contact admission support immediately.</div>
+          <div class="rsb-note-item"><i class="fas fa-circle"></i> Profile verification may take 24-48 working hours.</div>
+        </div>
+
+        <!-- Join Student Community (shown on Step 6) -->
+        <div class="rsb-box light" id="rsb-community-box" style="display:none;">
+          <div class="rsb-title" style="color:#0a1628;"><i class="fab fa-whatsapp" style="color:#22c55e;margin-right:.35rem;"></i> Join Student Community</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:.67rem;color:#374151;line-height:1.55;margin-bottom:.65rem;">Stay connected with your batch, receive important updates and announcements.</div>
+          <a href="https://wa.me/917488047888?text=Hello%20NAISFT%20India%2C%20I%20want%20to%20join%20the%20student%20community." target="_blank" class="btn-whatsapp" style="font-size:.68rem;padding:.45rem .7rem;">
+            <i class="fab fa-whatsapp"></i> Request WhatsApp Group Access
+          </a>
+        </div>
+
+        <!-- Need Help (shown on Step 6 variant) -->
+        <div class="rsb-box light" id="rsb-conf-help-box" style="display:none;">
+          <div class="rsb-title" style="color:#0a1628;"><i class="fas fa-life-ring" style="color:#e2a800;margin-right:.35rem;"></i> Need Help?</div>
+          <div style="font-family:'Poppins',sans-serif;font-size:.67rem;color:#374151;margin-bottom:.5rem;">Our admission counselors are here to help you.</div>
+          <a href="tel:+917488047888" style="display:flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;color:#0a1628;text-decoration:none;margin-bottom:.4rem;"><i class="fas fa-user-tie" style="color:#e2a800;"></i> Contact Counselor</a>
+          <a href="mailto:support@naisftindia.com" style="display:flex;align-items:center;gap:.4rem;font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;color:#0a1628;text-decoration:none;"><i class="fas fa-ticket-alt" style="color:#e2a800;"></i> Raise Support Ticket</a>
+        </div>
+<!-- Need Help -->
+        <div class="rsb-box">
+          <div class="rsb-title" style="color:#fff;">Need Help?</div>
+          <div class="rsb-help-sub">We're here to assist you</div>
+          <a href="tel:+917488047888" class="rsb-phone"><i class="fas fa-phone-alt"></i> +91 74880 47888</a>
+          <a href="https://wa.me/917488047888?text=Hello%20NAISFT%20India%2C%20I%20need%20help%20with%20admission." target="_blank" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp Support
+          </a>
+          <a href="mailto:info@naisftindia.com" class="rsb-help-email">
+            <i class="fas fa-envelope"></i> info@naisftindia.com
+          </a>
+          <div class="rsb-help-avail">Support Available 24/7</div>
+        </div>
+
+      </aside><!-- /.reg-right-bar -->
+
+    </div><!-- /.reg-3col -->
+  </div><!-- /.container -->
+</section>
+
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Popular Courses</h4><a href="courses.html">Industrial Safety</a><a href="courses.html">Fire Technology</a><a href="courses.html">QA/QC</a><a href="courses.html">Advanced Safety Diploma</a><a href="courses.html">Technical Courses</a></div><div><h4>Student Services</h4><a href="student-login.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="contact.html">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>&copy; 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg></a>
+
+  
+  <script src="js/main.js"></script>
+  <script src="js/auth.js?v=registration-dashboard-notice-1"></script>
+  <script>
+    function toggleWaField(cb) {
+      const wrap = document.getElementById('waPhoneWrap');
+      const input = document.getElementById('whatsapp');
+      wrap.style.display = cb.checked ? 'none' : 'flex';
+      if (cb.checked) input.value = '';
+    }
+
+    (function () {
+      // If a resume token is present, pre-fill the form with the saved application data
+      const token = new URLSearchParams(window.location.search).get('token');
+      if (!token) return;
+      fetch((['localhost','127.0.0.1'].includes(location.hostname) ? 'http://localhost:5000/api' : location.origin + '/api') + '/applications/resume/' + token)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data.success) return;
+          window._tokenData = data.data;
+          if (typeof tryPreSelect === 'function') tryPreSelect();
+        })
+        .catch(function () {
+          // Network error — form stays blank, user fills in manually
+        });
+    })();
+  </script>
+</body>
+</html>
+
+

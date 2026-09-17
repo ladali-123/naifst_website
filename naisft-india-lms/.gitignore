@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+server/node_modules/
+
+# Environment secrets — never commit these
+.env
+*.env
+server/.env
+
+# Prisma generated client (regenerated on deploy)
+server/node_modules/.prisma/
+
+# Editor directories
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+tmp/
+
+# Runtime uploads (directory is kept via .gitkeep)
+server/uploads/*
+!server/uploads/.gitkeep
+
+# Generated credential PDFs
+server/scripts/output/
+*.generated.pdf
+
+# Isolated local lifecycle-test database
+server/.local-postgres/

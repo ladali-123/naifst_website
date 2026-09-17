@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact NAISFT INDIA for admissions, franchise enquiries, student support, certificate verification, placement assistance and corporate training." />
+  <title>Contact Us | NAISFT INDIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" href="Assets/naisft-logo.png" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <style>
+  .ct-phone-row { display: flex; gap: 8px; }
+  .ct-phone-picker { position: relative; flex-shrink: 0; }
+  .ct-phone-trigger {
+    padding: 13px 10px;
+    border: 1px solid var(--contact-line,#dde5ed);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    font-size: 13px;
+    color: var(--contact-ink,#26384a);
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    min-width: 88px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+  .ct-phone-trigger:hover,
+  .ct-phone-trigger:focus,
+  .ct-phone-picker.open .ct-phone-trigger { border-color: var(--contact-yellow,#f7c11f); box-shadow: 0 0 0 3px rgba(247,193,31,.18); }
+  .ct-phone-flag { font-size: 20px; line-height: 1; }
+  .ct-phone-code { font-size: 13px; }
+  .ct-phone-chevron { width: 10px; height: 6px; flex-shrink: 0; opacity: 0.4; transition: transform 0.18s; }
+  .ct-phone-picker.open .ct-phone-chevron { transform: rotate(180deg); }
+  .ct-phone-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    z-index: 300;
+    background: #fff;
+    border: 1px solid var(--contact-line,#dde5ed);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    width: 248px;
+    overflow: hidden;
+  }
+  .ct-phone-search {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 9px 12px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    background: #fafafa;
+    color: var(--contact-ink,#26384a);
+  }
+  .ct-phone-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    max-height: 216px;
+    overflow-y: auto;
+  }
+  .ct-phone-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--contact-ink,#26384a);
+  }
+  .ct-phone-list li:hover,
+  .ct-phone-list li.selected { background: var(--contact-soft,#f5f8fb); }
+  .ct-phone-list-flag { font-size: 20px; flex-shrink: 0; }
+  .ct-phone-list-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ct-phone-list-dial { font-size: 12px; color: #888; flex-shrink: 0; }
+  .ct-phone-row .ct-phone-input { flex: 1; min-width: 0; width: auto !important; }
+  </style>
+</head>
+<body class="contact-page">
+  <svg class="svg-sprite" aria-hidden="true" style="display:none">
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5.3-3.4 9.3-8 11-4.6-1.7-8-5.7-8-11V5l8-3Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></symbol>
+    <symbol id="i-location" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 13h5"/></symbol>
+    <symbol id="i-graduation" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5M22 9v6"/></symbol>
+    <symbol id="i-brand" viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z"/><path d="m4 7 8 4 8-4M12 11v10"/></symbol>
+    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4 14v-4a8 8 0 0 1 16 0v4"/><path d="M4 14h3v5H4zM17 14h3v5h-3zM17 19c0 2-2 3-5 3"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M3 12h18M10 12v2h4v-2"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5h10v16M14 9h6v12M8 9h2M8 13h2M8 17h2M17 13h1M17 17h1M2 21h20"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m3 3 18 9-18 9 4-9z"/><path d="M7 12h14"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  </svg>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><svg><use href="#i-phone"/></svg><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><svg><use href="#i-mail"/></svg><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-dashboard.html" class="topbar-item"><svg><use href="#i-user"/></svg><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><svg><use href="#i-shield"/></svg><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home"><img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="student-dashboard.html">Student Zone</a><a href="franchise.html">Franchise</a><a class="active" href="contact.html">Contact</a>
+        <a href="#smart-enquiry" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="contact-hero-overlay"></div>
+      <div class="container contact-hero-grid">
+        <div class="contact-hero-copy reveal visible">
+          <span class="eyebrow light">OFFICIAL NAISFT CONTACT DESK</span>
+          <h1>Talk To The Right Team.<br><em>Get Clear Guidance.</em></h1>
+          <p class="hero-lead">One official contact point for admission, franchise, student support, certificate verification, placement and corporate enquiries.</p>
+          <div class="hero-actions"><a href="#smart-enquiry" class="btn btn-primary btn-lg">Send an Enquiry <span>→</span></a><a href="https://wa.me/919835627522" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">WhatsApp Us</a></div>
+        </div>
+        <div class="contact-hero-visual reveal visible">
+          <div class="contact-hero-image-card">
+            <img src="Assets/contact-support-team.png" alt="NAISFT contact support team ready to help students, franchise partners and employers" />
+            <div class="contact-hero-badge">
+              <span>OFFICIAL SUPPORT</span>
+              <strong>Admissions • Student Help • Franchise • Placement</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-quick-strip" aria-label="Official contact channels">
+      <div class="container contact-quick-grid">
+        <a href="tel:+919835627522"><span><svg><use href="#i-phone"/></svg></span><div><small>CALL THE OFFICE</small><strong>+91 98356 27522</strong></div><b>→</b></a>
+        <a href="mailto:info@naisftindia.com"><span><svg><use href="#i-mail"/></svg></span><div><small>EMAIL SUPPORT</small><strong>info@naisftindia.com</strong></div><b>→</b></a>
+        <a href="https://wa.me/919835627522" target="_blank" rel="noopener"><span><svg><use href="#i-message"/></svg></span><div><small>WHATSAPP</small><strong>Chat with our team</strong></div><b>→</b></a>
+        <a href="#office-location"><span><svg><use href="#i-location"/></svg></span><div><small>HEAD OFFICE</small><strong>Patna, Bihar, India</strong></div><b>→</b></a>
+      </div>
+    </section>
+
+    <section class="section department-section">
+      <div class="container">
+        <div class="section-heading row-heading reveal"><div><span class="eyebrow">CONNECT WITH THE RIGHT DEPARTMENT</span><h2>Choose the fastest route for your enquiry</h2></div><div class="heading-side"><p>Each support path is designed for a specific type of request so your enquiry reaches the right team sooner.</p></div></div>
+        <div class="department-grid">
+          <article class="department-card reveal"><div class="department-icon"><svg><use href="#i-graduation"/></svg></div><span>ADMISSION</span><h3>Admission Enquiry</h3><p>Course details, fees, eligibility, batch timing and admission guidance.</p><button data-type="Admission">Talk to Admission Team <b>→</b></button></article>
+          <article class="department-card reveal delay-1"><div class="department-icon"><svg><use href="#i-brand"/></svg></div><span>FRANCHISE</span><h3>Franchise Enquiry</h3><p>Center requirements, investment, agreement, brand support and portal access.</p><button data-type="Franchise">Apply for Franchise <b>→</b></button></article>
+          <article class="department-card reveal delay-2"><div class="department-icon"><svg><use href="#i-support"/></svg></div><span>STUDENT HELP</span><h3>Student Support</h3><p>Login, receipt, ID card, result, certificate, correction and helpdesk support.</p><button data-type="Student Support">Get Student Support <b>→</b></button></article>
+          <article class="department-card reveal"><div class="department-icon"><svg><use href="#i-shield"/></svg></div><span>VERIFICATION</span><h3>Certificate Verification</h3><p>Certificate number, QR verification and employer authenticity checks.</p><a href="certificate-verify.html">Verify Certificate <b>→</b></a></article>
+          <article class="department-card reveal delay-1"><div class="department-icon"><svg><use href="#i-briefcase"/></svg></div><span>PLACEMENT CELL</span><h3>Placement Support</h3><p>Resume submission, job updates, interview guidance and Gulf career support.</p><button data-type="Placement">Contact Placement Cell <b>→</b></button></article>
+          <article class="department-card reveal delay-2"><div class="department-icon"><svg><use href="#i-building"/></svg></div><span>CORPORATE</span><h3>Corporate Contact</h3><p>Hiring students, corporate training, bulk training and partnership enquiries.</p><button data-type="Corporate">Business Enquiry <b>→</b></button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section enquiry-section" id="smart-enquiry">
+      <div class="container enquiry-layout">
+        <div class="enquiry-copy reveal">
+          <span class="eyebrow">SMART ENQUIRY FORM</span>
+          <h2>Send your request to the correct department</h2>
+          <p class="lead">Choose the enquiry type and share the details needed for that request. The form adapts so the team receives the right context from the beginning.</p>
+          <div class="response-note"><span><svg><use href="#i-clock"/></svg></span><div><strong>Clear response expectations</strong><p>Most enquiries are handled within the response windows shown below, depending on department and working hours.</p></div></div>
+        </div>
+        <form class="contact-form reveal delay-1" id="contactForm" novalidate>
+          <div class="form-head"><span>OFFICIAL CONTACT FORM</span><h3>How can we help?</h3><p>Select an enquiry type to route your request.</p></div>
+          <div class="type-buttons" role="group" aria-label="Enquiry type">
+            <button type="button" class="type-btn active" data-type="Admission">Admission</button>
+            <button type="button" class="type-btn" data-type="Franchise">Franchise</button>
+            <button type="button" class="type-btn" data-type="Student Support">Student Support</button>
+            <button type="button" class="type-btn" data-type="Certificate Verification">Certificate</button>
+            <button type="button" class="type-btn" data-type="Placement">Placement</button>
+            <button type="button" class="type-btn" data-type="Corporate">Corporate</button>
+          </div>
+          <input type="hidden" name="enquiryType" id="enquiryType" value="Admission" />
+          <div class="form-grid">
+            <label><span>Full Name *</span><input type="text" name="name" required placeholder="Enter your full name" /></label>
+            <label><span>Mobile Number *</span>
+              <div class="ct-phone-row">
+                <div class="ct-phone-picker" id="ctPhonePicker">
+                  <button type="button" class="ct-phone-trigger" id="ctPhoneTrigger" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="ct-phone-flag" id="ctPhoneFlag">🇮🇳</span>
+                    <span class="ct-phone-code" id="ctPhoneCode">+91</span>
+                    <svg class="ct-phone-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="ct-phone-dropdown" id="ctPhoneDropdown" hidden>
+                    <input type="text" class="ct-phone-search" id="ctPhoneSearch" placeholder="Search country or code…" autocomplete="off">
+                    <ul class="ct-phone-list" id="ctPhoneList" role="listbox"></ul>
+                  </div>
+                </div>
+                <input type="tel" name="phone" id="ctPhone" class="ct-phone-input" required placeholder="Mobile number" maxlength="15" autocomplete="tel">
+              </div>
+            </label>
+            <label><span>Email Address</span><input type="email" name="email" placeholder="you@example.com" /></label>
+            <label><span>City / State</span><input type="text" name="location" placeholder="Your city and state" /></label>
+            <label class="full dynamic-field" data-for="Admission"><span>Course of Interest</span><input type="text" name="course" placeholder="Course or training program" /></label>
+            <label class="full dynamic-field hidden" data-for="Franchise"><span>Proposed Franchise Location</span><input type="text" name="franchiseLocation" placeholder="City, district or territory" /></label>
+            <label class="full dynamic-field hidden" data-for="Student Support"><span>Student ID / Registration Number</span><input type="text" name="studentId" placeholder="Enter student ID if available" /></label>
+            <label class="full dynamic-field hidden" data-for="Certificate Verification"><span>Certificate Number / Token</span><input type="text" name="certificateToken" placeholder="Enter certificate number or token" /></label>
+            <label class="full dynamic-field hidden" data-for="Placement"><span>Current Course / Qualification</span><input type="text" name="qualification" placeholder="Your course or qualification" /></label>
+            <label class="full dynamic-field hidden" data-for="Corporate"><span>Organisation Name</span><input type="text" name="organisation" placeholder="Company or organisation name" /></label>
+            <label class="full"><span>Message *</span><textarea name="message" rows="5" required placeholder="Tell us what you need help with"></textarea></label>
+          </div>
+          <button class="btn btn-primary btn-lg form-submit" type="submit">Submit Enquiry <svg><use href="#i-send"/></svg></button>
+          <p class="form-message" id="contactFormMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="office-section" id="office-location">
+      <div class="container office-grid">
+        <div class="office-details reveal">
+          <span class="eyebrow light">OFFICIAL CONTACT DETAILS</span>
+          <h2>Visit or contact the NAISFT Head Office</h2>
+          <div class="office-list">
+            <div><span><svg><use href="#i-location"/></svg></span><p><small>HEAD OFFICE</small><strong>Patna, Bihar, India</strong></p></div>
+            <div><span><svg><use href="#i-phone"/></svg></span><p><small>MOBILE</small><strong>+91 98356 27522</strong></p></div>
+            <div><span><svg><use href="#i-mail"/></svg></span><p><small>EMAIL</small><strong>info@naisftindia.com</strong></p></div>
+            <div><span><svg><use href="#i-clock"/></svg></span><p><small>OFFICE HOURS</small><strong>Mon–Sat: 10:00 AM – 6:00 PM</strong><em>Sunday: By appointment only</em></p></div>
+          </div>
+          <div class="office-actions"><a class="btn btn-primary" href="https://www.google.com/maps?q=Patna,Bihar,India" target="_blank" rel="noopener">Get Direction</a><a class="btn btn-ghost" href="tel:+919835627522">Call Now</a></div>
+        </div>
+        <div class="map-panel reveal delay-1">
+          <iframe title="NAISFT Head Office location in Patna, Bihar" src="https://www.google.com/maps?q=Patna,Bihar,India&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="map-caption"><span><svg><use href="#i-map"/></svg></span><div><strong>Patna, Bihar, India</strong><small>Open the map for directions to the official contact location.</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="container faq-grid">
+        <div class="faq-heading reveal"><span class="eyebrow">FREQUENTLY ASKED QUESTIONS</span><h2>Quick answers before you contact us</h2><p>Use the correct department route for the fastest assistance.</p></div>
+        <div class="faq-list reveal delay-1">
+          <article class="faq-item active"><button><span>How can I apply for a course?</span><b>−</b></button><div class="faq-answer"><p>Use the Admission Enquiry route or the smart enquiry form and select Admission.</p></div></article>
+          <article class="faq-item"><button><span>How do I verify a certificate?</span><b>+</b></button><div class="faq-answer"><p>Use the Certificate Verification page with the certificate number, QR-linked token or manual verification request.</p></div></article>
+          <article class="faq-item"><button><span>Can employers contact NAISFT?</span><b>+</b></button><div class="faq-answer"><p>Yes. Employers can use the Placement or Corporate enquiry route for hiring, verification or training discussions.</p></div></article>
+          <article class="faq-item"><button><span>How do I report a student support issue?</span><b>+</b></button><div class="faq-answer"><p>Select Student Support in the smart enquiry form and include your Student ID or registration number when available.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-cta">
+      <div class="container contact-cta-inner"><div><span>NEED GUIDANCE?</span><h2>Contact NAISFT INDIA today.</h2><p>Whether you are a student, parent, franchise applicant, employer or existing learner, our team is ready to guide you.</p></div><div class="contact-cta-actions"><a href="tel:+919835627522" class="btn btn-primary btn-lg">Call Now</a><a href="https://wa.me/919835627522" target="_blank" rel="noopener" class="btn btn-ghost btn-lg">WhatsApp</a></div></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Popular Courses</h4><a href="courses.html">Industrial Safety</a><a href="courses.html">Fire Technology</a><a href="courses.html">QA/QC</a><a href="courses.html">Advanced Safety Diploma</a><a href="courses.html">Technical Courses</a></div><div><h4>Student Services</h4><a href="student-dashboard.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="#smart-enquiry">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>© 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg></a>
+
+  <script src="js/contact.js"></script>
+  <script>
+  (function () {
+    const COUNTRIES = [
+      { flag:'🇮🇳', name:'India',           dial:'+91'  },
+      { flag:'🇦🇪', name:'UAE',             dial:'+971' },
+      { flag:'🇸🇦', name:'Saudi Arabia',    dial:'+966' },
+      { flag:'🇶🇦', name:'Qatar',           dial:'+974' },
+      { flag:'🇰🇼', name:'Kuwait',          dial:'+965' },
+      { flag:'🇧🇭', name:'Bahrain',         dial:'+973' },
+      { flag:'🇴🇲', name:'Oman',            dial:'+968' },
+      { flag:'🇺🇸', name:'United States',   dial:'+1'   },
+      { flag:'🇬🇧', name:'United Kingdom',  dial:'+44'  },
+      { flag:'🇦🇺', name:'Australia',       dial:'+61'  },
+      { flag:'🇨🇦', name:'Canada',          dial:'+1'   },
+      { flag:'🇸🇬', name:'Singapore',       dial:'+65'  },
+      { flag:'🇲🇾', name:'Malaysia',        dial:'+60'  },
+      { flag:'🇳🇵', name:'Nepal',           dial:'+977' },
+      { flag:'🇧🇩', name:'Bangladesh',      dial:'+880' },
+      { flag:'🇱🇰', name:'Sri Lanka',       dial:'+94'  },
+      { flag:'🇵🇰', name:'Pakistan',        dial:'+92'  },
+      { flag:'🇲🇻', name:'Maldives',        dial:'+960' },
+      { flag:'🇲🇲', name:'Myanmar',         dial:'+95'  },
+      { flag:'🇹🇭', name:'Thailand',        dial:'+66'  },
+      { flag:'🇮🇩', name:'Indonesia',       dial:'+62'  },
+      { flag:'🇵🇭', name:'Philippines',     dial:'+63'  },
+      { flag:'🇻🇳', name:'Vietnam',         dial:'+84'  },
+      { flag:'🇯🇵', name:'Japan',           dial:'+81'  },
+      { flag:'🇰🇷', name:'South Korea',     dial:'+82'  },
+      { flag:'🇨🇳', name:'China',           dial:'+86'  },
+      { flag:'🇩🇪', name:'Germany',         dial:'+49'  },
+      { flag:'🇫🇷', name:'France',          dial:'+33'  },
+      { flag:'🇮🇹', name:'Italy',           dial:'+39'  },
+      { flag:'🇪🇸', name:'Spain',           dial:'+34'  },
+      { flag:'🇳🇱', name:'Netherlands',     dial:'+31'  },
+      { flag:'🇧🇪', name:'Belgium',         dial:'+32'  },
+      { flag:'🇸🇪', name:'Sweden',          dial:'+46'  },
+      { flag:'🇳🇴', name:'Norway',          dial:'+47'  },
+      { flag:'🇩🇰', name:'Denmark',         dial:'+45'  },
+      { flag:'🇨🇭', name:'Switzerland',     dial:'+41'  },
+      { flag:'🇦🇹', name:'Austria',         dial:'+43'  },
+      { flag:'🇵🇱', name:'Poland',          dial:'+48'  },
+      { flag:'🇷🇺', name:'Russia',          dial:'+7'   },
+      { flag:'🇹🇷', name:'Turkey',          dial:'+90'  },
+      { flag:'🇬🇷', name:'Greece',          dial:'+30'  },
+      { flag:'🇪🇬', name:'Egypt',           dial:'+20'  },
+      { flag:'🇯🇴', name:'Jordan',          dial:'+962' },
+      { flag:'🇮🇶', name:'Iraq',            dial:'+964' },
+      { flag:'🇾🇪', name:'Yemen',           dial:'+967' },
+      { flag:'🇿🇦', name:'South Africa',    dial:'+27'  },
+      { flag:'🇳🇬', name:'Nigeria',         dial:'+234' },
+      { flag:'🇰🇪', name:'Kenya',           dial:'+254' },
+      { flag:'🇬🇭', name:'Ghana',           dial:'+233' },
+      { flag:'🇺🇬', name:'Uganda',          dial:'+256' },
+      { flag:'🇧🇷', name:'Brazil',          dial:'+55'  },
+      { flag:'🇲🇽', name:'Mexico',          dial:'+52'  },
+      { flag:'🇦🇷', name:'Argentina',       dial:'+54'  },
+      { flag:'🇳🇿', name:'New Zealand',     dial:'+64'  },
+      { flag:'🇫🇯', name:'Fiji',            dial:'+679' },
+    ];
+
+    let ctSelectedDial = '+91';
+
+    const picker     = document.getElementById('ctPhonePicker');
+    const trigger    = document.getElementById('ctPhoneTrigger');
+    const dropdown   = document.getElementById('ctPhoneDropdown');
+    const search     = document.getElementById('ctPhoneSearch');
+    const list       = document.getElementById('ctPhoneList');
+    const flagEl     = document.getElementById('ctPhoneFlag');
+    const codeEl     = document.getElementById('ctPhoneCode');
+    const phoneInput = document.getElementById('ctPhone');
+
+    function renderList(filter) {
+      const q = (filter || '').toLowerCase();
+      const filtered = q
+        ? COUNTRIES.filter(c => c.name.toLowerCase().includes(q) || c.dial.includes(q))
+        : COUNTRIES;
+      list.innerHTML = filtered.map(c =>
+        `<li role="option" data-dial="${c.dial}" data-flag="${c.flag}"${c.dial === ctSelectedDial ? ' class="selected"' : ''}>
+           <span class="ct-phone-list-flag">${c.flag}</span>
+           <span class="ct-phone-list-name">${c.name}</span>
+           <span class="ct-phone-list-dial">${c.dial}</span>
+         </li>`
+      ).join('');
+      list.querySelectorAll('li').forEach(li => {
+        li.addEventListener('click', () => {
+          ctSelectedDial = li.dataset.dial;
+          flagEl.textContent = li.dataset.flag;
+          codeEl.textContent = li.dataset.dial;
+          closeDropdown();
+          phoneInput.focus();
+        });
+      });
+    }
+
+    function openDropdown() {
+      dropdown.hidden = false;
+      picker.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+      search.value = '';
+      renderList('');
+      search.focus();
+    }
+
+    function closeDropdown() {
+      dropdown.hidden = true;
+      picker.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', () => dropdown.hidden ? openDropdown() : closeDropdown());
+    search.addEventListener('input', () => renderList(search.value));
+    document.addEventListener('click', e => { if (!picker.contains(e.target)) closeDropdown(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDropdown(); });
+
+    renderList('');
+
+    // Prepend dial code before contact.js reads FormData
+    document.querySelector('#contactForm,form').addEventListener('submit', function () {
+      const raw = phoneInput.value.trim();
+      if (raw && !raw.startsWith('+')) {
+        phoneInput.value = ctSelectedDial + raw;
+      }
+    }, true);
+  })();
+  </script>
+</body>
+</html>

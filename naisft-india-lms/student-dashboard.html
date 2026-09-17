@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
+  <title>Student Dashboard | NAISFT INDIA</title>
+  <meta name="description" content="NAISFT INDIA authenticated student dashboard for course, admission, payment, documents, certificate and support status.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Montserrat:wght@600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="Assets/naisft-logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css?v=site-poppins-16">
+</head>
+<body class="student-account-body">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><i class="fa-solid fa-phone"></i><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><i class="fa-regular fa-envelope"></i><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-login.html" class="topbar-item"><i class="fa-solid fa-user"></i><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><i class="fa-solid fa-shield-halved"></i><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home"><img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety &amp; Fire Technology" /></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="student-dashboard.html" class="active">Student Zone</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="student-account-page">
+    <section class="student-account-shell">
+      <aside class="sd-sidebar">
+        <a class="sd-logo" href="index.html" aria-label="NAISFT INDIA home">
+          <img src="Assets/naisft-logo.png" alt="NAISFT India">
+        </a>
+        <div class="sd-nav-group">
+          <strong>Overview</strong>
+          <a class="sd-nav-btn active" href="/student-dashboard.html/dashboard" data-dashboard-route="dashboard"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+          <a class="sd-nav-btn" href="/student-dashboard.html/courses" data-dashboard-route="courses"><i class="fa-solid fa-book-open"></i> Courses</a>
+          <a href="/student-dashboard.html/documents" data-dashboard-route="documents"><i class="fa-solid fa-folder-open"></i> Documents</a>
+          <a href="/student-dashboard.html/payments" data-dashboard-route="payments"><i class="fa-solid fa-receipt"></i> Payments</a>
+          <a href="/student-dashboard.html/certificate" data-dashboard-route="certificate"><i class="fa-solid fa-certificate"></i> Certificate</a>
+          <a href="/student-dashboard.html/identity-card" data-dashboard-route="identity-card"><i class="fa-solid fa-id-card"></i> Student ID Card</a>
+        </div>
+        <div class="sd-nav-group sd-nav-bottom">
+          <strong>Settings</strong>
+          <a href="student-zone.html"><i class="fa-solid fa-house"></i> Student Zone</a>
+          <button class="sd-nav-btn danger" type="button" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</button>
+        </div>
+      </aside>
+
+      <section class="sd-main">
+        <div class="sd-search-row">
+          <label class="sd-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="courseSearch" type="search" placeholder="Search your course here...">
+          </label>
+          <button class="sd-icon-btn" type="button" aria-label="Filter courses"><i class="fa-solid fa-filter"></i></button>
+        </div>
+
+        <div class="dash-alert" id="dashAlert"></div>
+        <div class="dash-loading" id="dashLoading"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading dashboard...</div>
+
+        <div class="dash-content" id="dashContent" hidden>
+          <section class="sd-registration-notice" id="registrationNotice" hidden>
+            <div class="sd-registration-notice-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+            <div>
+              <span>Registration Profile</span>
+              <h2>Complete your NAISFT registration profile</h2>
+              <p>Add your personal details and upload required documents so the center team can verify your student record.</p>
+            </div>
+            <a href="apply-online.html" id="registrationNoticeLink">Complete Registration</a>
+          </section>
+
+          <div class="sd-view active" id="dashboardView">
+            <section class="sd-hero-card">
+              <span>NAISFT STUDENT PORTAL</span>
+              <h1>Build Your Career With Industrial Safety &amp; Fire Technology</h1>
+              <p id="dashWelcome">Loading your student record...</p>
+              <a href="#course" class="sd-dark-cta">Continue <i class="fa-solid fa-play"></i></a>
+            </section>
+
+            <section class="sd-stats" id="overview">
+              <article><i class="fa-solid fa-id-card"></i><div><span>Enrollment No.</span><strong id="statEnrollment">-</strong></div></article>
+              <article><i class="fa-solid fa-shield-halved"></i><div><span>Verification</span><strong id="statVerified">-</strong></div></article>
+              <article><i class="fa-solid fa-graduation-cap"></i><div><span>Active Course</span><strong id="statCourse">-</strong></div></article>
+              <article><i class="fa-solid fa-indian-rupee-sign"></i><div><span>Total Paid</span><strong id="statPaid">-</strong></div></article>
+            </section>
+
+            <section class="sd-card-grid">
+              <article class="sd-panel sd-course-panel" id="course">
+                <div class="sd-panel-head">
+                  <h2>My Course</h2>
+                  <span id="courseStatus">Pending</span>
+                </div>
+                <h3 id="courseName">No course found</h3>
+                <div class="sd-course-meta">
+                  <span><i class="fa-regular fa-clock"></i> <b id="courseDuration">-</b></span>
+                  <span><i class="fa-solid fa-indian-rupee-sign"></i> <b id="courseFee">-</b></span>
+                  <span><i class="fa-solid fa-layer-group"></i> <b id="courseCategory">-</b></span>
+                </div>
+                <p id="courseDescription">Your selected course will appear here after registration.</p>
+                <div class="sd-enrollment-list" id="enrollmentList"></div>
+              </article>
+
+              <article class="sd-panel sd-learning-panel" id="learning">
+                <div class="sd-panel-head"><h2>Learning Progress</h2><span id="learningStatus">0%</span></div>
+                <div class="sd-learning-summary" id="learningSummary"></div>
+              </article>
+
+              <article class="sd-panel sd-task-panel" id="learningTasks">
+                <div class="sd-panel-head"><h2>Upcoming LMS Tasks</h2><span id="taskCount">0 pending</span></div>
+                <div class="sd-task-list" id="lmsTaskList"></div>
+              </article>
+
+              <article class="sd-panel">
+                <div class="sd-panel-head"><h2>Admission Progress</h2></div>
+                <div class="sd-timeline" id="admissionTimeline"></div>
+              </article>
+
+              <article class="sd-panel" id="profileDetails">
+                <div class="sd-panel-head"><h2>Registration Details</h2><span id="profileCompletion">Profile</span></div>
+                <div class="sd-info-grid" id="studentInfoGrid"></div>
+              </article>
+
+              <article class="sd-panel" id="documents">
+                <div class="sd-panel-head"><h2>Documents</h2><span id="docCount">0 uploaded</span></div>
+                <div class="sd-doc-list" id="documentList"></div>
+              </article>
+
+              <article class="sd-panel" id="payments">
+                <div class="sd-panel-head"><h2>Payments</h2><span id="paymentCount">0 records</span></div>
+                <div class="sd-payment-list" id="paymentList"></div>
+              </article>
+
+              <article class="sd-panel" id="certificate">
+                <div class="sd-panel-head"><h2>Certificate</h2><span id="certificateCount">0 issued</span></div>
+                <div class="sd-certificate-box" id="certificateBox">
+                  <i class="fa-solid fa-shield-halved"></i>
+                  <div>
+                    <strong>Certificate not issued yet</strong>
+                    <p>QR certificate will appear after course completion and admin approval.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="sd-panel" id="identityCard">
+                <div class="sd-panel-head"><h2>Student Identity Card</h2><span id="identityCardStatus">Not issued</span></div>
+                <div class="sd-certificate-box" id="identityCardBox">
+                  <i class="fa-solid fa-id-card"></i>
+                  <div><strong>ID card not issued yet</strong><p>Your QR-verifiable identity card will appear after registration approval.</p></div>
+                </div>
+              </article>
+
+              <article class="sd-panel" id="support">
+                <div class="sd-panel-head"><h2>Student Support</h2><span>Account help</span></div>
+                <form class="sd-support-form" id="studentSupportForm">
+                  <label>
+                    <span>Issue Type</span>
+                    <select id="supportSubject" required>
+                      <option value="">Select issue</option>
+                      <option>Admission / enrollment</option>
+                      <option>Payment verification</option>
+                      <option>Course access</option>
+                      <option>Assignment review</option>
+                      <option>Certificate support</option>
+                      <option>Other support</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>Message</span>
+                    <textarea id="supportMessage" rows="4" placeholder="Write your question or issue clearly" required></textarea>
+                  </label>
+                  <button type="submit"><i class="fa-solid fa-paper-plane"></i> Send Support Request</button>
+                </form>
+              </article>
+            </section>
+          </div>
+
+          <div class="sd-view" id="coursesView">
+            <div class="sd-courses-head">
+              <div>
+                <p>Courses &amp; Programs</p>
+                <h1>Course Manager</h1>
+                <span>Review available NAISFT courses and open their details.</span>
+              </div>
+              <a class="sd-primary-btn" href="quick-apply.html"><i class="fa-solid fa-plus"></i> Apply Course</a>
+            </div>
+            <div class="sd-course-filters">
+              <button class="active" type="button" data-course-filter="all">All courses</button>
+              <button type="button" data-course-filter="Safety">Safety</button>
+              <button type="button" data-course-filter="Fire">Fire</button>
+              <button type="button" data-course-filter="QA">QA/QC</button>
+              <button type="button" data-course-filter="Technical">Technical</button>
+            </div>
+            <div class="sd-course-cards" id="dashboardCourseList"></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sd-profile-panel">
+        <div class="sd-profile-menu"><span>Your Profile</span><i class="fa-solid fa-ellipsis-vertical"></i></div>
+        <div class="sd-avatar-ring">
+          <img id="profilePhoto" src="Assets/logo Institute.png" alt="Student profile">
+        </div>
+        <h2 id="profileName">Student</h2>
+        <p id="profileSub">Continue your journey and achieve your target.</p>
+        <div class="sd-profile-actions">
+          <a href="tel:+919835627522" aria-label="Call support"><i class="fa-solid fa-phone"></i></a>
+          <a href="mailto:info@naisftindia.com" aria-label="Email support"><i class="fa-regular fa-envelope"></i></a>
+          <a href="https://wa.me/919835627522" aria-label="WhatsApp support"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <div class="sd-chart-bars" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="sd-mini-list">
+          <div><span>Email</span><strong id="profileEmail">-</strong></div>
+          <div><span>Phone</span><strong id="profilePhone">-</strong></div>
+          <div><span>Location</span><strong id="profileLocation">-</strong></div>
+          <div><span>Qualification</span><strong id="profileQualification">-</strong></div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety &amp; Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Popular Courses</h4><a href="courses.html">Industrial Safety</a><a href="courses.html">Fire Technology</a><a href="courses.html">QA/QC</a><a href="courses.html">Advanced Safety Diploma</a><a href="courses.html">Technical Courses</a></div><div><h4>Student Services</h4><a href="student-login.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="contact.html">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>&copy; 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.47 1.64 6.36L3 29l6.82-1.6A13 13 0 0 0 16 29c7.18 0 13-5.82 13-13S23.18 3 16 3Zm0 2a11 11 0 1 1 0 22A11 11 0 0 1 16 5Zm-3.5 5.5c-.28 0-.72.1-1.1.53-.37.43-1.4 1.36-1.4 3.32s1.43 3.86 1.63 4.13c.2.26 2.8 4.28 6.77 5.83 3.36 1.32 4.05 1.06 4.78 1 .73-.07 2.35-.96 2.68-1.89.33-.92.33-1.72.23-1.88-.1-.16-.37-.26-.78-.46-.41-.2-2.35-1.16-2.72-1.29-.36-.13-.63-.2-.9.2-.26.4-1.02 1.29-1.25 1.56-.23.26-.46.3-.86.1-.41-.2-1.72-.63-3.27-2.02-1.21-1.08-2.02-2.41-2.26-2.81-.23-.41-.02-.63.18-.83.18-.18.41-.46.61-.69.2-.23.27-.4.4-.66.14-.27.07-.5-.03-.7-.1-.2-.88-2.15-1.22-2.94-.3-.72-.62-.7-.87-.7Z"/></svg></a>
+
+  <script>
+    window.NAISFT_DASHBOARD_DEV = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+      && new URLSearchParams(window.location.search).get('dev') === '1';
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/course-images.js"></script>
+  <script src="js/student-dashboard.js?v=local-verified-certificate-1"></script>
+</body>
+</html>

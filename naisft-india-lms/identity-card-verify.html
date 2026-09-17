@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Verify a NAISFT INDIA student identity card using its secure QR-linked token.">
+  <title>Verify Student ID Card | NAISFT INDIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/identity-card-verify.css">
+</head>
+<body class="id-verify-page">
+  <header class="idv-header"><a href="index.html"><img src="Assets/naisft-logo.png" alt="NAISFT INDIA"></a><nav><a href="student-login.html">Student Login</a><a href="certificate-verify.html">Verify Certificate</a></nav></header>
+  <main>
+    <section class="idv-hero">
+      <div class="idv-hero-copy"><span>SECURE STUDENT CREDENTIAL</span><h1>Verify a NAISFT<br><em>Student ID Card</em></h1><p>Scan the QR code or enter the secure token printed on the card to confirm its current status.</p></div>
+      <form id="identityVerifyForm" class="idv-search" novalidate><label for="identityToken">Student ID token or card number</label><div><input id="identityToken" autocomplete="off" placeholder="NAISFT-ID-…" required><button type="submit">Verify Identity</button></div><small>Verification reveals only the minimum information needed to confirm the credential.</small></form>
+    </section>
+    <section class="idv-result-wrap"><div id="identityResult" class="idv-result" aria-live="polite"><div class="idv-empty"><b>QR</b><h2>Ready to verify</h2><p>Scan a card QR code or enter its secure token above.</p></div></div></section>
+  </main>
+  <footer class="idv-footer">© 2026 NAISFT INDIA · Secure digital student services</footer>
+  <script src="js/identity-card-verify.js?v=credentials-3"></script>
+</body>
+</html>

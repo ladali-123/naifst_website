@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Verify a NAISFT INDIA training or course completion certificate using its secure token." />
+  <title>Verify Certificate | NAISFT INDIA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" href="Assets/naisft-logo.png" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/certificate-verify.css?v=editable-svg-1" />
+</head>
+<body class="certificate-page">
+  <svg class="svg-sprite" aria-hidden="true" style="display:none">
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5.3-3.4 9.3-8 11-4.6-1.7-8-5.7-8-11V5l8-3Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M16 3l5 5M14 5l5 5"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M14 2v5h5m-10 8 2 2 4-5"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 16v4h16v-4"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.6 2.6 0 1 1 4.5 1.8c-1.2 1-2 1.4-2 3.2M12 18h.01"/></symbol>
+  </svg>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item"><svg><use href="#i-phone"/></svg><span>+91 98356 27522</span></a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item"><svg><use href="#i-mail"/></svg><span>info@naisftindia.com</span></a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-dashboard.html" class="topbar-item"><svg><use href="#i-user"/></svg><span>Student Login</span></a>
+        <a href="#instant-verify" class="topbar-item utility-active"><svg><use href="#i-shield"/></svg><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home"><img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span>⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div>
+        <a href="courses.html">Courses</a>
+        <a href="placement.html">Career Support</a>
+        <a href="student-dashboard.html">Student Zone</a>
+        <a href="franchise.html">Franchise</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="verify-hero">
+      <div class="verify-grid-overlay" aria-hidden="true"></div>
+      <div class="container verify-hero-grid">
+        <div class="verify-hero-copy">
+          <span class="verify-eyebrow">DIGITAL CREDENTIAL VERIFICATION</span>
+          <h1><span>Verify a NAISFT</span><em>Certificate</em></h1>
+          <p class="verify-hero-lead">Every NAISFT course or training certificate can be checked through its QR-linked token record.</p>
+          <p class="verify-hero-text">Scan the QR code printed on the certificate to open its dedicated credential page, or enter the secure token manually below.</p>
+          <div class="verify-hero-actions">
+            <a href="#instant-verify" class="btn btn-primary btn-lg">Verify by Token <span>→</span></a>
+          </div>
+          <div class="verify-trust-row">
+            <span><svg><use href="#i-qr"/></svg> QR-linked records</span>
+            <span><svg><use href="#i-lock"/></svg> Secure token lookup</span>
+            <span><svg><use href="#i-filecheck"/></svg> Dedicated certificate page</span>
+          </div>
+        </div>
+
+        <div class="certificate-scene" aria-label="Illustration of a verifiable NAISFT certificate">
+          <div class="certificate-sheet">
+            <div class="certificate-topline"><span>NAISFT INDIA</span><span>TRAINING CREDENTIAL</span></div>
+            <img class="certificate-logo" src="Assets/naisft-logo.png" alt="NAISFT India" />
+            <div class="certificate-label">CERTIFICATE OF COMPLETION</div>
+            <h2>Industrial Safety Training</h2>
+            <p class="certificate-issued">Issued to</p>
+            <strong class="certificate-student">Sample Learner</strong>
+            <p class="certificate-copy">For successfully completing the prescribed training programme and assessment requirements.</p>
+            <div class="certificate-lower">
+              <div class="certificate-token"><span>Certificate Token</span><strong>NAISFT-DEMO-2026-001</strong><small>Scan or enter this token to verify</small></div>
+              <div class="certificate-qr"><img src="Assets/demo-certificate-qr.png" alt="Sample QR code for certificate verification" /></div>
+            </div>
+            <div class="verified-ribbon"><svg><use href="#i-shield"/></svg><span>QR-Linked Credential</span></div>
+          </div>
+          <div class="scene-note note-one"><svg><use href="#i-qr"/></svg><span>Scan QR</span></div>
+          <div class="scene-note note-two"><svg><use href="#i-key"/></svg><span>Check token</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="verification-choice-strip" aria-label="Certificate verification methods">
+      <div class="container verify-method-grid">
+        <a href="#instant-verify" class="method-card">
+          <span class="method-number">01</span><div class="method-icon"><svg><use href="#i-qr"/></svg></div><div><small>FASTEST METHOD</small><h3>Scan the QR code</h3><p>Use the QR printed on the certificate to open its linked verification page.</p></div><b>→</b>
+        </a>
+        <a href="#instant-verify" class="method-card">
+          <span class="method-number">02</span><div class="method-icon"><svg><use href="#i-key"/></svg></div><div><small>INSTANT LOOKUP</small><h3>Enter certificate token</h3><p>Type the unique token shown on the certificate to check its record.</p></div><b>→</b>
+        </a>
+      </div>
+    </section>
+
+    <section class="section instant-section" id="instant-verify">
+      <div class="container instant-grid">
+        <div class="instant-copy">
+          <span class="eyebrow">INSTANT CERTIFICATE LOOKUP</span>
+          <h2>Check a certificate using its secure token</h2>
+          <p class="instant-lead">The token is the unique verification string printed on the certificate and encoded inside its QR code.</p>
+          <div class="token-help-card">
+            <div class="token-help-icon"><svg><use href="#i-key"/></svg></div>
+            <div><strong>Where do I find the token?</strong><p>Look near the QR code or certificate footer. A token may look like <code>NAISFT-2026-XXXX</code>.</p></div>
+          </div>
+          <div class="privacy-note"><svg><use href="#i-lock"/></svg><span>Verification results display only the details required to establish certificate authenticity.</span></div>
+        </div>
+
+        <div class="lookup-card">
+          <div class="lookup-card-head"><div><span>Certificate verification</span><h3>Enter token or certificate ID</h3></div><div class="secure-badge"><svg><use href="#i-shield"/></svg> Secure check</div></div>
+          <form id="certificateVerifyForm" novalidate>
+            <label for="certificateTokenInput">Certificate token</label>
+            <div class="lookup-input-row">
+              <div class="token-input-wrap"><svg><use href="#i-search"/></svg><input id="certificateTokenInput" name="certificateToken" type="text" autocomplete="off" placeholder="e.g. NAISFT-2026-XXXX" aria-describedby="tokenHint" /></div>
+              <button class="btn btn-primary" type="submit">Verify Certificate <span>→</span></button>
+            </div>
+            <small id="tokenHint">Enter the token printed on your certificate. Use <strong>NAISFT-CERT-2026-000001</strong> to see a sample result.</small>
+          </form>
+
+          <div class="verification-state" id="certificateResult" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section how-section">
+      <div class="container">
+        <div class="section-heading verify-section-heading">
+          <div><span class="eyebrow light">HOW QR VERIFICATION WORKS</span><h2>From printed certificate to digital record</h2></div>
+          <p>Each issued certificate can carry a QR code that opens a token-linked verification route, allowing a student, employer, recruiter or institution to check the record.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-index">01</span><div class="step-icon"><svg><use href="#i-qr"/></svg></div><h3>Scan the QR code</h3><p>The QR code opens the certificate verification URL with the linked token.</p><span class="step-arrow">→</span></article>
+          <article class="step-card"><span class="step-index">02</span><div class="step-icon"><svg><use href="#i-key"/></svg></div><h3>Token record is checked</h3><p>The website looks for the corresponding certificate record in the verification database.</p><span class="step-arrow">→</span></article>
+          <article class="step-card"><span class="step-index">03</span><div class="step-icon"><svg><use href="#i-shield"/></svg></div><h3>Verification status appears</h3><p>The page returns the certificate status and essential matching credential details.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section record-section">
+      <div class="container record-grid">
+        <div class="record-visual">
+          <div class="record-card">
+            <div class="record-card-top"><div class="record-shield"><svg><use href="#i-shield"/></svg></div><div><span>VERIFIED CERTIFICATE RECORD</span><h3>Credential authenticity at a glance</h3></div></div>
+            <div class="record-list">
+              <div><span>Student name</span><strong>Matches issued record</strong><b>✓</b></div>
+              <div><span>Course / training</span><strong>Programme title shown</strong><b>✓</b></div>
+              <div><span>Certificate number</span><strong>Unique credential ID</strong><b>✓</b></div>
+              <div><span>Issue date</span><strong>Date of credential issue</strong><b>✓</b></div>
+              <div><span>Current status</span><strong>Valid / revoked / under review</strong><b>✓</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="record-copy"><span class="eyebrow">WHAT A VERIFIED RECORD SHOWS</span><h2>Simple enough for students. Clear enough for employers.</h2><p class="lead">A good verification result should make authenticity easy to understand without exposing unnecessary personal information.</p><div class="record-points"><div><span><svg><use href="#i-check"/></svg></span><p><strong>Clear status language</strong><small>Valid, under review, revoked or not found.</small></p></div><div><span><svg><use href="#i-check"/></svg></span><p><strong>Matching credential details</strong><small>Enough information to compare the digital record with the printed certificate.</small></p></div><div><span><svg><use href="#i-check"/></svg></span><p><strong>QR and token continuity</strong><small>The scanned certificate and typed token should lead to the same record.</small></p></div></div></div>
+      </div>
+    </section>
+
+    <section class="section manual-section" id="manual-request" hidden>
+      <div class="container manual-grid">
+        <div class="manual-copy">
+          <span class="eyebrow light">MANUAL VERIFICATION REQUEST</span>
+          <h2>Need additional certificate review?</h2>
+          <p>Use the request form when a QR code is damaged, a token is unreadable, older certificate data needs review, or an organisation requires written confirmation.</p>
+          <div class="manual-info-list">
+            <div><span>1</span><p><strong>Provide certificate details</strong><small>Enter the learner, course and certificate information visible on the document.</small></p></div>
+            <div><span>2</span><p><strong>Upload a clear copy</strong><small>Attach a readable scan or photo of the full certificate.</small></p></div>
+            <div><span>3</span><p><strong>Verification team reviews</strong><small>The submitted details will be checked against the academy's issuance records.</small></p></div>
+          </div>
+          <div class="response-note"><svg><use href="#i-clock"/></svg><div><strong>Response time</strong><span>Manual verification requests are typically reviewed within 2–3 working days. You will be contacted at the email address provided.</span></div></div>
+        </div>
+
+        <form class="manual-form" id="manualVerifyForm" novalidate>
+          <div class="manual-form-head"><span>Manual verification form</span><h3>Submit certificate details</h3><p>Fields marked * are required.</p></div>
+          <div class="form-row">
+            <label>Student full name *<input type="text" name="studentName" required placeholder="As printed on certificate" /></label>
+            <label>Certificate number / token *<input type="text" name="certificateNumber" required placeholder="Certificate ID or token" /></label>
+          </div>
+          <div class="form-row">
+            <label>Course or training programme *<input type="text" name="programme" required placeholder="Programme title" /></label>
+            <label>Approx. issue year<select name="issueYear"><option value="">Select year</option><option>2026</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>Earlier</option></select></label>
+          </div>
+          <div class="form-row">
+            <label>Your email *<input type="email" name="email" required placeholder="name@example.com" /></label>
+            <label>Phone number<input type="tel" name="phone" placeholder="Your contact number" /></label>
+          </div>
+          <label class="upload-field" for="certificateUpload"><input id="certificateUpload" name="certificateUpload" type="file" accept=".pdf,.jpg,.jpeg,.png" /><span class="upload-icon"><svg><use href="#i-upload"/></svg></span><span><strong>Upload certificate copy</strong><small>PDF, JPG or PNG. Use a clear full-page scan or photo.</small></span><b>Choose file</b></label>
+          <label>Reason for verification request<textarea name="reason" rows="4" placeholder="Tell us why you need manual verification or any issue you faced with QR/token lookup."></textarea></label>
+          <label class="consent-row"><input type="checkbox" required /><span>I confirm that the information submitted is accurate and may be used to review this certificate verification request.</span></label>
+          <button type="submit" class="btn btn-primary btn-lg manual-submit">Submit Verification Request <span>→</span></button>
+          <div class="form-message" id="manualFormMessage" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="container faq-grid">
+        <div><span class="eyebrow">CERTIFICATE VERIFICATION FAQ</span><h2>Common verification questions</h2><p>Clear guidance for students, employers, recruiters and institutions checking a NAISFT credential.</p></div>
+        <div class="faq-list">
+          <details open><summary>What happens when I scan the QR code?<span>+</span></summary><p>The QR code opens a NAISFT verification route associated with the certificate token. The website checks that token against the certificate record and shows the result.</p></details>
+          <details><summary>Can I verify without scanning the QR code?<span>+</span></summary><p>Yes. Enter the unique certificate token manually in the instant verification field.</p></details>
+          <details><summary>What should I do if a certificate cannot be found?<span>+</span></summary><p>Check the token carefully for typing errors. If the issue continues, contact NAISFT support using the details below.</p></details>
+          <details><summary>Can employers or recruiters use this page?<span>+</span></summary><p>Yes. This verification page can be used by authorised third parties checking a certificate presented by a learner, subject to NAISFT's privacy and verification policies.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="verification-cta">
+      <div class="container verification-cta-inner">
+        <div><span>NEED HELP WITH A CERTIFICATE?</span><h2>Talk to the NAISFT support team</h2><p>For damaged QR codes, unreadable tokens or certificate record questions, contact the academy support team.</p></div>
+        <div class="verification-cta-actions"><a class="btn btn-primary btn-lg" href="tel:+919835627522">Call Support</a><a class="btn btn-ghost btn-lg" href="mailto:info@naisftindia.com">Email Us</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="index.html" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational &amp; Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact Us</a></div><div><h4>Popular Courses</h4><a href="courses.html">Industrial Safety</a><a href="courses.html">Fire Technology</a><a href="courses.html">QA/QC</a><a href="courses.html">Advanced Safety Diploma</a><a href="courses.html">Technical Courses</a></div><div><h4>Student Services</h4><a href="student-dashboard.html">Student Login</a><a href="#instant-verify">Verify Certificate</a><a href="student-dashboard.html">View Results</a><a href="student-dashboard.html">Download Certificate</a><a href="contact.html">Admission Enquiry</a></div></div></div>
+    <div class="footer-bottom"><div class="container"><span>© 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms &amp; Conditions</a></span></div></div>
+  </footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg></a>
+
+  <script src="js/home.js"></script>
+  <script src="js/certificate-verify.js?v=editable-svg-2"></script>
+</body>
+</html>

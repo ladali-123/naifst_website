@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NAISFT INDIA — practical industrial safety, fire technology and QA/QC training with digital student services and career assistance." />
+  <title>NAISFT INDIA | Safety & Fire Technology Training</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@700;800;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5v-16Zm16 0A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M10 12v2h4v-2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2 20 5v6c0 5.3-3.4 9.3-8 11-4.6-1.7-8-5.7-8-11V5l8-3Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><path d="m14 6 4-4 4 4-4 4M16 8l-9.5 9.5a2.1 2.1 0 0 1-3-3L13 5"/><path d="m15 13 6 6-2 2-6-6"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-growth" viewBox="0 0 24 24"><path d="M4 19V9M10 19V5M16 19v-8M22 19V2"/><path d="m3 14 6-6 5 3 7-7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M4 6h14a2 2 0 0 1 2 2v11H4a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3h12"/><path d="M15 11h7v5h-7a2.5 2.5 0 0 1 0-5Z"/></symbol>
+    <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v19l-3-2-3 2-3-2-3 2V3Z"/><path d="M9 8h6M9 12h6M9 16h4"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-id" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="10" r="2.5"/><path d="M4.5 17a3.5 3.5 0 0 1 7 0M14 9h5M14 13h5"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8 14-2 8 6-3 6 3-2-8"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.6 2.6 0 1 1 4.5 1.8c-1.2 1-2 1.4-2 3.2M12 18h.01"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4v18M12 9h7v12M8 9v2M8 14v2M15 12v2M18 12v2M15 17v2M18 17v2"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M4 13V8h4l10-4v13L8 13H4Z"/><path d="m8 13 2 7H6l-2-7M20 8v5"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2"/><path d="M3 20a6 6 0 0 1 12 0M15 14a5 5 0 0 1 6 5"/></symbol>
+    <symbol id="i-filecheck" viewBox="0 0 24 24"><path d="M6 2h8l4 4v16H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/><path d="M14 2v5h5m-10 8 2 2 4-5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C10 21 3 14 3 5a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.3 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.5L21 8H7"/><circle cx="10" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  </svg>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left topbar-contact">
+        <a href="tel:+919835627522" class="topbar-item">
+          <svg><use href="#i-phone"/></svg><span>+91 98356 27522</span>
+        </a>
+        <a href="mailto:info@naisftindia.com" class="topbar-item">
+          <svg><use href="#i-mail"/></svg><span>info@naisftindia.com</span>
+        </a>
+      </div>
+      <div class="topbar-right topbar-actions">
+        <a href="student-login.html" class="topbar-item"><svg><use href="#i-user"/></svg><span>Student Login</span></a>
+        <a href="certificate-verify.html" class="topbar-item"><svg><use href="#i-shield"/></svg><span>Verify Certificate</span></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand" aria-label="NAISFT India home">
+        <img class="brand-logo" src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" />
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a class="active" href="index.html">Home</a><div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">About <span aria-hidden="true">⌄</span></button><div class="nav-dropdown-menu"><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="our-history.html">Our History</a><a href="mission-vision.html">Mission &amp; Vision</a><a href="our-leadership.html">Our Leadership</a><a href="affiliation-approvals.html">Affiliation &amp; Approvals</a></div></div><a href="courses.html">Courses</a><a href="placement.html">Career Support</a><a href="student-dashboard.html">Student Zone</a><a href="franchise.html">Franchise</a><a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-slider" aria-label="Featured NAISFT programs">
+      <div class="hero-track" id="heroTrack">
+        <article class="hero-slide hero-slide-signature active" style="--hero-image:url('../Assets/hero-bg.png')">
+          <div class="signature-hero-overlay"></div>
+          <div class="container signature-hero-grid">
+            <div class="signature-hero-copy">
+              <span class="signature-mobile-eyebrow">CAREER-FOCUSED INDUSTRIAL TRAINING</span>
+              <h1>
+                <span>Build Your Career In</span>
+                <span class="signature-title-desktop">Industrial Safety,<br>Fire Technology &amp;<br>Technical Skills</span>
+                <span class="signature-title-mobile">Industrial<br>Safety, Fire<br>Technology &amp;<br>Technical Skills</span>
+              </h1>
+
+              <div class="signature-mobile-visual" aria-hidden="true">
+                <span class="signature-mobile-ring one"></span>
+                <span class="signature-mobile-ring two"></span>
+                <img class="signature-mobile-chairman" src="Assets/principal.png" alt="" decoding="async" loading="eager" fetchpriority="high" />
+                <img class="signature-mobile-badge" src="Assets/Badge.png" alt="" decoding="async" loading="eager" fetchpriority="high" />
+              </div>
+
+              <p class="signature-hero-lead">India's Premium Training Academy for Safety, Fire, QA/QC, Technical &amp; Computer Courses</p>
+              <p class="signature-hero-text">NAISFT INDIA, under Ashrafi Educational &amp; Welfare Foundation, provides career-oriented industrial training programs designed for students, job seekers, working professionals and franchise partners across India.</p>
+              <p class="signature-responsive-text">Career-oriented industrial training programs designed for students, job seekers, working professionals and franchise partners across India.</p>
+
+              <div class="signature-responsive-actions" aria-label="Hero actions">
+                <a class="signature-responsive-btn primary" href="#courses">Explore Courses</a>
+                <a class="signature-responsive-btn secondary" href="quick-apply.html">Apply Now</a>
+                <a class="signature-responsive-btn brochure mobile-only" href="#">Download Brochure</a>
+              </div>
+
+              <div class="signature-trust-grid" aria-label="Trust indicators">
+                <span><b>✓</b> Government Registered</span>
+                <span><b>✓</b> Industry-Oriented Training</span>
+                <span><b>✓</b> Placement Assistance</span>
+                <span><b>✓</b> Practical Learning</span>
+              </div>
+
+              <div class="signature-hero-buttons">
+                <a class="signature-hero-btn apply" href="quick-apply.html">Apply Now <span>→</span></a>
+                <a class="signature-hero-btn outline" href="#">Download Brochure</a>
+              </div>
+            </div>
+
+            <div class="signature-hero-person" aria-hidden="true">
+              <div class="signature-ring one"></div>
+              <div class="signature-ring two"></div>
+              <img class="signature-training-badge" src="Assets/Badge.png" alt="" decoding="async" loading="eager" fetchpriority="high" />
+              <img class="signature-hero-chairman" src="Assets/principal.png" alt="" decoding="async" loading="eager" fetchpriority="high" />
+            </div>
+          </div>
+        </article>
+        <article class="hero-slide hero-slide-global-safety" style="--hero-image:url('../Assets/site-training.jpg')">
+          <div class="global-safety-overlay"></div>
+          <div class="container global-safety-grid">
+            <div class="global-safety-copy">
+              <span class="eyebrow light">INTERNATIONAL SAFETY LEARNING APPROACH</span>
+              <h1>
+                <span>Train For Safer Workplaces</span>
+                <em>NEBOSH &amp; IOSH-Aligned<br>Safety Learning</em>
+              </h1>
+              <div class="global-mobile-visual" aria-hidden="true">
+                <img src="Assets/risk-assessment.webp" alt="" decoding="async" loading="lazy" />
+              </div>
+              <p class="global-safety-lead">Build practical understanding of hazard identification, risk assessment, incident prevention and safe systems of work.</p>
+              <p class="global-safety-text">NAISFT safety training connects classroom learning with real workplace scenarios and internationally recognised approaches associated with NEBOSH and IOSH learning pathways.</p>
+              <div class="global-safety-actions">
+                <a href="#courses" class="btn btn-primary btn-lg">Explore Safety Courses <span>→</span></a>
+                <a href="#contact" class="btn btn-ghost btn-lg">Enquire About Training</a>
+              </div>
+            </div>
+
+            <div class="global-safety-visual visual-image-card" aria-hidden="true">
+              <div class="visual-photo-wrap">
+                <img class="global-safety-photo" src="Assets/risk-assessment.webp" alt="" decoding="async" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="hero-slide hero-slide-global-safety hero-slide-career-support" style="--hero-image:url('../Assets/group-training.jpg')">
+          <div class="global-safety-overlay"></div>
+          <div class="container global-safety-grid">
+            <div class="global-safety-copy">
+              <span class="eyebrow light">FROM TRAINING TO CAREER READINESS</span>
+              <h1>
+                <span>Prepare Beyond The Classroom</span>
+                <em>Career Guidance &amp;<br>Placement Assistance</em>
+              </h1>
+              <div class="global-mobile-visual" aria-hidden="true">
+                <img src="Assets/group-training.jpg" alt="" decoding="async" loading="lazy" />
+              </div>
+              <p class="global-safety-lead">Strengthen your transition from technical learning to real job opportunities with practical career preparation and industry-focused guidance.</p>
+              <p class="global-safety-text">NAISFT supports eligible learners with resume guidance, interview preparation, opportunity updates and career direction for industrial safety and technical roles in India and the Middle East.</p>
+              <div class="global-safety-actions">
+                <a href="#placement" class="btn btn-primary btn-lg">Explore Career Support <span>→</span></a>
+                <a href="#contact" class="btn btn-ghost btn-lg">Talk To Our Team</a>
+              </div>
+            </div>
+
+            <div class="global-safety-visual visual-image-card career-image-card" aria-hidden="true">
+              <div class="visual-photo-wrap career-photo-wrap">
+                <img class="global-safety-photo" src="Assets/group-training.jpg" alt="" decoding="async" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous slide">←</button><button class="hero-arrow hero-next" id="heroNext" aria-label="Next slide">→</button>
+      <div class="hero-dots" role="tablist" aria-label="Hero slides"><button class="active" data-slide="0" aria-label="Slide 1"></button><button data-slide="1" aria-label="Slide 2"></button><button data-slide="2" aria-label="Slide 3"></button></div>
+    </section>
+
+    <section class="service-strip" aria-label="Quick access">
+      <div class="container service-strip-grid">
+        <a href="#courses" class="strip-card strip-card-accent"><div class="strip-icon"><svg><use href="#i-book"/></svg></div><div><span>START LEARNING</span><h3>Safety Training Courses</h3><p>Explore diploma and advanced career programs.</p></div><b>→</b></a>
+        <a href="#student-zone" class="strip-card"><div class="strip-icon"><svg><use href="#i-user"/></svg></div><div><span>DIGITAL ACCESS</span><h3>Student Zone</h3><p>Results, receipts, ID card, certificate and more.</p></div><b>→</b></a>
+        <a href="#placement" class="strip-card"><div class="strip-icon"><svg><use href="#i-briefcase"/></svg></div><div><span>CAREER SUPPORT</span><h3>Placement Assistance</h3><p>Resume, interview and opportunity guidance.</p></div><b>→</b></a>
+      </div>
+    </section>
+
+    <section class="section courses-section" id="courses">
+      <div class="container">
+        <div class="section-heading row-heading reveal"><div><span class="eyebrow">OUR TRAINING PROGRAMMES</span><h2>Courses designed around workplace relevance</h2></div><div class="heading-side"><p>Explore career-focused training programs in industrial safety, fire technology and quality systems.</p><div class="slider-controls"><button class="slider-btn" id="coursePrev" aria-label="Previous courses">←</button><button class="slider-btn" id="courseNext" aria-label="Next courses">→</button></div></div></div>
+        <div class="course-slider reveal delay-1" id="courseSlider">
+          <article class="course-card"><div class="course-image image-one"><span class="course-tag">MOST POPULAR</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Diploma</span></div><h3>Diploma in Fire &amp; Industrial Safety Engineering</h3><p>Build foundational understanding across fire prevention, emergency response and industrial workplace safety.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=diploma-fire-industrial-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-two"><span class="course-tag navy">OIL &amp; GAS</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Diploma</span></div><h3>Diploma in Oil &amp; Gas Safety Engineering</h3><p>Develop safety awareness for oil and gas work environments, hazards, controls and safe operations.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=diploma-oil-gas-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-three"><span class="course-tag">DRILLING</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Diploma</span></div><h3>Diploma in Drilling &amp; Rig Safety Management</h3><p>Learn core safety concepts relevant to drilling, rig operations, hazard controls and worksite coordination.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=diploma-drilling-rig-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-four"><span class="course-tag navy">FOOD SAFETY</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Diploma</span></div><h3>Diploma in Food Safety &amp; Quality Management</h3><p>Build knowledge of food safety practices, quality management, hygiene controls and compliance-oriented systems.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=diploma-food-safety-quality">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-five"><span class="course-tag">INDUSTRIAL</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Diploma</span></div><h3>Diploma in Industrial Safety Engineering</h3><p>Develop broad practical understanding of industrial hazards, prevention, controls and safe work practices.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=diploma-industrial-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-one"><span class="course-tag red">ADVANCED</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Advanced Diploma</span></div><h3>Advanced Diploma in Fire &amp; Industrial Safety Engineering</h3><p>Advance your understanding of fire safety systems, industrial risk controls and safety management practice.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=adv-diploma-fire-industrial-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-two"><span class="course-tag red">ADVANCED</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Advanced Diploma</span></div><h3>Advanced Diploma in Oil &amp; Gas Safety Engineering</h3><p>Build deeper knowledge for managing risk, controls and safe operating practices in oil and gas environments.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=adv-diploma-oil-gas-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-three"><span class="course-tag red">ADVANCED</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Advanced Diploma</span></div><h3>Advanced Diploma in Drilling &amp; Rig Safety Management</h3><p>Strengthen advanced safety understanding for drilling operations, rig hazards and operational risk management.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=adv-diploma-drilling-rig-safety">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-four"><span class="course-tag red">ADVANCED</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Advanced Diploma</span></div><h3>Advanced Diploma in Food Safety &amp; Quality Management</h3><p>Develop advanced knowledge across food safety systems, quality control and structured management practices.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=adv-diploma-food-safety-quality">Course Details →</a></div></div></article>
+          <article class="course-card"><div class="course-image image-five"><span class="course-tag red">ADVANCED</span></div><div class="course-body"><div class="course-meta"><span>12 Months</span><span>Advanced Diploma</span></div><h3>Advanced Diploma in Industrial Safety Engineering</h3><p>Progress into advanced industrial safety concepts, risk control methods and workplace safety management.</p><div class="course-footer"><div class="course-price"><span>Course Fee</span><strong>₹26,500</strong></div><a href="course-detail.html#course=adv-diploma-industrial-safety">Course Details →</a></div></div></article>
+        </div><div class="course-progress"><span id="courseProgress"></span></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-media reveal"><div class="about-main-image"><img src="Assets/site-training.jpg" alt="Industrial safety training at a work site" /></div><div class="about-stat"><strong>Career-led</strong><span>Learning shaped around industry context</span></div><div class="about-mini"><strong>Practical</strong><span>Safety education</span></div></div>
+        <div class="about-copy reveal delay-1"><span class="eyebrow">ABOUT NAISFT INDIA</span><h2>Safety education that connects theory with the workplace</h2><p class="lead">NAISFT INDIA provides career-oriented training for students, job seekers and working professionals seeking practical knowledge in safety, fire technology and technical fields.</p><p>Our learning experience combines structured theory, workplace context, digital student services and career assistance to support learners through the complete training journey.</p><div class="feature-list"><div><span><svg><use href="#i-check"/></svg></span><p><strong>Industry-oriented learning</strong><small>Concepts explained through practical workplace scenarios.</small></p></div><div><span><svg><use href="#i-check"/></svg></span><p><strong>Connected learner journey</strong><small>Study, manage services, verify credentials and access guidance.</small></p></div><div><span><svg><use href="#i-check"/></svg></span><p><strong>Career readiness support</strong><small>Structured assistance for resumes, interviews and opportunities.</small></p></div></div><a href="#contact" class="text-link">Talk to an admission advisor <span>→</span></a></div>
+      </div>
+    </section>
+
+    <section class="section why-section" id="why-us">
+      <div class="container"><div class="section-heading centered reveal"><span class="eyebrow light">WHY CHOOSE NAISFT</span><h2>A learning system built beyond the classroom</h2><p>Practical skills, career focus, digital access and trusted credential verification—all connected in one student journey.</p></div>
+        <div class="why-grid">
+          <article class="why-card reveal"><span class="why-number">01</span><div class="why-icon"><svg><use href="#i-tools"/></svg></div><h3>Practical Learning</h3><p>Understand safety through workplace examples, demonstrations and applied scenarios.</p></article>
+          <article class="why-card reveal delay-1"><span class="why-number">02</span><div class="why-icon"><svg><use href="#i-target"/></svg></div><h3>Career-Oriented Courses</h3><p>Programs organised around roles and responsibilities found in industrial environments.</p></article>
+          <article class="why-card reveal delay-2"><span class="why-number">03</span><div class="why-icon"><svg><use href="#i-growth"/></svg></div><h3>Placement Assistance</h3><p>Eligible learners receive support with resumes, interviews, job alerts and career direction.</p></article>
+          <article class="why-card reveal delay-3"><span class="why-number">04</span><div class="why-icon"><svg><use href="#i-shield"/></svg></div><h3>Certificate Verification</h3><p>Employers and learners can check certificate authenticity through a digital verification flow.</p><a href="#verify">Verify a certificate →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section placement-section" id="placement">
+      <div class="container placement-grid">
+        <div class="placement-copy reveal"><span class="eyebrow light">CAREER & PLACEMENT ASSISTANCE</span><h2>From training to career readiness</h2><p>Our support helps eligible students prepare a stronger professional profile, approach interviews with more confidence and understand industrial career pathways in India and the Middle East.</p><div class="placement-list"><span>Resume guidance</span><span>Interview preparation</span><span>Job alert support</span><span>Gulf career guidance</span><span>Career counselling</span><span>Employer research support</span></div><a href="#contact" class="btn btn-primary btn-lg">Talk to a Career Advisor →</a></div>
+        <div class="placement-media reveal delay-1"><img src="Assets/group-training.jpg" alt="Students at a practical safety training session" /><div class="placement-callout"><strong>Practical. Focused. Career-ready.</strong><span>Build the knowledge and confidence needed for industrial environments.</span></div></div>
+      </div>
+      <div class="employer-band reveal"><div class="container"><div class="employer-head"><div><span class="eyebrow">MIDDLE EAST INDUSTRY LANDSCAPE</span><h3>Career pathways across leading industrial employers</h3></div><p>Examples of major employers learners may research while planning Gulf-region safety and technical careers.</p></div><div class="logo-marquee"><div class="logo-track">
+<div class="company-logo"><img src="Assets/aramco.webp" alt="Aramco logo" /></div>
+<div class="company-logo"><img src="Assets/adnoc.webp" alt="ADNOC logo" /></div>
+<div class="company-logo"><img src="Assets/qatarenergy.webp" alt="QatarEnergy logo" /></div>
+<div class="company-logo"><img src="Assets/sabic.webp" alt="SABIC logo" /></div>
+<div class="company-logo"><img src="Assets/maaden.webp" alt="Ma’aden logo" /></div>
+<div class="company-logo"><img src="Assets/petrofac.webp" alt="Petrofac logo" /></div>
+<div class="company-logo"><img src="Assets/aramco.webp" alt="" aria-hidden="true" /></div>
+<div class="company-logo"><img src="Assets/adnoc.webp" alt="" aria-hidden="true" /></div>
+<div class="company-logo"><img src="Assets/qatarenergy.webp" alt="" aria-hidden="true" /></div>
+<div class="company-logo"><img src="Assets/sabic.webp" alt="" aria-hidden="true" /></div>
+<div class="company-logo"><img src="Assets/maaden.webp" alt="" aria-hidden="true" /></div>
+<div class="company-logo"><img src="Assets/petrofac.webp" alt="" aria-hidden="true" /></div>
+</div></div></div></div>
+    </section>
+
+    <section class="section student-section" id="student-zone">
+      <div class="container">
+        <div class="student-head reveal">
+          <div><span class="eyebrow">DIGITAL STUDENT SERVICES</span><h2>Student essentials, made simpler</h2></div>
+          <p>Quick access to the academic and administrative services students use most — clearly organised in one digital destination.</p>
+        </div>
+        <div class="student-services-grid reveal delay-1">
+          <a class="student-service-card" href="#"><span class="service-icon"><svg><use href="#i-wallet"/></svg></span><div><strong>Fee Status</strong><p>See your payment progress and outstanding balance.</p></div><b>→</b></a>
+          <a class="student-service-card" href="#"><span class="service-icon"><svg><use href="#i-receipt"/></svg></span><div><strong>Payment Receipt</strong><p>Access payment records and available receipts.</p></div><b>→</b></a>
+          <a class="student-service-card" href="#"><span class="service-icon"><svg><use href="#i-chart"/></svg></span><div><strong>Results</strong><p>Check published academic results and progress.</p></div><b>→</b></a>
+          <a class="student-service-card" href="student-dashboard.html#identityCard"><span class="service-icon"><svg><use href="#i-id"/></svg></span><div><strong>Student ID Card</strong><p>View, print and verify your secure QR-linked student identity card.</p></div><b>→</b></a>
+          <a class="student-service-card" href="#"><span class="service-icon"><svg><use href="#i-award"/></svg></span><div><strong>Certificate Access</strong><p>View issued credential records and certificate details.</p></div><b>→</b></a>
+          <a class="student-service-card" href="#"><span class="service-icon"><svg><use href="#i-help"/></svg></span><div><strong>Support Ticket</strong><p>Raise and track academic or administrative requests.</p></div><b>→</b></a>
+        </div>
+        <div class="student-zone-cta reveal delay-2">
+          <div><span class="secure-dot"></span><p><strong>Student Zone</strong><small>Secure login for enrolled learners</small></p></div>
+          <a href="#" class="btn btn-primary">Open Student Login →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="verify-section" id="verify"><div class="container verify-grid reveal"><div class="verify-icon"><svg><use href="#i-shield"/></svg></div><div><span class="eyebrow light">CERTIFICATE AUTHENTICITY</span><h2>Verify a NAISFT certificate online</h2><p>Use the certificate number or registration number to begin the verification process.</p></div><form class="verify-form" id="verifyForm"><input type="text" required placeholder="Enter certificate / registration number" aria-label="Certificate number" /><button class="btn btn-primary" type="submit">Verify Certificate</button></form><p class="verify-message" id="verifyMessage" aria-live="polite"></p></div></section>
+
+    <section class="section testimonial-section" id="testimonials">
+      <div class="container">
+        <div class="testimonial-head reveal">
+          <div><span class="eyebrow">STUDENT EXPERIENCES</span><h2>What our learners say</h2></div>
+          <div class="rating-box"><strong>4.8</strong><div><span>★★★★★</span><small>Student experience rating</small></div></div>
+        </div>
+        <div class="testimonial-stage reveal delay-1">
+          <div class="quote-mark">“</div>
+          <p id="quoteText">NAISFT INDIA helped me understand industrial safety concepts in a simple and practical way. The learning environment was professional and supportive.</p>
+          <div class="quote-footer">
+            <div class="quote-person"><div class="avatar" id="quoteAvatar">AK</div><div><strong id="quoteName">Amit Kumar</strong><span id="quoteRole">Industrial Safety Learner</span></div></div>
+            <div class="quote-controls"><button id="quotePrev" aria-label="Previous testimonial">←</button><span id="quoteCount">01 / 04</span><button id="quoteNext" aria-label="Next testimonial">→</button></div>
+          </div>
+          <div class="testimonial-progress"><span id="testimonialProgress"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section franchise-section" id="franchise"><div class="container franchise-card reveal"><div class="franchise-copy"><span class="eyebrow light">PAN INDIA PARTNERSHIP OPPORTUNITY</span><h2>Build a training centre with the NAISFT ecosystem</h2><p>Become an authorised training partner and get a structured system for branding, program support, student management and certificate workflows.</p><div class="franchise-actions"><a href="#contact" class="btn btn-primary btn-lg">Apply for Franchise →</a><a href="#" class="btn btn-ghost btn-lg">Download Brochure</a></div></div><div class="franchise-features">
+      <div><span><svg><use href="#i-building"/></svg></span><p><strong>Centre Identity</strong><small>Authorised training centre branding framework.</small></p></div>
+      <div><span><svg><use href="#i-megaphone"/></svg></span><p><strong>Marketing Support</strong><small>Brand and campaign material support.</small></p></div>
+      <div><span><svg><use href="#i-book"/></svg></span><p><strong>Program Support</strong><small>Course and syllabus implementation assistance.</small></p></div>
+      <div><span><svg><use href="#i-monitor"/></svg></span><p><strong>Franchise Portal</strong><small>ERP-based digital workflow access.</small></p></div>
+      <div><span><svg><use href="#i-users"/></svg></span><p><strong>Student Management</strong><small>Structured learner administration tools.</small></p></div>
+      <div><span><svg><use href="#i-filecheck"/></svg></span><p><strong>Certificate Workflow</strong><small>Digital certificate request and tracking support.</small></p></div>
+    </div></div></section>
+
+    <section class="section contact-section" id="contact"><div class="container contact-grid"><div class="contact-copy reveal"><span class="eyebrow">ADMISSIONS & ENQUIRIES</span><h2>Ready to start your safety career?</h2><p>Tell us which training program interests you. Our team can guide you through course details, eligibility and the admission process.</p><div class="contact-details"><a href="tel:+919835627522"><span><svg><use href="#i-phone"/></svg></span><div><small>Call admissions</small><strong>+91 98356 27522</strong></div></a><a href="mailto:info@naisftindia.com"><span><svg><use href="#i-mail"/></svg></span><div><small>Email us</small><strong>info@naisftindia.com</strong></div></a><div><span><svg><use href="#i-pin"/></svg></span><div><small>Location</small><strong>Patna, Bihar, India</strong></div></div></div></div>
+      <form class="enquiry-form reveal delay-1" id="enquiryForm"><div class="form-head"><h3>Enquire about a course</h3><p>Fields marked * are required.</p></div><div class="form-row"><label>Full Name *<input type="text" required placeholder="Your name" /></label><label>Phone Number *<input type="tel" required placeholder="+91" /></label></div><div class="form-row"><label>Email Address<input type="email" placeholder="you@example.com" /></label><label>City<input type="text" placeholder="Your city" /></label></div><label>Course Interested In *<select required><option value="">Select a course</option><option>Diploma in Industrial Safety</option><option>Diploma in Fire Technology</option><option>Diploma in QA/QC</option><option>Advanced Diploma in Industrial Safety</option><option>Technical / Computer Course</option><option>Franchise Opportunity</option></select></label><label>Message<textarea rows="4" placeholder="Tell us what you would like to know"></textarea></label><button class="btn btn-primary btn-lg form-submit" type="submit">Submit Enquiry →</button><p class="form-note" id="formMessage"></p></form>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-top"><div class="container footer-grid"><div class="footer-brand"><a href="#top" class="footer-logo-panel" aria-label="NAISFT India home"><img src="Assets/naisft-logo.png" alt="NAISFT India — National Academy of Safety & Fire Technology" /></a><p>Career-oriented industrial safety, fire technology and technical skill training supported by digital student services and career guidance.</p><small class="foundation">Under Ashrafi Educational & Welfare Foundation</small></div><div><h4>Explore</h4><a href="about-naisft-india.html">About NAISFT INDIA</a><a href="#courses">Courses</a><a href="#placement">Career Support</a><a href="#franchise">Franchise</a><a href="#contact">Contact Us</a></div><div><h4>Popular Courses</h4><a href="#courses">Industrial Safety</a><a href="#courses">Fire Technology</a><a href="#courses">QA/QC</a><a href="#courses">Advanced Safety Diploma</a><a href="#courses">Technical Courses</a></div><div><h4>Student Services</h4><a href="#student-zone">Student Login</a><a href="#verify">Verify Certificate</a><a href="#student-zone">View Results</a><a href="#student-zone">Download Certificate</a><a href="#contact">Admission Enquiry</a></div></div></div><div class="footer-bottom"><div class="container"><span>© 2026 NAISFT INDIA. All Rights Reserved.</span><span><a href="privacy-policy.html">Privacy Policy</a><a href="terms-conditions.html">Terms & Conditions</a></span></div></div></footer>
+
+  <a class="floating-call floating-whatsapp" href="https://wa.me/919835627522" target="_blank" rel="noopener" aria-label="Chat with NAISFT India on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M19.11 17.2c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.46-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.94-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17s.93 2.52 1.06 2.69c.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.23-.17-.49-.3Z"/><path d="M16.04 3.2c-6.95 0-12.6 5.65-12.6 12.6 0 2.22.58 4.39 1.68 6.3L3.34 28.8l6.85-1.8a12.55 12.55 0 0 0 5.84 1.48h.01c6.95 0 12.6-5.65 12.6-12.6 0-3.37-1.31-6.53-3.69-8.91A12.52 12.52 0 0 0 16.04 3.2Zm0 22.99h-.01a10.3 10.3 0 0 1-5.26-1.44l-.38-.23-4.06 1.06 1.08-3.95-.25-.4a10.27 10.27 0 0 1-1.58-5.48c0-5.73 4.67-10.39 10.41-10.39 2.77 0 5.38 1.08 7.34 3.04a10.32 10.32 0 0 1 3.05 7.35c0 5.73-4.67 10.4-10.4 10.4Z"/></svg></a>
+  <script src="js/course-images.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
