@@ -1239,7 +1239,7 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
     line-height:1.1;
     font-weight:800;
     letter-spacing:-.7px;
-    margin-bottom:8px;
+    margin-bottom:22px;
   }
 
   .hero-copy .eyebrow,
@@ -1289,41 +1289,43 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
   }
 
   .signature-hero-chairman{
-    left:50%;
+    left:70%;
     bottom:0;
-    translate:-50% 0;
-    width:clamp(470px,30vw,570px);
-    height:clamp(440px,31vw,560px);
+    translate:-50% 5%;
+    width:clamp(940px,60.32vw,1121px);
+    height:clamp(902px,63.44vw,1144px);
     object-fit:contain;
     object-position:center bottom;
+    filter:drop-shadow(-8px 12px 22px rgba(0,0,0,.42));
     z-index:3;
   }
 
   .signature-ring{
-    left:50%;
-    top:46%;
+    display:block;
+    left:50.5%;
+    top:55%;
     translate:-50% -50%;
     border-color:rgba(247,193,31,.78);
     z-index:1;
   }
 
   .signature-ring.one{
-    width:clamp(310px,20vw,375px);
-    height:clamp(310px,20vw,375px);
-    opacity:.9;
+    width:clamp(313px,20vw,375px);
+    height:clamp(313px,20vw,375px);
+    opacity:.82;
   }
 
   .signature-ring.two{
-    width:clamp(430px,27vw,520px);
-    height:clamp(430px,27vw,520px);
-    opacity:.55;
+    width:clamp(438px,27.5vw,525px);
+    height:clamp(438px,27.5vw,525px);
+    opacity:.5;
   }
 
   .signature-training-badge{
-    right:2.5%;
+    right:-4.5%;
     top:10%;
-    width:clamp(116px,8vw,150px);
-    height:clamp(116px,8vw,150px);
+    width:clamp(139px,9.6vw,180px);
+    height:clamp(139px,9.6vw,180px);
     z-index:5;
   }
 }
@@ -1338,11 +1340,19 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
   .signature-hero-copy h1>span:first-child{font-size:clamp(22px,2vw,28px)}
 
   .signature-hero-chairman{
-    width:clamp(440px,35vw,520px);
-    height:clamp(420px,36vw,520px);
+    left:69%;
+    bottom:0;
+    translate:-50% 5%;
+    width:clamp(830px,63.44vw,987px);
+    height:clamp(830px,63.44vw,1049px);
   }
 
-  .signature-training-badge{right:0;top:10%}
+  .signature-training-badge{
+    right:-7%;
+    top:10%;
+    width:clamp(139px,9.6vw,180px);
+    height:clamp(139px,9.6vw,180px);
+  }
 }
 
 /* Tablet/mobile remain full width and retain their existing responsive
@@ -1387,413 +1397,6 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
   }
 }
 
-/* ======================================================================
-   Signature hero principal scale + face alignment refinement.
-   Desktop only: ~40% larger than the previous render and horizontally/
-   vertically offset so the face sits in the centre of the upper gold ring.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:68%;
-    bottom:42px;
-    width:clamp(600px,38.5vw,728px);
-    height:clamp(580px,40.6vw,735px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:67%;
-    bottom:34px;
-    width:clamp(560px,43.4vw,665px);
-    height:clamp(560px,43.4vw,700px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero principal scale adjustment.
-   Increases the principal image while preserving the left-side text layout.
-   This override affects only slide 1.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:69%;
-    bottom:-78px;
-    width:clamp(860px,55vw,1020px);
-    height:clamp(820px,58vw,1040px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:68%;
-    bottom:-64px;
-    width:clamp(760px,58vw,900px);
-    height:clamp(760px,58vw,960px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero principal scale adjustment.
-   Further increases the principal image while leaving the left-side text
-   spacing unchanged.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:70.5%;
-    bottom:-190px;
-    width:clamp(1200px,77vw,1430px);
-    height:clamp(1150px,81vw,1460px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:69.5%;
-    bottom:-160px;
-    width:clamp(1060px,81vw,1260px);
-    height:clamp(1060px,81vw,1340px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero principal scale adjustment.
-   Reduces the principal image while leaving the left-side text spacing
-   unchanged.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:70%;
-    bottom:-152px;
-    width:clamp(960px,61.6vw,1144px);
-    height:clamp(920px,64.8vw,1168px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:69%;
-    bottom:-128px;
-    width:clamp(848px,64.8vw,1008px);
-    height:clamp(848px,64.8vw,1072px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero principal scale and position adjustment.
-   Reduces the principal image and lifts it while preserving the left-side
-   text layout.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:70%;
-    bottom:-152px;
-    translate:-50% -35%;
-    width:clamp(845px,54.2vw,1007px);
-    height:clamp(810px,57vw,1028px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    left:69%;
-    bottom:-128px;
-    translate:-50% -35%;
-    width:clamp(746px,57vw,887px);
-    height:clamp(746px,57vw,943px);
-  }
-}
-
-/* ======================================================================
-   Signature hero principal vertical alignment correction.
-   Keep the current scale, but bottom-align the image within slide 1.
-   Left-side text layout remains untouched.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    bottom:0;
-    translate:-50% 0;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    bottom:0;
-    translate:-50% 0;
-  }
-}
-
-
-/* ======================================================================
-   Signature hero principal scale adjustment.
-   Increases the bottom-aligned principal image while preserving the left-side
-   text layout.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    width:clamp(904px,58vw,1078px);
-    height:clamp(867px,61vw,1100px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    width:clamp(798px,61vw,949px);
-    height:clamp(798px,61vw,1009px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero image and badge scale adjustment.
-   Increases the principal image and badge while keeping the surrounding
-   layout unchanged.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    width:clamp(940px,60.32vw,1121px);
-    height:clamp(902px,63.44vw,1144px);
-  }
-
-  .hero-slide-signature .signature-training-badge{
-    width:clamp(139px,9.6vw,180px);
-    height:clamp(139px,9.6vw,180px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    width:clamp(830px,63.44vw,987px);
-    height:clamp(830px,63.44vw,1049px);
-  }
-
-  .hero-slide-signature .signature-training-badge{
-    width:clamp(139px,9.6vw,180px);
-    height:clamp(139px,9.6vw,180px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero badge and portrait positioning.
-   Offsets the badge and lowers the principal image while keeping the current
-   sizes and left-side text layout.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-training-badge{
-    right:-4.5%;
-  }
-
-  .hero-slide-signature .signature-hero-chairman{
-    bottom:0;
-    translate:-50% 12%;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-training-badge{
-    right:-7%;
-  }
-
-  .hero-slide-signature .signature-hero-chairman{
-    bottom:0;
-    translate:-50% 12%;
-  }
-}
-
-
-/* ======================================================================
-   Signature hero portrait positioning.
-   Move the principal image up by 7% from the previous 12%-down position.
-   Net vertical offset is now 5% downward from its bottom-aligned baseline.
-   All sizes, badge position, text spacing, and other sections unchanged.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-hero-chairman{
-    bottom:0;
-    translate:-50% 5%;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-hero-chairman{
-    bottom:0;
-    translate:-50% 5%;
-  }
-}
-
-/* ======================================================================
-   Signature hero cleanup.
-   Remove the CSS-generated circle/ring elements behind the principal on
-   slide 1 only. Background image, principal, badge and all other content
-   remain unchanged.
-   ====================================================================== */
-.hero-slide-signature .signature-ring{
-  display:none !important;
-}
-
-
-/* ======================================================================
-   Signature hero decorative ring positioning.
-   Restore the decorative rings behind the principal on slide 1 and place
-   them behind the principal's head/upper-body area rather than floating
-   independently over the background.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-ring{
-    display:block !important;
-    z-index:1;
-    left:69.5%;
-    top:36%;
-    translate:-50% -50%;
-    border-color:rgba(247,193,31,.78);
-  }
-
-  .hero-slide-signature .signature-ring.one{
-    width:clamp(250px,16vw,300px);
-    height:clamp(250px,16vw,300px);
-    opacity:.82;
-  }
-
-  .hero-slide-signature .signature-ring.two{
-    width:clamp(350px,22vw,420px);
-    height:clamp(350px,22vw,420px);
-    opacity:.5;
-  }
-
-  .hero-slide-signature .signature-hero-chairman{
-    z-index:3;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-ring{
-    display:block !important;
-    left:68.5%;
-    top:37%;
-  }
-
-  .hero-slide-signature .signature-ring.one{
-    width:clamp(220px,17vw,270px);
-    height:clamp(220px,17vw,270px);
-  }
-
-  .hero-slide-signature .signature-ring.two{
-    width:clamp(310px,24vw,380px);
-    height:clamp(310px,24vw,380px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero decorative ring positioning.
-   Moves the restored rings down and left on the first slider only.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-ring{
-    left:59.5%;
-    top:61%;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-ring{
-    left:58.5%;
-    top:62%;
-  }
-}
-
-
-/* ======================================================================
-   Signature hero decorative ring positioning.
-   Moves the ring system up and left on the first slider only.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-ring{
-    left:47.5%;
-    top:53%;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-ring{
-    left:46.5%;
-    top:54%;
-  }
-}
-
-
-/* ======================================================================
-   Signature hero decorative ring scale.
-   Enlarges the ring system while preserving its current position and all
-   other slide elements.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-ring.one{
-    width:clamp(313px,20vw,375px);
-    height:clamp(313px,20vw,375px);
-  }
-
-  .hero-slide-signature .signature-ring.two{
-    width:clamp(438px,27.5vw,525px);
-    height:clamp(438px,27.5vw,525px);
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-ring.one{
-    width:clamp(275px,21.25vw,338px);
-    height:clamp(275px,21.25vw,338px);
-  }
-
-  .hero-slide-signature .signature-ring.two{
-    width:clamp(388px,30vw,475px);
-    height:clamp(388px,30vw,475px);
-  }
-}
-
-
-/* ======================================================================
-   Signature hero decorative ring positioning.
-   Moves the ring system to the right on the first slider only while keeping
-   size and vertical position.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-ring{
-    left:52.5%;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-ring{
-    left:51.5%;
-  }
-}
-
-
-/* ======================================================================
-   Signature hero decorative ring positioning.
-   Moves the ring system down and left on the first slider only. Size and all
-   other slide elements remain unchanged.
-   ====================================================================== */
-@media (min-width:1061px){
-  .hero-slide-signature .signature-ring{
-    left:50.5%;
-    top:55%;
-  }
-}
-
-@media (min-width:1061px) and (max-width:1360px){
-  .hero-slide-signature .signature-ring{
-    left:49.5%;
-    top:56%;
-  }
-}
-
 
 /* ======================================================================
    Signature hero text-gap refinement.
@@ -1802,11 +1405,11 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
    ====================================================================== */
 @media (min-width:1061px){
   .hero-slide-signature .signature-hero-copy h1{
-    margin-bottom:8px;
+    margin-bottom:24px;
   }
 
   .hero-slide-signature .signature-hero-lead{
-    margin-top:6px;
+    margin-top:18px;
   }
 }
 
@@ -1841,11 +1444,11 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
 }
 
 .global-safety-copy .eyebrow{
-  margin-bottom:16px;
+  margin-bottom:24px;
 }
 
 .global-safety-copy h1{
-  margin:0 0 8px;
+  margin:0 0 20px;
   font-family:"Cinzel",Georgia,serif;
   font-size:clamp(46px,3.55vw,64px);
   line-height:1.01;
@@ -1856,7 +1459,7 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
 
 .global-safety-copy h1 span{
   display:block;
-  margin-bottom:8px;
+  margin-bottom:14px;
   font-size:clamp(24px,1.85vw,32px);
   line-height:1.1;
   letter-spacing:-.7px;
@@ -1872,7 +1475,7 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
 
 .global-safety-lead{
   max-width:650px;
-  margin-top:6px;
+  margin-top:14px;
   color:#fff;
   font-size:clamp(18px,1.08vw,20px);
   line-height:1.42;
@@ -1881,7 +1484,7 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
 
 .global-safety-text{
   max-width:640px;
-  margin-top:8px;
+  margin-top:14px;
   color:rgba(255,255,255,.8);
   font-size:clamp(15px,.9vw,16px);
   line-height:1.6;
@@ -1890,7 +1493,7 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
 .global-safety-actions{
   display:flex;
   gap:10px;
-  margin-top:20px;
+  margin-top:32px;
 }
 
 .global-safety-visual{
@@ -2539,3 +2142,12 @@ h2{font-size:clamp(46px,3.55vw,64px);line-height:1.01;letter-spacing:-2.5px;text
 @media(min-width:1281px){.main-nav .nav-dropdown-toggle{font-size:15px;font-weight:700;line-height:1.2;letter-spacing:0}}
 @media(min-width:1061px) and (max-width:1280px){.main-nav .nav-dropdown-toggle{font-size:13px;font-weight:800}}
 @media(max-width:1060px){.main-nav .nav-dropdown-toggle{font-size:15px;font-weight:700}}
+
+/* ======================================================================
+   Slide 1 — remove the decorative gold ring behind the principal.
+   Everything else on the slide (photo, badge, text, spacing) is unchanged.
+   ====================================================================== */
+.signature-ring,
+.signature-mobile-ring{
+  display:none !important;
+}
